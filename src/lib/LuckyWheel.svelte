@@ -1,0 +1,70 @@
+<script lang="ts">
+	import { Tween } from 'svelte/motion';
+	import type { Moneybag_t } from '../routes/moneybags';
+	import { RAD2DEG } from './RAD2DEG';
+	import { cubicOut } from 'svelte/easing';
+	import { onMount } from 'svelte';
+
+	const getCoordinatesForPercent = (percent: number) => {
+		const x = Math.cos(2 * Math.PI * percent);
+		const y = Math.sin(2 * Math.PI * percent);
+		return [x, y];
+	};
+
+	const { moneybag, pointerAt }: { moneybag: Moneybag_t; pointerAt: number } = $props();
+
+	const slices = [...moneybag.open].sort((a, b) => a.chance - b.chance);
+
+	const angle = pointerAt * 2 * Math.PI;
+	const radius = 1;
+
+	const pointerData = $state({
+		tipX: radius * Math.cos(angle) * 0.9,
+		tipY: radius * Math.sin(angle) * 0.9
+	});
+
+	const pathDatas = $state(
+		[] as {
+			arcFlag: 0 | 1;
+			data: string;
+			color: string;
+		}[]
+	);
+
+	let cumulativePercent = 0;
+	for (let i = 0; i < slices.length; i++) {
+		const sec = slices[i];
+		const [startX, startY] = getCoordinatesForPercent(cumulativePercent);
+		cumulativePercent += sec.chance;
+		const [endX, endY] = getCoordinatesForPercent(cumulativePercent);
+		const ret = {} as (typeof pathDatas)[0];
+		ret.arcFlag = sec.chance > 0.5 ? 1 : 0;
+		ret.color = moneybag.colors.wheelColors[i];
+		ret.data = `M ${startX} ${startY} A 1 1 0 ${ret.arcFlag} 1 ${endX} ${endY} L 0 0`;
+		pathDatas.push(ret);
+	}
+
+	let wheelRotation = new Tween(360 * 3 + Math.random() * 360, {
+		duration: 2000,
+		easing: cubicOut
+	});
+
+	onMount(() => (wheelRotation.target = 0));
+</script>
+
+<svg
+	class="aspect-square h-full w-auto"
+	viewBox="-1.2 -1.2 2.4 2.4"
+	style={`transform: rotate(${-angle * RAD2DEG - 90}deg)`}
+>
+	<g style={`transform:rotate(${wheelRotation.current}deg)`}>
+		{#each pathDatas as pathData}
+			<path d={pathData.data} fill={pathData.color} />
+		{/each}
+	</g>
+	<polygon
+		points="0,0 0.05,-0.15 -0.05,-0.15"
+		class="fill-base-content"
+		transform={`translate(${pointerData.tipX}, ${pointerData.tipY}) rotate(${angle * RAD2DEG + 90})`}
+	/>
+</svg>

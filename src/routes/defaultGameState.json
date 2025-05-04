@@ -1,0 +1,23 @@
+{
+	"tick": 0,
+	"multiplier": {
+		"index": 0,
+		"value": 1
+	},
+	"coins": 1000,
+	"moneybags": {
+		"Basic": {
+			"unlocked": true,
+			"owned": 10,
+			"marketHistory": [100, 100, 100, 100, 100]
+		},
+		"Jumpy": {
+			"unlocked": false,
+			"owned": 0,
+			"marketHistory": [100, 100, 100, 100, 100]
+		}
+	},
+	"updateTick": 0,
+	"lastRandomEvent": null,
+	"maxEachMoneybag": 10
+}
