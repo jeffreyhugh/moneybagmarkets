@@ -10,18 +10,18 @@
 	<button type="button" class="btn pl-3">
 		<IconBuildingStore /> Store
 	</button>
-	<div class="relative mr-2 flex justify-end gap-1">
-		<IconPigMoney />
+	<div class="relative mr-2 flex justify-end gap-1 text-2xl">
+		<IconPigMoney class="size-8" />
 		{gameState.coins.toLocaleString()}
 		{#each coinEvents.events as e (e.id)}
 			<div
 				class={[
-					'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-sm font-bold',
+					'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-lg font-bold',
 					e.sign === '+' && 'text-success',
 					e.sign === '-' && 'text-error'
 				]}
 			>
-				{e.sign}{e.value}
+				{e.sign}{e.value}{e.suffix || ''}
 			</div>
 		{/each}
 	</div>

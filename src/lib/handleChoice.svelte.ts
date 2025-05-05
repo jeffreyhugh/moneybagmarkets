@@ -31,5 +31,5 @@ export const handleChoices = (_moneybag: Moneybag_t, choices: (Moneybag_t['open'
 
 	coin('+', addTotal);
 
-	// return `+${addTotal}`;
+	return `+${addTotal}`;
 };

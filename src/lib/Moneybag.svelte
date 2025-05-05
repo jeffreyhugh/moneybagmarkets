@@ -58,12 +58,13 @@
 		showWheel = random;
 		await new Promise((resolve) => setTimeout(resolve, 2200));
 
-		// showGain = handleChoices(moneybag, choices);
-		handleChoices(moneybag, choices);
+		showGain = handleChoices(moneybag, choices);
 
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		await new Promise((resolve) => setTimeout(resolve, 500));
 		showGain = null;
 		showWheel = null;
+
+		await new Promise((resolve) => setTimeout(resolve, 200));
 		opening = false;
 	};
 
@@ -114,75 +115,83 @@
 	{#if !gameState.moneybags[moneybag.name].unlocked}
 		<Locker {moneybag} />
 	{/if}
-	<div class="flex items-center gap-3">
+	<div class="flex items-center gap-4">
 		<div
 			class={[
-				'rounded-box flex size-18 items-center justify-center bg-gradient-to-br',
+				'rounded-box flex size-24 items-center justify-center bg-gradient-to-br',
 				moneybag.colors.from,
 				moneybag.colors.via,
 				moneybag.colors.to,
 				moneybag.colors.text
 			]}
 		>
-			<IconMoneybag class="size-12" />
+			{#if moneybag.icon}
+				<moneybag.icon class="size-16" />
+			{:else}
+				<IconMoneybag class="size-16" />
+			{/if}
 		</div>
-		<div>
-			<div class="text-xl font-bold">{moneybag.name}</div>
+		<div class="flex flex-col">
+			<div class="text-2xl font-bold">{moneybag.name}</div>
 			<div>
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
 				</span> owned
 			</div>
-			<button disabled={opening} class={['btn btn-sm']} onclick={bumpMultiplier}>
-				x{mult.multiplier}
-			</button>
-			<button
-				disabled={opening || gameState.moneybags[moneybag.name].owned === 0}
-				class={[
-					'btn btn-sm',
-					gameState.moneybags[moneybag.name].owned > 0 && [
-						'bg-gradient-to-br',
-						moneybag.colors.from,
-						moneybag.colors.via,
-						moneybag.colors.to,
-						moneybag.colors.text
-					]
-				]}
-				onclick={openMoneybag}
-			>
-				Open
-			</button>
-			<button
-				disabled={gameState.moneybags[moneybag.name].owned === gameState.maxEachMoneybag ||
-					gameState.coins < gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]}
-				class="btn btn-sm not-disabled:btn-success"
-				onclick={buyMoneybag}
-			>
-				Buy
-			</button>
-			<button
-				disabled={gameState.moneybags[moneybag.name].owned === 0}
-				class="btn btn-sm not-disabled:btn-error"
-				onclick={sellMoneybag}
-			>
-				Sell
-			</button>
+			<!-- {#if moneybag.market.target !== 0}
+				<button disabled={opening} class={['btn btn-sm']} onclick={bumpMultiplier}>
+					x{mult.multiplier}
+				</button>
+			{/if} -->
+			<div class="mt-1">
+				<button
+					disabled={opening || gameState.moneybags[moneybag.name].owned === 0}
+					class={[
+						'btn btn-sm',
+						gameState.moneybags[moneybag.name].owned > 0 && [
+							'bg-gradient-to-br',
+							moneybag.colors.from,
+							moneybag.colors.via,
+							moneybag.colors.to,
+							moneybag.colors.text
+						]
+					]}
+					onclick={openMoneybag}
+				>
+					Open
+				</button>
+				<button
+					disabled={gameState.moneybags[moneybag.name].owned === gameState.maxEachMoneybag ||
+						gameState.coins < gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]}
+					class="btn btn-sm not-disabled:btn-success"
+					onclick={buyMoneybag}
+				>
+					Buy
+				</button>
+				<button
+					disabled={gameState.moneybags[moneybag.name].owned === 0}
+					class="btn btn-sm not-disabled:btn-error"
+					onclick={sellMoneybag}
+				>
+					Sell
+				</button>
+			</div>
 		</div>
 	</div>
-	<div class="relative h-26">
+	<div class="relative h-40 max-w-1/3 grow">
 		{#if showWheel === null}
-			<div class="absolute top-0 right-0" transition:blur={{ duration: 200 }}>
+			<div class="absolute top-0 right-0 h-full w-full" transition:blur={{ duration: 200 }}>
 				<MoneybagSparkline {moneybag} />
 			</div>
 		{:else}
-			<div class="absolute top-0 right-0 h-26" transition:blur={{ duration: 200 }}>
-				<!-- {#if showGain !== null}
+			<div class="absolute top-0 right-0 h-full" transition:blur={{ duration: 200 }}>
+				{#if showGain !== null}
 					<div
-						class="fade-move text-vibrant absolute right-0 left-0 z-10 mx-auto w-fit text-sm font-bold"
+						class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"
 					>
 						{showGain}
 					</div>
-				{/if} -->
+				{/if}
 				<LuckyWheel pointerAt={showWheel} {moneybag} />
 			</div>
 		{/if}

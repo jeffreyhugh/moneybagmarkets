@@ -35,7 +35,7 @@ setInterval(() => {
 	for (const moneybag of moneybags) {
 		writeLatest(moneybag);
 	}
-}, 2_000);
+}, 1_000);
 
 const writeLatest = (moneybag: Moneybag_t) => {
 	if (gameState.tick % moneybag.market.updateOnMod !== 0) {

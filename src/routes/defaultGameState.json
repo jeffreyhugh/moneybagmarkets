@@ -4,17 +4,22 @@
 		"index": 0,
 		"value": 1
 	},
-	"coins": 1000,
+	"coins": 2000,
 	"moneybags": {
-		"Basic": {
+		"Dirt Poor Landscaping": {
 			"unlocked": true,
-			"owned": 10,
-			"marketHistory": [100, 100, 100, 100, 100]
+			"owned": 0,
+			"marketHistory": [0, 0, 0, 0, 0]
 		},
-		"Jumpy": {
+		"Prune Juice, Inc.": {
 			"unlocked": false,
 			"owned": 0,
 			"marketHistory": [100, 100, 100, 100, 100]
+		},
+		"Anderson Cactus Removal": {
+			"unlocked": false,
+			"owned": 0,
+			"marketHistory": [450, 450, 450, 450, 450]
 		}
 	},
 	"updateTick": 0,
