@@ -15,6 +15,7 @@ export type GameState_t = {
 		value: number;
 	};
 	coins: number;
+	coinMultiplier: number;
 	moneybags: {
 		[name: Moneybag_t['name']]: {
 			owned: number;

@@ -7,9 +7,7 @@
 </script>
 
 <div class="mb-2 flex items-baseline justify-between gap-1 select-none">
-	<button type="button" class="btn pl-3">
-		<IconBuildingStore /> Store
-	</button>
+	<div></div>
 	<div class="relative mr-2 flex justify-end gap-1 text-2xl">
 		<IconPigMoney class="size-8" />
 		{gameState.coins.toLocaleString()}

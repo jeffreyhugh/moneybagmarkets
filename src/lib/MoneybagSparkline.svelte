@@ -2,7 +2,7 @@
 	import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
-	import { Sparkline } from 'sparkline-svelte';
+	import Sparkline from './Sparkline.svelte';
 	import { MarketDataLastIndex } from '$lib/marketData';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
@@ -34,7 +34,9 @@
 					fillColor: '',
 					strokeWidth: 2,
 					lineColor: moneybag.colors.sparkline,
-					showTooltip: false
+					showTooltip: false,
+					min: moneybag.market.min,
+					max: moneybag.market.max
 				}}
 			/>
 		{/if}

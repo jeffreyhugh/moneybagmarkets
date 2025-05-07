@@ -14,6 +14,9 @@ importers:
       '@tabler/icons-svelte':
         specifier: ^3.31.0
         version: 3.31.0(svelte@5.28.2)
+      colord:
+        specifier: ^2.9.3
+        version: 2.9.3
       luxon:
         specifier: ^3.6.1
         version: 3.6.1

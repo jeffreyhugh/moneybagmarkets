@@ -1,7 +1,12 @@
+import Barbell from '@tabler/icons-svelte/icons/barbell';
 import Bottle from '@tabler/icons-svelte/icons/bottle';
+import BuildingAirport from '@tabler/icons-svelte/icons/building-airport';
 import CactusOff from '@tabler/icons-svelte/icons/cactus-off';
+import HorseToy from '@tabler/icons-svelte/icons/horse-toy';
 import type Icons from '@tabler/icons-svelte/icons/icons';
 import ShovelPitchforks from '@tabler/icons-svelte/icons/shovel-pitchforks';
+
+export type Powerup_t = ['doubleMoney', 'tripleMoney', 'plusTenMaxMoneybags', 'spinMultiplier'];
 
 export type Moneybag_t = {
 	name: string;
@@ -24,11 +29,19 @@ export type Moneybag_t = {
 		absoluteVolatility: number; // max swing per tick
 	};
 	costToUnlock: number;
-	open: {
-		chance: number; // [0, 1]
-		effect: 'add';
-		value: number;
-	}[];
+	open: (
+		| {
+				chance: number; // [0, 1]
+				effect: 'add';
+				minValue: number;
+				maxValue: number;
+		  }
+		| {
+				chance: number;
+				effect: 'powerup';
+				value: Powerup_t[number];
+		  }
+	)[];
 };
 
 export const moneybags: Moneybag_t[] = [
@@ -56,12 +69,14 @@ export const moneybags: Moneybag_t[] = [
 			{
 				chance: 0.95,
 				effect: 'add',
-				value: 10
+				minValue: 5,
+				maxValue: 15
 			},
 			{
 				chance: 0.05,
 				effect: 'add',
-				value: 1000
+				minValue: 800,
+				maxValue: 1200
 			}
 		]
 	},
@@ -93,17 +108,20 @@ export const moneybags: Moneybag_t[] = [
 			{
 				chance: 0.5,
 				effect: 'add',
-				value: 90
+				minValue: 70,
+				maxValue: 110
 			},
 			{
 				chance: 0.3,
 				effect: 'add',
-				value: 120
+				minValue: 100,
+				maxValue: 140
 			},
 			{
 				chance: 0.2,
 				effect: 'add',
-				value: 250
+				minValue: 200,
+				maxValue: 300
 			}
 		]
 	},
@@ -136,22 +154,180 @@ export const moneybags: Moneybag_t[] = [
 			{
 				chance: 0.4,
 				effect: 'add',
-				value: 300
+				minValue: 270,
+				maxValue: 330
 			},
 			{
 				chance: 0.3,
 				effect: 'add',
-				value: 400
+				minValue: 360,
+				maxValue: 440
 			},
 			{
 				chance: 0.27,
 				effect: 'add',
-				value: 700
+				minValue: 650,
+				maxValue: 750
 			},
 			{
 				chance: 0.03,
 				effect: 'add',
-				value: 9000
+				minValue: 8000,
+				maxValue: 10_000
+			}
+		]
+	},
+	{
+		name: "Patricia's Rocking Horses",
+		icon: HorseToy,
+		colors: {
+			text: 'text-white',
+			from: 'from-fuchsia-600',
+			to: 'to-fuchsia-800',
+			confetti: ['#8a0194'],
+			sparkline: '#8a0194',
+			wheelColors: [
+				'oklch(90.3% 0.076 319.62)',
+				'oklch(74% 0.238 322.16)',
+				'oklch(59.1% 0.293 322.896)',
+				'oklch(45.2% 0.211 324.591)',
+				'oklch(29.3% 0.136 325.661)'
+			]
+		},
+		market: {
+			updateOnMod: 10,
+			min: 1200,
+			max: 6900,
+			target: 3000,
+			lineWeight: 0.5,
+			absoluteVolatility: 1500
+		},
+		costToUnlock: 14_000,
+		open: [
+			{
+				chance: 0.4,
+				effect: 'add',
+				minValue: 1500,
+				maxValue: 2100
+			},
+			{
+				chance: 0.35,
+				effect: 'add',
+				minValue: 2750,
+				maxValue: 3150
+			},
+			{
+				chance: 0.15,
+				effect: 'add',
+				minValue: 4000,
+				maxValue: 4600
+			},
+			{
+				chance: 0.09,
+				effect: 'add',
+				minValue: 5000,
+				maxValue: 7000
+			},
+			{
+				chance: 0.01,
+				effect: 'powerup',
+				value: 'doubleMoney'
+			}
+		]
+	},
+	{
+		name: 'Stronk Jim',
+		icon: Barbell,
+		colors: {
+			text: 'text-black',
+			from: 'from-yellow-400',
+			to: 'to-yellow-600',
+			confetti: ['#facc15', '#ca8a04'],
+			sparkline: '#facc15',
+			wheelColors: [
+				'oklch(94.5% 0.129 101.54)',
+				'oklch(85.2% 0.199 91.936)',
+				'oklch(68.1% 0.162 75.834)',
+				'oklch(47.6% 0.114 61.907)',
+				'oklch(42.1% 0.095 57.708)'
+			]
+		},
+		market: {
+			updateOnMod: 4,
+			min: 2000,
+			max: 4500,
+			target: 3000,
+			lineWeight: 0.7,
+			absoluteVolatility: 1300
+		},
+		costToUnlock: 20_000,
+		open: [
+			{
+				chance: 0.5,
+				effect: 'add',
+				minValue: 1500,
+				maxValue: 1800
+			},
+			{
+				chance: 0.27,
+				effect: 'add',
+				minValue: 1700,
+				maxValue: 2100
+			},
+			{
+				chance: 0.2,
+				effect: 'add',
+				minValue: 2000,
+				maxValue: 2300
+			},
+			{
+				chance: 0.03,
+				effect: 'powerup',
+				value: 'plusTenMaxMoneybags'
+			}
+		]
+	},
+	{
+		name: 'Underground Airport',
+		icon: BuildingAirport,
+		colors: {
+			text: 'text-white',
+			from: 'from-sky-700',
+			to: 'to-blue-900',
+			confetti: ['#0369a1', '#1e40af', '#1e3a8a'],
+			sparkline: '#1e40af',
+			wheelColors: [
+				'oklch(54.6% 0.245 262.881)',
+				'oklch(68.5% 0.169 237.323)',
+				'oklch(25.7% 0.09 281.288)'
+			]
+		},
+		market: {
+			updateOnMod: 20,
+			min: 1000,
+			max: 20_000,
+			target: 15_000,
+			lineWeight: 0.3,
+			absoluteVolatility: 4000
+		},
+		costToUnlock: 100_000,
+		open: [
+			{
+				chance: 0.34,
+				effect: 'add',
+				minValue: 1,
+				maxValue: 1
+			},
+			{
+				chance: 0.33,
+				effect: 'add',
+				minValue: 1000,
+				maxValue: 20_000
+			},
+			{
+				chance: 0.33,
+				effect: 'powerup',
+				value: 'spinMultiplier'
 			}
 		]
 	}

@@ -6,9 +6,28 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 	// gameState.moneybags[moneybag.name].owned -= 1;
 
 	if (choice.effect === 'add') {
-		gameState.coins += choice.value;
+		const newCoins = Math.round(
+			(Math.random() * (choice.maxValue - choice.minValue + 1) + choice.minValue) *
+				gameState.coinMultiplier
+		);
+		gameState.coins += newCoins;
 
-		return `+${choice.value}`;
+		return `+${newCoins}`;
+	} else if (choice.effect === 'powerup') {
+		switch (choice.value) {
+			case 'doubleMoney':
+				gameState.coins *= 2;
+				return 'x3';
+			case 'tripleMoney':
+				gameState.coins *= 3;
+				return 'x3';
+			case 'plusTenMaxMoneybags':
+				gameState.maxEachMoneybag += 10;
+				return '+10 Max';
+			case 'spinMultiplier':
+				gameState.coinMultiplier += 0.1;
+				return `Spin x${gameState.coinMultiplier.toFixed(1)}`;
+		}
 	}
 
 	return null;
@@ -24,8 +43,11 @@ export const handleChoices = (_moneybag: Moneybag_t, choices: (Moneybag_t['open'
 		}
 
 		if (choice.effect === 'add') {
-			gameState.coins += choice.value;
-			addTotal += choice.value;
+			const newCoins = Math.round(
+				Math.random() * (choice.maxValue - choice.minValue + 1) + choice.minValue
+			);
+			gameState.coins += newCoins;
+			addTotal += newCoins;
 		}
 	}
 

@@ -5,7 +5,7 @@
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
 	import { weightedChoice } from '$lib/weightedChoice';
-	import { handleChoices } from '$lib/handleChoice.svelte';
+	import { handleChoice } from '$lib/handleChoice.svelte';
 	import LuckyWheel from '$lib/LuckyWheel.svelte';
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
@@ -36,29 +36,44 @@
 	};
 
 	const openMoneybag = async () => {
+		if (gameState.moneybags[moneybag.name].owned === 0) {
+			return;
+		}
+
 		opening = true;
-		const choices = [] as ((typeof moneybag.open)[0] | null)[];
-		let random = 0;
-		for (let i = 0; i < mult.multiplier; i++) {
-			if (gameState.moneybags[moneybag.name].owned === 0) {
-				opening = false;
-				break;
-			}
 
-			gameState.moneybags[moneybag.name].owned -= 1;
+		gameState.moneybags[moneybag.name].owned -= 1;
 
-			const [choice, r] = weightedChoice(moneybag.open);
-			if (!choice) {
-				break;
-			}
-			random = r;
-			choices.push(choice);
+		// const choices = [] as ((typeof moneybag.open)[0] | null)[];
+		// let random = 0;
+		// for (let i = 0; i < mult.multiplier; i++) {
+		// 	if (gameState.moneybags[moneybag.name].owned === 0) {
+		// 		opening = false;
+		// 		break;
+		// 	}
+
+		// 	gameState.moneybags[moneybag.name].owned -= 1;
+
+		// 	const [choice, r] = weightedChoice(moneybag.open);
+		// 	if (!choice) {
+		// 		break;
+		// 	}
+		// 	random = r;
+		// 	choices.push(choice);
+		// }
+
+		const [choice, random] = weightedChoice(moneybag.open);
+
+		if (!choice) {
+			opening = false;
+			return;
 		}
 
 		showWheel = random;
 		await new Promise((resolve) => setTimeout(resolve, 2200));
 
-		showGain = handleChoices(moneybag, choices);
+		// showGain = handleChoices(moneybag, choices);
+		showGain = handleChoice(moneybag, choice);
 
 		await new Promise((resolve) => setTimeout(resolve, 500));
 		showGain = null;

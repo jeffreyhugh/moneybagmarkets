@@ -47,6 +47,7 @@
 	"dependencies": {
 		"@fontsource-variable/quicksand": "^5.2.6",
 		"@tabler/icons-svelte": "^3.31.0",
+		"colord": "^2.9.3",
 		"luxon": "^3.6.1",
 		"mode-watcher": "^1.0.4",
 		"sparkline-svelte": "^0.1.18",

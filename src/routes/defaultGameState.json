@@ -4,7 +4,8 @@
 		"index": 0,
 		"value": 1
 	},
-	"coins": 2000,
+	"coins": 0,
+	"coinMultiplier": 1.0,
 	"moneybags": {
 		"Dirt Poor Landscaping": {
 			"unlocked": true,
@@ -20,6 +21,21 @@
 			"unlocked": false,
 			"owned": 0,
 			"marketHistory": [450, 450, 450, 450, 450]
+		},
+		"Patricia's Rocking Horses": {
+			"unlocked": false,
+			"owned": 0,
+			"marketHistory": [3000, 3000, 3000, 3000, 3000]
+		},
+		"Stronk Jim": {
+			"unlocked": false,
+			"owned": 0,
+			"marketHistory": [3000, 3000, 3000, 3000, 3000]
+		},
+		"Underground Airport": {
+			"unlocked": false,
+			"owned": 0,
+			"marketHistory": [15000, 15000, 15000, 15000, 15000]
 		}
 	},
 	"updateTick": 0,
