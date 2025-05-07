@@ -2,8 +2,8 @@ import Barbell from '@tabler/icons-svelte/icons/barbell';
 import Bottle from '@tabler/icons-svelte/icons/bottle';
 import BuildingAirport from '@tabler/icons-svelte/icons/building-airport';
 import CactusOff from '@tabler/icons-svelte/icons/cactus-off';
-import HorseToy from '@tabler/icons-svelte/icons/horse-toy';
 import type Icons from '@tabler/icons-svelte/icons/icons';
+import Plant from '@tabler/icons-svelte/icons/plant';
 import ShovelPitchforks from '@tabler/icons-svelte/icons/shovel-pitchforks';
 
 export type Powerup_t = ['doubleMoney', 'tripleMoney', 'plusTenMaxMoneybags', 'spinMultiplier'];
@@ -178,8 +178,8 @@ export const moneybags: Moneybag_t[] = [
 		]
 	},
 	{
-		name: "Patricia's Rocking Horses",
-		icon: HorseToy,
+		name: 'Florals by Patricia',
+		icon: Plant,
 		colors: {
 			text: 'text-white',
 			from: 'from-fuchsia-600',

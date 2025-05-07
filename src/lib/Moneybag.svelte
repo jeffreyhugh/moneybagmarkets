@@ -121,7 +121,7 @@
 </script>
 
 <div
-	class="rounded-box border-base-300 relative flex items-center justify-between border p-4 select-none"
+	class="rounded-box border-base-300 relative flex flex-col items-stretch justify-between border p-4 select-none md:flex-row"
 >
 	{#if gameState.moneybags[moneybag.name].unlocked}
 		<div class="absolute top-1/2 left-1/2">
@@ -134,7 +134,7 @@
 	<div class="flex items-center gap-4">
 		<div
 			class={[
-				'rounded-box flex size-24 items-center justify-center bg-gradient-to-br',
+				'rounded-box flex aspect-square size-20 items-center justify-center bg-gradient-to-br md:size-24',
 				moneybag.colors.from,
 				moneybag.colors.via,
 				moneybag.colors.to,
@@ -142,13 +142,13 @@
 			]}
 		>
 			{#if moneybag.icon}
-				<moneybag.icon class="size-16" />
+				<moneybag.icon class="size-12 md:size-16" />
 			{:else}
-				<IconMoneybag class="size-16" />
+				<IconMoneybag class="size-12 md:size-16" />
 			{/if}
 		</div>
 		<div class="flex flex-col">
-			<div class="text-2xl font-bold">{moneybag.name}</div>
+			<div class="text-xl font-bold md:text-2xl">{moneybag.name}</div>
 			<div>
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
@@ -194,13 +194,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative h-40 max-w-1/3 grow">
+	<div class="relative h-40 grow md:max-w-1/3">
 		{#if showWheel === null}
 			<div class="absolute top-0 right-0 h-full w-full" transition:blur={{ duration: 200 }}>
 				<MoneybagSparkline {moneybag} />
 			</div>
 		{:else}
-			<div class="absolute top-0 right-0 h-full" transition:blur={{ duration: 200 }}>
+			<div
+				class="absolute top-0 right-0 flex h-full w-full justify-center"
+				transition:blur={{ duration: 200 }}
+			>
 				{#if showGain !== null}
 					<div
 						class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"

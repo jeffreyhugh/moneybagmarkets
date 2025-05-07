@@ -20,7 +20,7 @@
 </script>
 
 <div
-	class="bg-base-300 rounded-box absolute top-0 left-0 z-20 flex h-full w-full cursor-not-allowed flex-col items-center justify-center gap-2"
+	class="bg-base-200 rounded-box absolute top-0 left-0 z-20 flex h-full w-full cursor-not-allowed flex-col items-center justify-center gap-2"
 	out:fade
 >
 	<div>

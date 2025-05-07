@@ -27,14 +27,24 @@ export type GameState_t = {
 	maxEachMoneybag: number;
 };
 
+let pauseGame = $state(false);
+
 export const gameState = $state(
 	JSON.parse(localStorage.getItem('gamestate') || JSON.stringify(defaultGameState)) as GameState_t
 );
 
 setInterval(() => {
+	if (pauseGame) {
+		return;
+	}
+
 	gameState.tick += 1;
 	for (const moneybag of moneybags) {
 		writeLatest(moneybag);
+	}
+
+	if (gameState.tick % 5 === 0) {
+		save();
 	}
 }, 1_000);
 
@@ -52,4 +62,20 @@ const writeLatest = (moneybag: Moneybag_t) => {
 
 	gameState.moneybags[moneybag.name].marketHistory =
 		snapshot as GameState_t['moneybags']['']['marketHistory'];
+};
+
+const save = () => {
+	localStorage.setItem('gamestate', JSON.stringify(gameState));
+};
+
+export const reset = () => {
+	pauseGame = true;
+	const yes = confirm('Are you sure? Your save data will be lost.');
+	if (!yes) {
+		pauseGame = false;
+		return;
+	}
+
+	localStorage.removeItem('gamestate');
+	window.location.reload();
 };

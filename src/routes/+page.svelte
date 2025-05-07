@@ -9,13 +9,13 @@
 
 <div class="mb-2 flex items-baseline justify-between gap-1 select-none">
 	<div></div>
-	<div class="relative mr-2 flex justify-end gap-1 text-2xl">
-		<IconPigMoney class="size-8" />
+	<div class="relative mr-2 flex justify-end gap-1 text-xl md:text-2xl">
+		<IconPigMoney class="size-6 translate-y-0.5 md:size-7" />
 		{gameState.coins.toLocaleString()}
 		{#each coinEvents.events as e (e.id)}
 			<div
 				class={[
-					'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-lg font-bold',
+					'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold md:text-lg',
 					e.sign === '+' && 'text-success',
 					e.sign === '-' && 'text-error'
 				]}
