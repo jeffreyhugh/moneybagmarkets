@@ -1,6 +1,7 @@
 <script>
 	import { IconMoon, IconSun } from '@tabler/icons-svelte';
 	import { setMode, setTheme, theme } from 'mode-watcher';
+
 	import { reset } from '../routes/gamestate.svelte';
 </script>
 
