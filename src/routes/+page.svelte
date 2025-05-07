@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { IconPigMoney } from '@tabler/icons-svelte';
+
 	import Moneybag from '../lib/Moneybag.svelte';
-	import { moneybags } from './moneybags';
-	import { gameState } from './gamestate.svelte';
-	import { IconBuildingStore, IconPigMoney } from '@tabler/icons-svelte';
 	import { coinEvents } from './coinEvents.svelte';
+	import { gameState } from './gamestate.svelte';
+	import { moneybags } from './moneybags';
 </script>
 
 <div class="mb-2 flex items-baseline justify-between gap-1 select-none">
@@ -25,7 +26,7 @@
 	</div>
 </div>
 <div class="flex flex-col gap-2">
-	{#each moneybags as moneybag}
+	{#each moneybags as moneybag (moneybag.name)}
 		<Moneybag {moneybag} />
 	{/each}
 </div>

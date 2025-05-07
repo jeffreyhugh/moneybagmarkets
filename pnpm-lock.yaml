@@ -23,9 +23,6 @@ importers:
       mode-watcher:
         specifier: ^1.0.4
         version: 1.0.4(svelte@5.28.2)
-      sparkline-svelte:
-        specifier: ^0.1.18
-        version: 0.1.18(svelte@5.28.2)
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
@@ -1573,12 +1570,6 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  sparkline-svelte@0.1.18:
-    resolution: {integrity: sha512-KHtxkNVb+7APssuoWl9HiXL+7ZEU+JmX0+TAdnnLn1OoWpzJrR4HsW/wYLUYOlpoglCDmwwkTyz4NScLKIw4zQ==}
-    engines: {node: '>=22.0.0'}
-    peerDependencies:
-      svelte: ^5.0.0
-
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
@@ -3098,11 +3089,6 @@ snapshots:
       totalist: 3.0.1
 
   source-map-js@1.2.1: {}
-
-  sparkline-svelte@0.1.18(svelte@5.28.2):
-    dependencies:
-      colord: 2.9.3
-      svelte: 5.28.2
 
   statuses@2.0.1: {}
 

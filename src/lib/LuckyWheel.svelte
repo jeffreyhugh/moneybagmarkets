@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { cubicOut } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';
+
 	import type { Moneybag_t } from '../routes/moneybags';
 	import { RAD2DEG } from './RAD2DEG';
-	import { cubicOut } from 'svelte/easing';
-	import { onMount } from 'svelte';
 
 	const getCoordinatesForPercent = (percent: number) => {
 		const x = Math.cos(2 * Math.PI * percent);
@@ -58,7 +59,7 @@
 	style={`transform: rotate(${-angle * RAD2DEG - 90}deg)`}
 >
 	<g style={`transform:rotate(${wheelRotation.current}deg)`}>
-		{#each pathDatas as pathData}
+		{#each pathDatas as pathData (pathData.data)}
 			<path d={pathData.data} fill={pathData.color} />
 		{/each}
 	</g>

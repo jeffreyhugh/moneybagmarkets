@@ -1,4 +1,8 @@
 <script module lang="ts">
+	// modified from https://github.com/bn-l/sparkline-svelte/blob/main/dist/Sparkline.svelte
+
+	/* eslint-disable */
+
 	export type Datum = number | { label: string; value: number };
 
 	export interface DataPoint {
@@ -38,7 +42,7 @@
 </script>
 
 <script lang="ts">
-	import { colord, type Colord } from 'colord';
+	import { type Colord, colord } from 'colord';
 
 	//  ------------------ SET UP ------------------
 

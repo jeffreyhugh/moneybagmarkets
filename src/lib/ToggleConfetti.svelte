@@ -1,17 +1,16 @@
 <!-- c/o https://github.com/Mitcheljager/svelte-confetti/blob/a0a27505c7b2c4b854fbcb2a6e067d75b96c294e/src/routes/ToggleConfetti.svelte -->
 
 <script lang="ts">
-	import { tick, type Snippet } from 'svelte';
+	import { type Snippet, tick } from 'svelte';
 
 	const {
-		disabled = false,
 		toggleOnce = false,
 		confetti,
 		children
 	}: {
-		disabled?: boolean;
+		// disabled?: boolean;
 		toggleOnce?: boolean;
-		relative?: boolean;
+		// relative?: boolean;
 		confetti: Snippet;
 		children: Snippet;
 	} = $props();

@@ -1,17 +1,18 @@
 <script lang="ts">
-	import MoneybagSparkline from './MoneybagSparkline.svelte';
-
 	import { IconMoneybag } from '@tabler/icons-svelte';
-	import { gameState } from '../routes/gamestate.svelte';
-	import type { Moneybag_t } from '../routes/moneybags';
-	import { weightedChoice } from '$lib/weightedChoice';
-	import { handleChoice } from '$lib/handleChoice.svelte';
-	import LuckyWheel from '$lib/LuckyWheel.svelte';
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
+
+	import { handleChoice } from '$lib/handleChoice.svelte';
+	import LuckyWheel from '$lib/LuckyWheel.svelte';
+	import { weightedChoice } from '$lib/weightedChoice';
+
+	import { coin } from '../routes/coinEvents.svelte';
+	import { gameState } from '../routes/gamestate.svelte';
+	import type { Moneybag_t } from '../routes/moneybags';
 	import Locker from './Locker.svelte';
 	import { MarketDataLastIndex } from './marketData';
-	import { coin } from '../routes/coinEvents.svelte';
+	import MoneybagSparkline from './MoneybagSparkline.svelte';
 
 	const MultiplierStops = [1, 5, 10, 100, 1000];
 
@@ -24,16 +25,16 @@
 	let showWheel = $state<number | null>(null);
 	let showGain = $state<string | null>(null);
 
-	const bumpMultiplier = () => {
-		const newIndex = (mult.index + 1) % MultiplierStops.length;
-		// if (gameState.moneybags[moneybag.name].owned >= MultiplierStops[newIndex]) {
-		mult.index = newIndex;
-		mult.multiplier = MultiplierStops[newIndex];
-		// } else {
-		// mult.index = 0;
-		// mult.multiplier = MultiplierStops[0];
-		// }
-	};
+	// const bumpMultiplier = () => {
+	// 	const newIndex = (mult.index + 1) % MultiplierStops.length;
+	// 	// if (gameState.moneybags[moneybag.name].owned >= MultiplierStops[newIndex]) {
+	// 	mult.index = newIndex;
+	// 	mult.multiplier = MultiplierStops[newIndex];
+	// 	// } else {
+	// 	// mult.index = 0;
+	// 	// mult.multiplier = MultiplierStops[0];
+	// 	// }
+	// };
 
 	const openMoneybag = async () => {
 		if (gameState.moneybags[moneybag.name].owned === 0) {

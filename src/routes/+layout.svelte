@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import '@fontsource-variable/quicksand';
+
+	import { ModeWatcher } from 'mode-watcher';
+
 	import Header from '../lib/Header.svelte';
 
 	let { children } = $props();

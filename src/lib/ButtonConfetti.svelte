@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Confetti from 'svelte-confetti';
+
 	import type { Moneybag_t } from '../routes/moneybags';
 	import ToggleConfetti from './ToggleConfetti.svelte';
-	import type { Snippet } from 'svelte';
 
 	const {
 		moneybag,

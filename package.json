@@ -1,7 +1,7 @@
 {
 	"name": "moneybagmarkets",
 	"private": true,
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --host",
@@ -50,7 +50,6 @@
 		"colord": "^2.9.3",
 		"luxon": "^3.6.1",
 		"mode-watcher": "^1.0.4",
-		"sparkline-svelte": "^0.1.18",
 		"uuid": "^11.1.0"
 	}
 }

@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
+
+	import { MarketDataLastIndex } from '$lib/marketData';
+
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
 	import Sparkline from './Sparkline.svelte';
-	import { MarketDataLastIndex } from '$lib/marketData';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 </script>

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { IconLock, IconPigMoney } from '@tabler/icons-svelte';
 	import { fade } from 'svelte/transition';
+
+	import { coin } from '../routes/coinEvents.svelte';
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
-	import { IconLock, IconPigMoney } from '@tabler/icons-svelte';
-	import { coin } from '../routes/coinEvents.svelte';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 
