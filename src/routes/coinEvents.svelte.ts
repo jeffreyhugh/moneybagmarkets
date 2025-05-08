@@ -2,7 +2,7 @@ import { v4 } from 'uuid';
 
 export type CoinEvent_t = {
 	id: string;
-	sign: '+' | '-';
+	sign: '+' | '-' | 'x';
 	value: number;
 	suffix?: string;
 };

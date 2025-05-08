@@ -2,7 +2,7 @@ import { coin } from '../routes/coinEvents.svelte';
 import { gameState } from '../routes/gamestate.svelte';
 import type { Moneybag_t } from '../routes/moneybags';
 
-export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
+export const handleChoice = (_moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
 	// gameState.moneybags[moneybag.name].owned -= 1;
 
 	if (choice.effect === 'add') {
@@ -10,6 +10,7 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 			(Math.random() * (choice.maxValue - choice.minValue + 1) + choice.minValue) *
 				gameState.coinMultiplier
 		);
+		coin('+', newCoins);
 		gameState.coins += newCoins;
 
 		return `+${newCoins}`;
@@ -17,9 +18,11 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 		switch (choice.value) {
 			case 'doubleMoney':
 				gameState.coins *= 2;
-				return 'x3';
+				coin('x', 2);
+				return 'x2';
 			case 'tripleMoney':
 				gameState.coins *= 3;
+				coin('x', 3);
 				return 'x3';
 			case 'plusTenMaxMoneybags':
 				gameState.maxEachMoneybag += 10;

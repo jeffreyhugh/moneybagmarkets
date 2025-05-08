@@ -30,7 +30,7 @@
 			<div
 				class={[
 					'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold md:text-lg',
-					e.sign === '+' && 'text-success',
+					e.sign === '+' || (e.sign === 'x' && 'text-success'),
 					e.sign === '-' && 'text-error'
 				]}
 			>
