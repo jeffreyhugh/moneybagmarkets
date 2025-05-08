@@ -11,7 +11,7 @@
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 </script>
 
-<div class="mt-4 flex h-full w-full flex-col md:mt-0">
+<div class="pointer-events-none mt-4 flex h-full w-full flex-col md:mt-0">
 	<div class="mb-1 hidden w-full gap-1 text-base md:flex">
 		<span class="grid grid-cols-1 grid-rows-1">
 			{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
