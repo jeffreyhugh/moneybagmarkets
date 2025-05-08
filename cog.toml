@@ -10,7 +10,7 @@ skip_ci = "[skip ci]"
 skip_untracked = false
 pre_bump_hooks = [
   "jq '.version |= \"{{version}}\"' package.json > package.json.tmp && mv package.json.tmp package.json",
-  "sed -i.bak \"s/const version = '.*';/const version = '{{version}};'/\" src/lib/Header.svelte",
+  "sed -i.bak \"s/const version = '.*';/const version = '{{version}}';/\" src/lib/Header.svelte",
   "pnpm prettier --write package.json src/lib/Header.svelte",
   "git add :/package.json",
   "git add :/src/lib/Header.svelte"
