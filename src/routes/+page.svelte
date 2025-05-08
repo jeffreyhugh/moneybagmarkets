@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { IconPigMoney } from '@tabler/icons-svelte';
 
+	import { numberFormatOptions } from '$lib/numberFormatOptions';
+
 	import Moneybag from '../lib/Moneybag.svelte';
 	import { coinEvents } from './coinEvents.svelte';
 	import { gameState } from './gamestate.svelte';
@@ -20,7 +22,7 @@
 	</div>
 	<div class="relative top-0 mr-2 flex justify-end gap-1 text-xl md:text-2xl">
 		<IconPigMoney class="size-6 translate-y-0.5 md:size-7" />
-		{gameState.coins.toLocaleString()}
+		{gameState.coins.toLocaleString(undefined, numberFormatOptions)}
 		{#each coinEvents.events as e (e.id)}
 			<div
 				class={[

@@ -6,6 +6,7 @@
 
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
+	import { numberFormatOptions } from './numberFormatOptions';
 	import Sparkline from './Sparkline.svelte';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
@@ -26,7 +27,10 @@
 		</span>
 		Current
 		<span class="font-bold">
-			{gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]}
+			{gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex].toLocaleString(
+				undefined,
+				numberFormatOptions
+			)}
 		</span>
 	</div>
 	<div
@@ -62,17 +66,26 @@
 			</span>
 			Current
 			<span class="font-bold">
-				{gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]}
+				{gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex].toLocaleString(
+					undefined,
+					numberFormatOptions
+				)}
 			</span>
 			&middot;
 		</div>
 		Low
 		<span class="font-bold">
-			{Math.min(...gameState.moneybags[moneybag.name].marketHistory)}
+			{Math.min(...gameState.moneybags[moneybag.name].marketHistory).toLocaleString(
+				undefined,
+				numberFormatOptions
+			)}
 		</span>
 		&middot; High
 		<span class="font-bold">
-			{Math.max(...gameState.moneybags[moneybag.name].marketHistory)}
+			{Math.max(...gameState.moneybags[moneybag.name].marketHistory).toLocaleString(
+				undefined,
+				numberFormatOptions
+			)}
 		</span>
 	</div>
 </div>

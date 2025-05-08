@@ -5,6 +5,7 @@
 	import { coin } from '../routes/coinEvents.svelte';
 	import { gameState } from '../routes/gamestate.svelte';
 	import type { Moneybag_t } from '../routes/moneybags';
+	import { numberFormatOptions } from './numberFormatOptions';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 
@@ -42,6 +43,6 @@
 		onclick={unlock}
 	>
 		Unlock (<IconPigMoney class="-m-1 opacity-100" />
-		{moneybag.costToUnlock.toLocaleString()})
+		{moneybag.costToUnlock.toLocaleString(undefined, numberFormatOptions)})
 	</button>
 </div>

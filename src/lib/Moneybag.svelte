@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IconMoneybag } from '@tabler/icons-svelte';
+	import { IconMoneybag, IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
 
@@ -13,6 +13,7 @@
 	import Locker from './Locker.svelte';
 	import { MarketDataLastIndex } from './marketData';
 	import MoneybagSparkline from './MoneybagSparkline.svelte';
+	import { numberFormatOptions } from './numberFormatOptions';
 
 	const MultiplierStops = [1, 5, 10, 100, 1000];
 
@@ -166,10 +167,30 @@
 		</div>
 		<div class="flex flex-col">
 			<div class="text-xl font-bold md:text-2xl">{moneybag.name}</div>
-			<div>
+			<div class="flex gap-1">
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
-				</span> owned
+				</span>
+				owned
+				{#if hideSparklines}
+					&middot; <span class="grid grid-cols-1 grid-rows-1">
+						{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
+							<span class="col-start-1 row-start-1">
+								<IconTrendingUp class="inline size-4" />
+							</span>
+						{:else}
+							<span class="col-start-1 row-start-1">
+								<IconTrendingDown class="inline size-4" />
+							</span>
+						{/if}
+					</span>
+					<span class="font-bold">
+						{gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex].toLocaleString(
+							undefined,
+							numberFormatOptions
+						)}
+					</span>
+				{/if}
 			</div>
 			<!-- {#if moneybag.market.target !== 0}
 				<button disabled={opening} class={['btn btn-sm']} onclick={bumpMultiplier}>
