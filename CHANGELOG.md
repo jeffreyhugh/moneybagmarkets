@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.2.3 - 2025-05-08
+#### Bug Fixes
+- auto bump header version, fix cocogitto scripts - (395e584) - Jeffrey Hugh
+
+- - -
+
 ## v0.2.2 - 2025-05-08
 #### Bug Fixes
 - cocogitto config - (05f226a) - Jeffrey Hugh
