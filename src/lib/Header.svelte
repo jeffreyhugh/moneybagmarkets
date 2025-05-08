@@ -3,6 +3,8 @@
 	import { setMode, setTheme, theme } from 'mode-watcher';
 
 	import { reset } from '../routes/gamestate.svelte';
+
+	const version = '0.1.0';
 </script>
 
 <div class="mb-8 w-full flex-col items-stretch gap-2">
@@ -34,7 +36,9 @@
 			moneybag.markets
 		</a>
 		<div class="mt-4 flex w-full justify-center text-lg">
-			<span class="lowercase italic">Pre-release 0.1.0</span>
+			<span class="lowercase italic">
+				version {version}
+			</span>
 			<div class="divider divider-horizontal"></div>
 			<button type="button" onclick={reset} class="btn btn-error btn-xs">Reset</button>
 		</div>
