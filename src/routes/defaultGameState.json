@@ -4,38 +4,13 @@
 		"index": 0,
 		"value": 1
 	},
-	"coins": 200100000000000,
+	"coins": 0,
 	"coinMultiplier": 1.0,
 	"moneybags": {
 		"Dirt Poor Landscaping": {
 			"unlocked": true,
 			"owned": 0,
 			"marketHistory": [0, 0, 0, 0, 0]
-		},
-		"Prune Juice, Inc.": {
-			"unlocked": false,
-			"owned": 0,
-			"marketHistory": [100, 100, 100, 100, 100]
-		},
-		"Anderson Cactus Removal": {
-			"unlocked": false,
-			"owned": 0,
-			"marketHistory": [450, 450, 450, 450, 450]
-		},
-		"Florals by Patricia": {
-			"unlocked": false,
-			"owned": 0,
-			"marketHistory": [3000, 3000, 3000, 3000, 3000]
-		},
-		"Stronk Jim": {
-			"unlocked": false,
-			"owned": 0,
-			"marketHistory": [3000, 3000, 3000, 3000, 3000]
-		},
-		"Underground Airport": {
-			"unlocked": false,
-			"owned": 0,
-			"marketHistory": [15000, 15000, 15000, 15000, 15000]
 		}
 	},
 	"updateTick": 0,

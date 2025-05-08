@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { IconPigMoney } from '@tabler/icons-svelte';
+	import { onMount } from 'svelte';
 
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
 
 	import Moneybag from '../lib/Moneybag.svelte';
 	import { coinEvents } from './coinEvents.svelte';
-	import { gameState } from './gamestate.svelte';
+	import { gameState, migrateGameState } from './gamestate.svelte';
 	import { moneybags } from './moneybags';
 
 	let hideSparklines = $state(false);
+
+	onMount(migrateGameState);
 </script>
 
 <div
@@ -38,7 +41,9 @@
 </div>
 <div class="flex flex-col gap-2">
 	{#each moneybags as moneybag (moneybag.name)}
-		<Moneybag {moneybag} {hideSparklines} />
+		{#if moneybag.name in gameState.moneybags}
+			<Moneybag {moneybag} {hideSparklines} />
+		{/if}
 	{/each}
 </div>
 

@@ -29,8 +29,27 @@ export type GameState_t = {
 
 let pauseGame = $state(false);
 
+const defaultPlusMoneybags = { ...defaultGameState } as unknown as GameState_t;
+for (const moneybag of moneybags) {
+	if (!(moneybag.name in defaultPlusMoneybags.moneybags)) {
+		defaultPlusMoneybags.moneybags[moneybag.name] = {
+			owned: 0,
+			marketHistory: [
+				moneybag.market.target,
+				moneybag.market.target,
+				moneybag.market.target,
+				moneybag.market.target,
+				moneybag.market.target
+			],
+			unlocked: false
+		};
+	}
+}
+
 export const gameState = $state(
-	JSON.parse(localStorage.getItem('gamestate') || JSON.stringify(defaultGameState)) as GameState_t
+	JSON.parse(
+		localStorage.getItem('gamestate') || JSON.stringify(defaultPlusMoneybags)
+	) as GameState_t
 );
 
 setInterval(() => {
@@ -53,7 +72,14 @@ const writeLatest = (moneybag: Moneybag_t) => {
 		return;
 	}
 
-	const snapshot = $state.snapshot(gameState.moneybags[moneybag.name].marketHistory);
+	let snapshot: number[] = [];
+	try {
+		snapshot = $state.snapshot(gameState.moneybags[moneybag.name].marketHistory);
+	} catch (e) {
+		console.error(e);
+		migrateGameState();
+		return;
+	}
 
 	const next = nextValue(snapshot[MarketDataLastIndex], moneybag);
 
@@ -78,4 +104,46 @@ export const reset = () => {
 
 	localStorage.removeItem('gamestate');
 	window.location.reload();
+};
+
+export const migrateGameState = () => {
+	pauseGame = true;
+
+	console.log('Beginning migration');
+
+	let dirty = false;
+
+	for (const moneybag of moneybags) {
+		if (!(moneybag.name in gameState.moneybags)) {
+			console.log('Add: ', moneybag.name);
+			dirty = true;
+			gameState.moneybags[moneybag.name] = {
+				owned: 0,
+				marketHistory: [
+					moneybag.market.target,
+					moneybag.market.target,
+					moneybag.market.target,
+					moneybag.market.target,
+					moneybag.market.target
+				],
+				unlocked: false
+			};
+		}
+	}
+
+	for (const mbName of Object.keys(gameState.moneybags)) {
+		if (moneybags.findIndex((mb) => mb.name === mbName) === -1) {
+			console.log('Remove: ', mbName);
+			dirty = true;
+			delete gameState.moneybags[mbName];
+		}
+	}
+
+	save();
+	if (dirty) {
+		window.location.reload();
+	} else {
+		console.log('Nothing to do');
+	}
+	pauseGame = false;
 };

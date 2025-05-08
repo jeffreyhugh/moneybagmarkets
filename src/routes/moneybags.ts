@@ -288,7 +288,7 @@ export const moneybags: Moneybag_t[] = [
 		]
 	},
 	{
-		name: 'Underground Airport',
+		name: 'Underground Airport (KNDR)',
 		icon: BuildingAirport,
 		colors: {
 			text: 'text-white',
