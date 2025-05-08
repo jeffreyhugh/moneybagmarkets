@@ -8,13 +8,15 @@ generate_mono_repository_package_tags = true
 branch_whitelist = []
 skip_ci = "[skip ci]"
 skip_untracked = false
-pre_bump_hooks = []
-post_bump_hooks = []
-pre_package_bump_hooks = []
-post_package_bump_hooks = [
+pre_bump_hooks = [
   "jq '.version = \"{{version}}\"' package.json > package.json",
-  "git push origin {{version_tag}}"
+  "git add package.json"
 ]
+post_bump_hooks = [
+  "git push --atomic origin master {{version_tag}}"
+]
+pre_package_bump_hooks = []
+post_package_bump_hooks = []
 tag_prefix="v"
 
 [git_hooks]
