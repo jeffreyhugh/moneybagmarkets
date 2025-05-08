@@ -5,11 +5,20 @@
 	import { coinEvents } from './coinEvents.svelte';
 	import { gameState } from './gamestate.svelte';
 	import { moneybags } from './moneybags';
+
+	let hideSparklines = $state(false);
 </script>
 
-<div class="mb-2 flex items-baseline justify-between gap-1 select-none">
-	<div></div>
-	<div class="relative mr-2 flex justify-end gap-1 text-xl md:text-2xl">
+<div
+	class="border-base-300 sticky top-0 z-30 mb-2 flex items-baseline justify-between gap-1 border-b py-2 backdrop-blur-md select-none"
+>
+	<div>
+		<label class="label ml-2">
+			<input type="checkbox" bind:checked={hideSparklines} class="toggle" />
+			Hide Sparklines
+		</label>
+	</div>
+	<div class="relative top-0 mr-2 flex justify-end gap-1 text-xl md:text-2xl">
 		<IconPigMoney class="size-6 translate-y-0.5 md:size-7" />
 		{gameState.coins.toLocaleString()}
 		{#each coinEvents.events as e (e.id)}
@@ -27,7 +36,7 @@
 </div>
 <div class="flex flex-col gap-2">
 	{#each moneybags as moneybag (moneybag.name)}
-		<Moneybag {moneybag} />
+		<Moneybag {moneybag} {hideSparklines} />
 	{/each}
 </div>
 

@@ -16,7 +16,7 @@
 
 	const MultiplierStops = [1, 5, 10, 100, 1000];
 
-	const { moneybag }: { moneybag: Moneybag_t } = $props();
+	const { moneybag, hideSparklines }: { moneybag: Moneybag_t; hideSparklines: boolean } = $props();
 	let mult = $state({
 		index: 0,
 		multiplier: MultiplierStops[0]
@@ -132,19 +132,36 @@
 		<Locker {moneybag} />
 	{/if}
 	<div class="flex items-center gap-4">
-		<div
-			class={[
-				'rounded-box flex aspect-square size-20 items-center justify-center bg-gradient-to-br md:size-24',
-				moneybag.colors.from,
-				moneybag.colors.via,
-				moneybag.colors.to,
-				moneybag.colors.text
-			]}
-		>
-			{#if moneybag.icon}
-				<moneybag.icon class="size-12 md:size-16" />
+		<div class="grid aspect-square size-20 grid-cols-1 grid-rows-1 md:size-24">
+			{#if hideSparklines && showWheel !== null}
+				<div class="relative col-start-1 row-start-1" transition:blur={{ duration: 200 }}>
+					{#if showGain !== null}
+						<div
+							class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"
+						>
+							{showGain}
+						</div>
+					{/if}
+					<LuckyWheel pointerAt={showWheel} {moneybag} />
+				</div>
 			{:else}
-				<IconMoneybag class="size-12 md:size-16" />
+				<div
+					class={[
+						'col-start-1 row-start-1',
+						'rounded-box flex size-full items-center justify-center bg-gradient-to-br',
+						moneybag.colors.from,
+						moneybag.colors.via,
+						moneybag.colors.to,
+						moneybag.colors.text
+					]}
+					transition:blur={{ duration: 200 }}
+				>
+					{#if moneybag.icon}
+						<moneybag.icon class="size-12 md:size-16" />
+					{:else}
+						<IconMoneybag class="size-12 md:size-16" />
+					{/if}
+				</div>
 			{/if}
 		</div>
 		<div class="flex flex-col">
@@ -194,27 +211,29 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative h-40 grow md:max-w-1/3">
-		{#if showWheel === null}
-			<div class="absolute top-0 right-0 h-full w-full" transition:blur={{ duration: 200 }}>
-				<MoneybagSparkline {moneybag} />
-			</div>
-		{:else}
-			<div
-				class="absolute top-0 right-0 flex h-full w-full justify-center"
-				transition:blur={{ duration: 200 }}
-			>
-				{#if showGain !== null}
-					<div
-						class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"
-					>
-						{showGain}
-					</div>
-				{/if}
-				<LuckyWheel pointerAt={showWheel} {moneybag} />
-			</div>
-		{/if}
-	</div>
+	{#if !hideSparklines}
+		<div class="relative h-40 grow md:max-w-1/3">
+			{#if showWheel === null}
+				<div class="absolute top-0 right-0 h-full w-full" transition:blur={{ duration: 200 }}>
+					<MoneybagSparkline {moneybag} />
+				</div>
+			{:else}
+				<div
+					class="absolute top-0 right-0 flex h-full w-full justify-center"
+					transition:blur={{ duration: 200 }}
+				>
+					{#if showGain !== null}
+						<div
+							class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"
+						>
+							{showGain}
+						</div>
+					{/if}
+					<LuckyWheel pointerAt={showWheel} {moneybag} />
+				</div>
+			{/if}
+		</div>
+	{/if}
 </div>
 
 <style>
