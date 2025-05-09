@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.1 - 2025-05-09
+#### Bug Fixes
+- defaultGameState should have 0 coins - (bfafbfb) - Jeffrey Hugh
+
+- - -
+
 ## v0.3.0 - 2025-05-09
 #### Features
 - add 9 new companies - (23aa46a) - Jeffrey Hugh
