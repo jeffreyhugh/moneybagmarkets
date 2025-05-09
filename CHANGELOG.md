@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.0 - 2025-05-09
+#### Features
+- add 9 new companies - (23aa46a) - Jeffrey Hugh
+#### Miscellaneous Chores
+- update eslint - (04335c1) - Jeffrey Hugh
+
+- - -
+
 ## v0.2.4 - 2025-05-08
 #### Bug Fixes
 - cocogitto scripts - (a07cecb) - Jeffrey Hugh
