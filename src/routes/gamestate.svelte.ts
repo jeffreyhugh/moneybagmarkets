@@ -143,6 +143,21 @@ export const migrateGameState = () => {
 		}
 	}
 
+	// add missing fields
+	for (const mbName of Object.keys(gameState.moneybags)) {
+		const moneybag = gameState.moneybags[mbName];
+		if (
+			Object.keys(moneybag).length !==
+			Object.keys(defaultGameState.moneybags['Dirt Poor Landscaping']).length
+		) {
+			gameState.moneybags[mbName] = {
+				...defaultGameState.moneybags['Dirt Poor Landscaping'],
+				...moneybag
+			};
+			dirty = true;
+		}
+	}
+
 	save();
 	if (dirty) {
 		window.location.reload();
