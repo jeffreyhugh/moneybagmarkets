@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { IconMoneybag, IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
+	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
 
@@ -189,7 +190,11 @@
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
 				</span>
-				owned
+				{#if !hideSparklines}owned{/if} &middot; <PigMoney class="size-5 translate-y-px" />
+				{(
+					gameState.moneybags[moneybag.name].owned *
+					gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]
+				).toLocaleString(undefined, numberFormatOptions)}
 				{#if hideSparklines}
 					&middot; <span class="grid grid-cols-1 grid-rows-1">
 						{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
