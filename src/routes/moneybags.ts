@@ -6,6 +6,7 @@ import BuildingAirport from '@tabler/icons-svelte/icons/building-airport';
 import BuildingStore from '@tabler/icons-svelte/icons/building-store';
 import CactusOff from '@tabler/icons-svelte/icons/cactus-off';
 import Diamond from '@tabler/icons-svelte/icons/diamond';
+import EggCracked from '@tabler/icons-svelte/icons/egg-cracked';
 import Flask from '@tabler/icons-svelte/icons/flask';
 import IceCream from '@tabler/icons-svelte/icons/ice-cream';
 import type Icons from '@tabler/icons-svelte/icons/icons';
@@ -13,7 +14,6 @@ import Plant from '@tabler/icons-svelte/icons/plant';
 import Receipt from '@tabler/icons-svelte/icons/receipt';
 import RollerSkating from '@tabler/icons-svelte/icons/roller-skating';
 import ShovelPitchforks from '@tabler/icons-svelte/icons/shovel-pitchforks';
-import Tools from '@tabler/icons-svelte/icons/tools';
 
 import type { Demographics_t } from './headlines';
 import { Demographics_t as DEM } from './headlines';
@@ -25,10 +25,10 @@ export type Powerup_t = [
 	'spinMultiplier',
 	'plusMoneybags',
 	'bonusSnacks',
-	'flashSale', // next market tick will be at the minimum value
-	'doubleSpinMultiplier', // add 0.2 instead of 0.1
-	'unlockAutoSpin', // unlocks the ability to purchase auto spin
-	'autoSpinSpeed' // for random moneybag with autospin enabled, make the autospin happen more frequently
+	'flashSale',
+	'doubleSpinMultiplier',
+	'unlockAutoSpin',
+	'autoSpinSpeed'
 ];
 
 export type Moneybag_t = {
@@ -389,11 +389,11 @@ const fauxBrothersJewelry: Moneybag_t = {
 		confetti: ['#0891b2', '#155e75', '#0e7490'],
 		sparkline: '#0891b2',
 		wheelColors: [
-			'oklch(91.7% 0.08 205.041)', // cyan-200
-			'oklch(78.9% 0.154 211.53)', // cyan-400
-			'oklch(60.9% 0.126 221.723)', // cyan-600
-			'oklch(45% 0.085 224.283)', // cyan-800
-			'oklch(30.2% 0.056 229.695)' // cyan-950
+			'oklch(91.7% 0.08 205.041)',
+			'oklch(78.9% 0.154 211.53)',
+			'oklch(60.9% 0.126 221.723)',
+			'oklch(45% 0.085 224.283)',
+			'oklch(30.2% 0.056 229.695)'
 		]
 	},
 	market: {
@@ -450,11 +450,11 @@ const gaslampGalleria: Moneybag_t = {
 		confetti: ['#fcd34d', '#fbbf24', '#fb923c'],
 		sparkline: '#fcd34d',
 		wheelColors: [
-			'oklch(95.6% 0.19 85.51)', // amber-200
-			'oklch(88.6% 0.182 77.97)', // yellow-300
-			'oklch(78.9% 0.191 67.99)', // yellow-400
-			'oklch(66.2% 0.222 61.21)', // orange-400
-			'oklch(52.3% 0.212 56.31)' // orange-500
+			'oklch(95.6% 0.19 85.51)',
+			'oklch(88.6% 0.182 77.97)',
+			'oklch(78.9% 0.191 67.99)',
+			'oklch(66.2% 0.222 61.21)',
+			'oklch(52.3% 0.212 56.31)'
 		]
 	},
 	market: {
@@ -621,7 +621,7 @@ const pawnDome: Moneybag_t = {
 
 const midnightOilPress: Moneybag_t = {
 	name: 'Midnight Oil Press',
-	icon: Flask, // Artisanal oil production
+	icon: Flask,
 	applicableDemographics: [DEM.AGE_MID, DEM.MONEY_MID, DEM.MONEY_RICH, DEM.TYPE_GOOD],
 	colors: {
 		text: 'text-white',
@@ -643,8 +643,8 @@ const midnightOilPress: Moneybag_t = {
 		min: 5000,
 		max: 75000,
 		target: 28000,
-		lineWeight: 0.4, // Moderate drift toward target
-		absoluteVolatility: 10000 // ~0.35x target
+		lineWeight: 0.4,
+		absoluteVolatility: 10000
 	},
 	costToUnlock: 175_000,
 	open: [
@@ -675,14 +675,14 @@ const midnightOilPress: Moneybag_t = {
 		{
 			chance: 0.02,
 			effect: 'powerup',
-			value: 'tripleMoney' // High-risk, high-reward powerup
+			value: 'tripleMoney'
 		}
 	]
 };
 
 const grandmasAlgorithmicBakery: Moneybag_t = {
 	name: "Grandma's Algorithmic Bakery",
-	icon: Bread, // Nostalgic but tech-themed
+	icon: Bread,
 	applicableDemographics: [DEM.AGE_YOUNG, DEM.AGE_MID, DEM.MONEY_MID, DEM.TYPE_GOOD],
 	colors: {
 		text: 'text-black',
@@ -692,22 +692,22 @@ const grandmasAlgorithmicBakery: Moneybag_t = {
 		confetti: ['#fde68a', '#fcd34d', '#fbbf24'],
 		sparkline: '#f59e0b',
 		wheelColors: [
-			'oklch(95% 0.12 85)', // Lightest
+			'oklch(95% 0.12 85)',
 			'oklch(88% 0.15 80)',
 			'oklch(80% 0.18 75)',
 			'oklch(70% 0.2 70)',
-			'oklch(55% 0.18 65)' // Darkest
+			'oklch(55% 0.18 65)'
 		]
 	},
 	market: {
-		updateOnMod: 6, // Faster updates = more volatility
+		updateOnMod: 6,
 		min: 8000,
 		max: 90000,
-		target: 35000, // Tier above Midnight Oil Press (28k)
-		lineWeight: 0.6, // Less predictable (trends randomize more)
-		absoluteVolatility: 12000 // ~0.34x target
+		target: 35000,
+		lineWeight: 0.6,
+		absoluteVolatility: 12000
 	},
-	costToUnlock: 210_000, // +20% from previous
+	costToUnlock: 210_000,
 	open: [
 		{
 			chance: 0.35,
@@ -736,14 +736,14 @@ const grandmasAlgorithmicBakery: Moneybag_t = {
 		{
 			chance: 0.02,
 			effect: 'powerup',
-			value: 'doubleSpinMultiplier' // Permanent bonus
+			value: 'doubleSpinMultiplier'
 		}
 	]
 };
 
 const neonRollerRink: Moneybag_t = {
 	name: 'Neon Roller Rink',
-	icon: RollerSkating, // Tabler's roller skate icon
+	icon: RollerSkating,
 	applicableDemographics: [
 		DEM.AGE_YOUNG,
 		DEM.AGE_MID,
@@ -757,24 +757,24 @@ const neonRollerRink: Moneybag_t = {
 		via: 'via-pink-400',
 		to: 'to-rose-400',
 		confetti: ['#c084fc', '#f472b6', '#fb7185'],
-		sparkline: '#e879f9', // Electric purple
+		sparkline: '#e879f9',
 		wheelColors: [
-			'oklch(90% 0.18 330)', // Neon pink
-			'oklch(80% 0.2 310)', // Purple-pink
-			'oklch(70% 0.22 290)', // Deeper purple
-			'oklch(60% 0.2 270)', // Dark magenta
-			'oklch(45% 0.15 250)' // Nightclub violet
+			'oklch(90% 0.18 330)',
+			'oklch(80% 0.2 310)',
+			'oklch(70% 0.22 290)',
+			'oklch(60% 0.2 270)',
+			'oklch(45% 0.15 250)'
 		]
 	},
 	market: {
-		updateOnMod: 5, // Frequent updates for wild swings
+		updateOnMod: 5,
 		min: 10000,
 		max: 100000,
-		target: 42000, // Higher than bakery (35k)
-		lineWeight: 0.7, // Chaotic, less drift to target
-		absoluteVolatility: 15000 // ~0.36x target
+		target: 42000,
+		lineWeight: 0.7,
+		absoluteVolatility: 15000
 	},
-	costToUnlock: 250_000, // +19% from bakery
+	costToUnlock: 250_000,
 	open: [
 		{
 			chance: 0.4,
@@ -803,14 +803,14 @@ const neonRollerRink: Moneybag_t = {
 		{
 			chance: 0.02,
 			effect: 'powerup',
-			value: 'unlockAutoSpin' // Fits "expanding the rink" theme
+			value: 'unlockAutoSpin'
 		}
 	]
 };
 
-const plungerBrosPlumbing: Moneybag_t = {
-	name: 'Plunger Bros Plumbing',
-	icon: Tools, // Tabler's tools icon (represents service tools)
+const crackedPlumbing: Moneybag_t = {
+	name: 'Cracked Plumbing',
+	icon: EggCracked,
 	applicableDemographics: [
 		DEM.AGE_MID,
 		DEM.AGE_OLD,
@@ -824,24 +824,24 @@ const plungerBrosPlumbing: Moneybag_t = {
 		via: 'via-blue-800',
 		to: 'to-blue-900',
 		confetti: ['#1d4ed8', '#1e40af', '#1e3a8a'],
-		sparkline: '#3b82f6', // Bright blue for contrast
+		sparkline: '#3b82f6',
 		wheelColors: [
-			'oklch(90% 0.1 250)', // Light blue
+			'oklch(90% 0.1 250)',
 			'oklch(75% 0.15 245)',
-			'oklch(60% 0.2 240)', // Mid blue
-			'oklch(45% 0.18 235)', // Deep blue
-			'oklch(30% 0.12 230)' // Navy
+			'oklch(60% 0.2 240)',
+			'oklch(45% 0.18 235)',
+			'oklch(30% 0.12 230)'
 		]
 	},
 	market: {
-		updateOnMod: 4, // Emergency plumbing = fast market changes
+		updateOnMod: 4,
 		min: 15000,
 		max: 120000,
-		target: 50000, // Higher than roller rink (42k)
-		lineWeight: 0.65, // Unpredictable like plumbing emergencies
-		absoluteVolatility: 18000 // ~0.36x target
+		target: 50000,
+		lineWeight: 0.65,
+		absoluteVolatility: 18000
 	},
-	costToUnlock: 300_000, // +20% from roller rink
+	costToUnlock: 300_000,
 	open: [
 		{
 			chance: 0.35,
@@ -870,44 +870,44 @@ const plungerBrosPlumbing: Moneybag_t = {
 		{
 			chance: 0.02,
 			effect: 'powerup',
-			value: 'tripleMoney' // "Pipe dream" jackpot
+			value: 'tripleMoney'
 		}
 	]
 };
 
 const theVault: Moneybag_t = {
 	name: 'The Vault™',
-	icon: IconLock, // Represents high security
+	icon: IconLock,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_ESTABLISHMENT],
 	colors: {
 		text: 'text-white',
 		from: 'from-gray-900',
 		via: 'via-gray-800',
 		to: 'to-gray-700',
-		confetti: ['#111827', '#1f2937', '#374151'], // All gray tones
-		sparkline: '#6b7280', // Subdued sparkline
+		confetti: ['#111827', '#1f2937', '#374151'],
+		sparkline: '#6b7280',
 		wheelColors: [
-			'oklch(95% 0.01 260)', // Near-white
+			'oklch(95% 0.01 260)',
 			'oklch(80% 0.02 260)',
 			'oklch(65% 0.03 260)',
 			'oklch(50% 0.04 260)',
-			'oklch(30% 0.05 260)' // Near-black
+			'oklch(30% 0.05 260)'
 		]
 	},
 	market: {
-		updateOnMod: 15, // Slow updates = stability
+		updateOnMod: 15,
 		min: 40000,
 		max: 80000,
-		target: 60000, // High but narrow range
-		lineWeight: 0.2, // Strong drift to target
-		absoluteVolatility: 5000 // Just 8% of target
+		target: 60000,
+		lineWeight: 0.2,
+		absoluteVolatility: 5000
 	},
-	costToUnlock: 500_000, // Highest tier
+	costToUnlock: 500_000,
 	open: [
 		{
 			chance: 0.5,
 			effect: 'add',
-			minValue: 500, // Punishingly low
+			minValue: 500,
 			maxValue: 1000
 		},
 		{
@@ -929,9 +929,9 @@ const theVault: Moneybag_t = {
 			maxValue: 40000
 		},
 		{
-			chance: 0.005, // 1 in 1000 chance
+			chance: 0.005,
 			effect: 'powerup',
-			value: 'autoSpinSpeed' // Nuclear option
+			value: 'autoSpinSpeed'
 		}
 	]
 };
@@ -950,6 +950,6 @@ export const moneybags: Moneybag_t[] = [
 	midnightOilPress,
 	grandmasAlgorithmicBakery,
 	neonRollerRink,
-	plungerBrosPlumbing,
+	crackedPlumbing,
 	theVault
 ];
