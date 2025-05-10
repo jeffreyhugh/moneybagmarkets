@@ -186,11 +186,11 @@
 		</div>
 		<div class="flex flex-col">
 			<div class="text-xl font-bold md:text-2xl">{moneybag.name}</div>
-			<div class="flex gap-1">
+			<div class="flex items-center gap-1">
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
 				</span>
-				{#if !hideSparklines}owned{/if} &middot; <PigMoney class="size-5 translate-y-px" />
+				{#if !hideSparklines}owned{/if} &middot; <PigMoney class="inline size-4 md:size-6" />
 				{(
 					gameState.moneybags[moneybag.name].owned *
 					gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]
