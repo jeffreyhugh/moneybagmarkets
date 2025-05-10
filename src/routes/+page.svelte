@@ -20,7 +20,7 @@
 	<div>
 		<label class="label ml-2">
 			<input type="checkbox" bind:checked={hideSparklines} class="toggle" />
-			Hide Sparklines
+			Compact View
 		</label>
 	</div>
 	<div class="relative top-0 mr-2 flex justify-end gap-1 text-xl md:text-2xl">
