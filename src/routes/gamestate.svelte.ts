@@ -21,10 +21,12 @@ export type GameState_t = {
 			owned: number;
 			marketHistory: [number, number, number, number, number];
 			unlocked: boolean;
+			flashSales: number;
 		};
 	};
 	lastRandomEvent: DateTime | null;
 	maxEachMoneybag: number;
+	bonusSnacks: number;
 };
 
 let pauseGame = $state(false);
@@ -41,7 +43,8 @@ for (const moneybag of moneybags) {
 				moneybag.market.target,
 				moneybag.market.target
 			],
-			unlocked: false
+			unlocked: false,
+			flashSales: 0
 		};
 	}
 }
@@ -126,7 +129,8 @@ export const migrateGameState = () => {
 					moneybag.market.target,
 					moneybag.market.target
 				],
-				unlocked: false
+				unlocked: false,
+				flashSales: 0
 			};
 		}
 	}

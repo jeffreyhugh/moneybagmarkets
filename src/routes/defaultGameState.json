@@ -10,10 +10,12 @@
 		"Dirt Poor Landscaping": {
 			"unlocked": true,
 			"owned": 0,
-			"marketHistory": [0, 0, 0, 0, 0]
+			"marketHistory": [0, 0, 0, 0, 0],
+			"flashSales": 0
 		}
 	},
 	"updateTick": 0,
 	"lastRandomEvent": null,
-	"maxEachMoneybag": 10
+	"maxEachMoneybag": 10,
+	"bonusSnacks": 0
 }

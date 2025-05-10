@@ -76,6 +76,10 @@
 
 		// showGain = handleChoices(moneybag, choices);
 		showGain = handleChoice(moneybag, choice);
+		if (gameState.bonusSnacks > 0) {
+			gameState.bonusSnacks -= 1;
+			openBonusSnack();
+		}
 
 		await new Promise((resolve) => setTimeout(resolve, 500));
 		showGain = null;
@@ -83,6 +87,20 @@
 
 		await new Promise((resolve) => setTimeout(resolve, 200));
 		opening = false;
+	};
+
+	const openBonusSnack = async () => {
+		const [choice] = weightedChoice(moneybag.open);
+
+		if (!choice) {
+			opening = false;
+			return;
+		}
+
+		await new Promise((resolve) => setTimeout(resolve, 250));
+
+		// showGain = handleChoices(moneybag, choices);
+		showGain = handleChoice(moneybag, choice);
 	};
 
 	const buyMoneybag = () => {

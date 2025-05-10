@@ -1,6 +1,12 @@
+import { gameState } from '../routes/gamestate.svelte';
 import type { Moneybag_t } from '../routes/moneybags';
 
 export const nextValue = (currentValue: number, moneybag: Moneybag_t) => {
+	if (gameState.moneybags[moneybag.name].flashSales > 0) {
+		gameState.moneybags[moneybag.name].flashSales -= 1;
+		return moneybag.market.min;
+	}
+
 	const midpoint =
 		moneybag.market.lineWeight * currentValue +
 		(1 - moneybag.market.lineWeight) * moneybag.market.target;
