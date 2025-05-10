@@ -147,14 +147,50 @@ export const migrateGameState = () => {
 	for (const mbName of Object.keys(gameState.moneybags)) {
 		const moneybag = gameState.moneybags[mbName];
 		if (
-			Object.keys(moneybag).length !==
-			Object.keys(defaultGameState.moneybags['Dirt Poor Landscaping']).length
+			JSON.stringify(Object.keys(moneybag).sort()) !==
+			JSON.stringify(Object.keys(defaultGameState.moneybags['Dirt Poor Landscaping']).sort())
 		) {
-			gameState.moneybags[mbName] = {
-				...defaultGameState.moneybags['Dirt Poor Landscaping'],
-				...moneybag
-			};
-			dirty = true;
+			for (const gsKey of Object.keys(gameState.moneybags[mbName])) {
+				if (!(gsKey in defaultGameState.moneybags['Dirt Poor Landscaping'])) {
+					// @ts-expect-error I promise this is type-safe
+					delete gameState.moneybags[mbName][gsKey];
+					console.log('Removed', gsKey, 'from', mbName);
+					dirty = true;
+				}
+			}
+
+			for (const defaultKey of Object.keys(defaultGameState.moneybags['Dirt Poor Landscaping'])) {
+				if (!(defaultKey in gameState.moneybags[mbName])) {
+					// @ts-expect-error I promise this is type-safe
+					gameState.moneybags[mbName][defaultKey] =
+						// @ts-expect-error I promise this is type-safe
+						defaultGameState.moneybags['Dirt Poor Landscaping'][defaultKey];
+					console.log('Added', defaultKey, 'from', mbName);
+					dirty = true;
+				}
+			}
+		}
+	}
+	if (
+		JSON.stringify(Object.keys(gameState).sort()) !==
+		JSON.stringify(Object.keys(defaultGameState).sort())
+	) {
+		for (const existingKey of Object.keys(gameState)) {
+			if (!(existingKey in defaultGameState)) {
+				// @ts-expect-error I promise this is type-safe
+				delete gameState[existingKey];
+				console.log('Removed', existingKey, 'from root gameState');
+				dirty = true;
+			}
+		}
+
+		for (const defaultKey of Object.keys(defaultGameState)) {
+			if (!(defaultKey in gameState)) {
+				// @ts-expect-error I promise this is type-safe
+				gameState[defaultKey] = defaultGameState[defaultKey];
+				console.log('Added', defaultKey, 'to root gameState');
+				dirty = true;
+			}
 		}
 	}
 
