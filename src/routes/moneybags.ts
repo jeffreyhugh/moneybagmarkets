@@ -32,8 +32,10 @@ export type Powerup_t = [
 ];
 
 export const powerupDescriptions: Record<Powerup_t[number], string> = {
-	doubleMoney: 'Double your current coin balance.',
-	tripleMoney: 'Triple your current coin balance.',
+	doubleMoney:
+		'Double your current coin balance up to 200x the current market value of the moneybag.',
+	tripleMoney:
+		'Triple your current coin balance up to 300x the current market value of the moneybag.',
 	plusTenMaxMoneybags: 'Increase the moneybag cap by 10.',
 	spinMultiplier: 'Increase your permanent spin multiplier up to 2.5x.',
 	plusMoneybags: 'Fill your moneybag cap instantly, for free.',

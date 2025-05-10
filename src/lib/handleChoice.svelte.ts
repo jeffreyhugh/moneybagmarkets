@@ -1,6 +1,7 @@
 import { coin } from '../routes/coinEvents.svelte';
 import { gameState } from '../routes/gamestate.svelte';
 import type { Moneybag_t } from '../routes/moneybags';
+import { MarketDataLastIndex } from './marketData';
 
 export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
 	// gameState.moneybags[moneybag.name].owned -= 1;
@@ -21,14 +22,23 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 			gameState.moneybags[moneybag.name].discoveries.powerups.push(choice.value);
 		}
 
+		let delta = 0;
 		switch (choice.value) {
 			case 'doubleMoney':
-				gameState.coins *= 2;
-				coin('x', 2);
+				delta = Math.min(
+					gameState.coins,
+					gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] * 200
+				);
+				gameState.coins += delta;
+				coin('+', delta);
 				return 'x2';
 			case 'tripleMoney':
-				gameState.coins *= 3;
-				coin('x', 3);
+				delta = Math.min(
+					gameState.coins * 2,
+					gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] * 300
+				);
+				gameState.coins += delta;
+				coin('+', delta);
 				return 'x3';
 			case 'plusTenMaxMoneybags':
 				gameState.maxEachMoneybag += 10;
