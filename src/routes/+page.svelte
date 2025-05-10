@@ -40,7 +40,7 @@
 	</div>
 </div>
 <div class="mx-auto w-11/12 max-w-4xl">
-	<div class="flex flex-col gap-2">
+	<div class={['grid grid-cols-1 gap-2', hideSparklines && 'md:grid-cols-2']}>
 		{#each moneybags as moneybag (moneybag.name)}
 			{#if moneybag.name in gameState.moneybags}
 				<Moneybag {moneybag} {hideSparklines} />
