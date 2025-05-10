@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.2 - 2025-05-10
+#### Bug Fixes
+- add missing powerups - (c8cf528) - Jeffrey Hugh
+- header w-full - (6c4fb46) - Jeffrey Hugh
+- coin delta color - (6acac1f) - Jeffrey Hugh
+- more confetti when unlocking - (d658e19) - Jeffrey Hugh
+#### Features
+- chad grid layout - (6f7d1bd) - Jeffrey Hugh
+- show total asset value - (06a8590) - Jeffrey Hugh
+#### Miscellaneous Chores
+- fix asset total formatting - (1fed75c) - Jeffrey Hugh
+- change sparkline toggle label to 'compact view' - (fba8bd1) - Jeffrey Hugh
+
+- - -
+
 ## v0.3.1 - 2025-05-09
 #### Bug Fixes
 - defaultGameState should have 0 coins - (bfafbfb) - Jeffrey Hugh
