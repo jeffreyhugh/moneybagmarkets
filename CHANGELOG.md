@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.5 - 2025-05-10
+#### Bug Fixes
+- migrate other keys in gameState - (9bc0b1e) - Jeffrey Hugh
+
+- - -
+
 ## v0.3.4 - 2025-05-10
 #### Bug Fixes
 - add missing new fields to gameState - (909f0c6) - Jeffrey Hugh
