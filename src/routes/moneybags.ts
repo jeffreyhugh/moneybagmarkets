@@ -28,11 +28,26 @@ export type Powerup_t = [
 	'flashSale',
 	'doubleSpinMultiplier',
 	'unlockAutoSpin',
-	'autoSpinSpeed'
+	'plusWorker'
 ];
+
+export const powerupDescriptions: Record<Powerup_t[number], string> = {
+	doubleMoney: 'Double your current coin balance.',
+	tripleMoney: 'Triple your current coin balance.',
+	plusTenMaxMoneybags: 'Increase the moneybag cap by 10.',
+	spinMultiplier: 'Increase your permanent spin multiplier up to 2.5x.',
+	plusMoneybags: 'Fill your moneybag cap instantly, for free.',
+	bonusSnacks:
+		'Earn 5 snacks. Each snack is consumed on use and gives an extra roll when opening your next moneybag.',
+	flashSale: 'The next market tick for each moneybag will be the lowest possible value.',
+	doubleSpinMultiplier: 'Increase your permanent spin multiplier up to 5x.',
+	unlockAutoSpin: 'Unlock auto-spins.',
+	plusWorker: 'Get another worker to automate tasks.'
+};
 
 export type Moneybag_t = {
 	name: string;
+	lore?: string;
 	icon?: typeof Icons;
 	applicableDemographics: Demographics_t[];
 	colors: {
@@ -70,6 +85,7 @@ export type Moneybag_t = {
 
 const dirtPoorLandscaping: Moneybag_t = {
 	name: 'Dirt Poor Landscaping',
+	lore: 'Making our yard look presentable-ish since 1998. Always hiring entry-level positions.',
 	icon: ShovelPitchforks,
 	applicableDemographics: [
 		DEM.AGE_MID,
@@ -113,6 +129,7 @@ const dirtPoorLandscaping: Moneybag_t = {
 
 const pruneJuiceInc: Moneybag_t = {
 	name: 'Prune Juice, Inc.',
+	lore: 'Helping you go with the flow since 1946.',
 	icon: Bottle,
 	applicableDemographics: [DEM.AGE_OLD, DEM.MONEY_LOWER, DEM.MONEY_MID, DEM.TYPE_GOOD],
 	colors: {
@@ -160,6 +177,7 @@ const pruneJuiceInc: Moneybag_t = {
 
 const andersonCactusRemoval: Moneybag_t = {
 	name: 'Anderson Cactus Removal',
+	lore: 'We get you out of thorny situations.',
 	icon: CactusOff,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_SERVICE],
 	colors: {
@@ -214,6 +232,7 @@ const andersonCactusRemoval: Moneybag_t = {
 
 const floralsByPatricia: Moneybag_t = {
 	name: 'Florals by Patricia',
+	lore: 'The most beautiful arrangements for weddings, funerals, and those nasty fights with your wife.',
 	icon: Plant,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_SERVICE],
 	colors: {
@@ -274,6 +293,7 @@ const floralsByPatricia: Moneybag_t = {
 
 const stronkJim: Moneybag_t = {
 	name: 'Stronk Jim',
+	lore: 'Greg is not welcome back.',
 	icon: Barbell,
 	applicableDemographics: [
 		DEM.AGE_YOUNG,
@@ -334,6 +354,7 @@ const stronkJim: Moneybag_t = {
 
 const undergroundAirport: Moneybag_t = {
 	name: 'Underground Airport (KNDR)',
+	lore: "Surely, nothing suspicious is going on here. This definitely isn't a secret airport for rich folks.",
 	icon: BuildingAirport,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_ESTABLISHMENT],
 	colors: {
@@ -380,6 +401,7 @@ const undergroundAirport: Moneybag_t = {
 
 const fauxBrothersJewelry: Moneybag_t = {
 	name: 'Faux Brothers Jewelry',
+	lore: "Don't trust the name -- we're the real deal.",
 	icon: Diamond,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_GOOD],
 	colors: {
@@ -440,6 +462,7 @@ const fauxBrothersJewelry: Moneybag_t = {
 
 const gaslampGalleria: Moneybag_t = {
 	name: 'Gaslamp Galleria',
+	lore: 'This museum of gaslamps has got to be a front for something...',
 	icon: BuildingStore,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_YOUNG, DEM.MONEY_MID, DEM.TYPE_ESTABLISHMENT],
 	colors: {
@@ -501,6 +524,7 @@ const gaslampGalleria: Moneybag_t = {
 
 const elevenPMSnax: Moneybag_t = {
 	name: '11PM Snax',
+	lore: 'Your go-to satisfier for all midnight cravings.',
 	icon: IceCream,
 	applicableDemographics: [DEM.AGE_YOUNG, DEM.MONEY_LOWER, DEM.MONEY_MID, DEM.TYPE_GOOD],
 	colors: {
@@ -561,6 +585,7 @@ const elevenPMSnax: Moneybag_t = {
 
 const pawnDome: Moneybag_t = {
 	name: 'Pawn Dome',
+	lore: 'A grungy pawn shop. Nothing to see here.',
 	icon: Receipt,
 	applicableDemographics: [DEM.AGE_YOUNG, DEM.AGE_MID, DEM.MONEY_LOWER, DEM.TYPE_ESTABLISHMENT],
 	colors: {
@@ -621,6 +646,7 @@ const pawnDome: Moneybag_t = {
 
 const midnightOilPress: Moneybag_t = {
 	name: 'Midnight Oil Press',
+	lore: 'The finest olive oil for the most discerning palettes.',
 	icon: Flask,
 	applicableDemographics: [DEM.AGE_MID, DEM.MONEY_MID, DEM.MONEY_RICH, DEM.TYPE_GOOD],
 	colors: {
@@ -682,6 +708,7 @@ const midnightOilPress: Moneybag_t = {
 
 const grandmasAlgorithmicBakery: Moneybag_t = {
 	name: "Grandma's Algorithmic Bakery",
+	lore: "The calming scent of fresh bread fills the hipster study area. Unfortunately, it's not enough to mask the smell of the hackathon in the corner.",
 	icon: Bread,
 	applicableDemographics: [DEM.AGE_YOUNG, DEM.AGE_MID, DEM.MONEY_MID, DEM.TYPE_GOOD],
 	colors: {
@@ -743,6 +770,7 @@ const grandmasAlgorithmicBakery: Moneybag_t = {
 
 const neonRollerRink: Moneybag_t = {
 	name: 'Neon Roller Rink',
+	lore: 'Where the wheels never stop -- and neither do the lawsuits.',
 	icon: RollerSkating,
 	applicableDemographics: [
 		DEM.AGE_YOUNG,
@@ -810,6 +838,7 @@ const neonRollerRink: Moneybag_t = {
 
 const crackedPlumbing: Moneybag_t = {
 	name: 'Cracked Plumbing',
+	lore: "Our rates are fair, our pipes are tight... and yes, we've heard the jokes.",
 	icon: EggCracked,
 	applicableDemographics: [
 		DEM.AGE_MID,
@@ -877,6 +906,7 @@ const crackedPlumbing: Moneybag_t = {
 
 const theVault: Moneybag_t = {
 	name: 'The Vault™',
+	lore: "You've finally made it to the ultra-exclusive club. Welcome to the 1% -- may you stay richer than the 99%.",
 	icon: IconLock,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_ESTABLISHMENT],
 	colors: {
@@ -931,7 +961,7 @@ const theVault: Moneybag_t = {
 		{
 			chance: 0.005,
 			effect: 'powerup',
-			value: 'autoSpinSpeed'
+			value: 'plusWorker'
 		}
 	]
 };

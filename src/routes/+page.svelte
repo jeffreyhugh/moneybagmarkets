@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { IconPigMoney } from '@tabler/icons-svelte';
+	import { IconNotebook } from '@tabler/icons-svelte/icons';
 	import { onMount } from 'svelte';
 
+	import Notebook from '$lib/Notebook.svelte';
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
 
 	import Moneybag from '../lib/Moneybag.svelte';
@@ -10,6 +12,8 @@
 	import { moneybags } from './moneybags';
 
 	let hideSparklines = $state(false);
+
+	let notebookDialog = $state<HTMLDialogElement>();
 
 	onMount(migrateGameState);
 </script>
@@ -22,20 +26,29 @@
 				Compact View
 			</label>
 		</div>
-		<div class="relative top-0 mr-2 flex justify-end gap-1 text-xl md:text-2xl">
-			<IconPigMoney class="size-6 translate-y-0.5 md:size-7" />
-			{gameState.coins.toLocaleString(undefined, numberFormatOptions)}
-			{#each coinEvents.events as e (e.id)}
-				<div
-					class={[
-						'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold md:text-lg',
-						(e.sign === '+' || e.sign === 'x') && 'text-success',
-						e.sign === '-' && 'text-error'
-					]}
-				>
-					{e.sign}{e.value}{e.suffix || ''}
-				</div>
-			{/each}
+		<div class="relative top-0 mr-2 flex items-center justify-end gap-1 text-xl md:text-2xl">
+			<div class="relative flex items-center gap-1">
+				<IconPigMoney class="size-6 md:size-7" />
+				{gameState.coins.toLocaleString(undefined, numberFormatOptions)}
+				{#each coinEvents.events as e (e.id)}
+					<div
+						class={[
+							'fade-move absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold md:text-lg',
+							(e.sign === '+' || e.sign === 'x') && 'text-success',
+							e.sign === '-' && 'text-error'
+						]}
+					>
+						{e.sign}{e.value}{e.suffix || ''}
+					</div>
+				{/each}
+			</div>
+			<button
+				class="btn btn-ghost btn-square md:ml-3"
+				type="button"
+				onclick={() => notebookDialog?.show()}
+			>
+				<IconNotebook class="size-6 md:size-7" />
+			</button>
 		</div>
 	</div>
 </div>
@@ -48,6 +61,12 @@
 		{/each}
 	</div>
 </div>
+<dialog bind:this={notebookDialog} class="modal modal-bottom sm:modal-middle">
+	<Notebook />
+	<form method="dialog" class="modal-backdrop">
+		<button>close</button>
+	</form>
+</dialog>
 
 <style>
 	.fade-move {

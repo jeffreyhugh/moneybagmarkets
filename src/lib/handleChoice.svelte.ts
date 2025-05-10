@@ -17,6 +17,10 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 	} else if (choice.effect === 'powerup') {
 		let ownedMoneybags = 0;
 
+		if (!(choice.value in gameState.moneybags[moneybag.name].discoveries.powerups)) {
+			gameState.moneybags[moneybag.name].discoveries.powerups.push(choice.value);
+		}
+
 		switch (choice.value) {
 			case 'doubleMoney':
 				gameState.coins *= 2;
@@ -30,7 +34,7 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 				gameState.maxEachMoneybag += 10;
 				return '+10 Max';
 			case 'spinMultiplier':
-				gameState.coinMultiplier += 0.1;
+				gameState.coinMultiplier = Math.min(2.5, gameState.coinMultiplier + 0.1);
 				return `Spin x${gameState.coinMultiplier.toFixed(1)}`;
 			case 'plusMoneybags':
 				ownedMoneybags = gameState.moneybags[moneybag.name].owned;
@@ -45,11 +49,11 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 				}
 				return 'Flash Sale!';
 			case 'doubleSpinMultiplier':
-				gameState.coinMultiplier += 0.2;
+				gameState.coinMultiplier = Math.min(5, gameState.coinMultiplier + 0.1);
 				return `Spin x${gameState.coinMultiplier.toFixed(1)}`;
 			case 'unlockAutoSpin':
 				return 'WIP';
-			case 'autoSpinSpeed':
+			case 'plusWorker':
 				return 'WIP';
 		}
 	}

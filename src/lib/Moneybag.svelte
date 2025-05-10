@@ -104,8 +104,19 @@
 		showGain = handleChoice(moneybag, choice);
 	};
 
+	const addDiscovery = (cost: number) => {
+		if ((gameState.moneybags[moneybag.name].discoveries.min ?? Infinity) > cost) {
+			gameState.moneybags[moneybag.name].discoveries.min = cost;
+		}
+
+		if ((gameState.moneybags[moneybag.name].discoveries.max ?? -Infinity) < cost) {
+			gameState.moneybags[moneybag.name].discoveries.max = cost;
+		}
+	};
+
 	const buyMoneybag = () => {
 		const cost = gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex];
+		addDiscovery(cost);
 		let total = 0;
 		for (let i = 0; i < mult.multiplier; i++) {
 			if (gameState.moneybags[moneybag.name].owned === gameState.maxEachMoneybag) {
@@ -125,6 +136,7 @@
 
 	const sellMoneybag = () => {
 		const cost = gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex];
+		addDiscovery(cost);
 		let total = 0;
 		for (let i = 0; i < mult.multiplier; i++) {
 			if (gameState.moneybags[moneybag.name].owned === 0) {
@@ -154,7 +166,10 @@
 	<div class="flex items-center gap-4">
 		<div class="grid aspect-square size-20 grid-cols-1 grid-rows-1 md:size-24">
 			{#if hideSparklines && showWheel !== null}
-				<div class="relative col-start-1 row-start-1" transition:blur={{ duration: 200 }}>
+				<div
+					class="pointer-events-none relative col-start-1 row-start-1"
+					transition:blur={{ duration: 200 }}
+				>
 					{#if showGain !== null}
 						<div
 							class="fade-move text-success absolute right-0 left-0 z-10 mx-auto w-fit text-base font-bold"

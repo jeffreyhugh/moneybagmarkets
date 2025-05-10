@@ -11,7 +11,12 @@
 			"unlocked": true,
 			"owned": 0,
 			"marketHistory": [0, 0, 0, 0, 0],
-			"flashSales": 0
+			"flashSales": 0,
+			"discoveries": {
+				"min": null,
+				"max": null,
+				"powerups": []
+			}
 		}
 	},
 	"updateTick": 0,

@@ -1,0 +1,40 @@
+<script lang="ts">
+	import { IconQuestionMark } from '@tabler/icons-svelte';
+
+	import { gameState } from '../../routes/gamestate.svelte';
+	import { moneybags } from '../../routes/moneybags';
+
+	const { setPage }: { setPage: (page: string) => void } = $props();
+</script>
+
+<h3 class="mb-2 text-xl font-bold md:text-2xl">Moneybags</h3>
+<div class="flex flex-col items-start pb-4 md:pb-6">
+	{#each moneybags as moneybag (moneybag.name)}
+		<button
+			class="btn md:btn-lg btn-ghost flex h-auto w-full items-center justify-start gap-1 p-1 sm:gap-2"
+			disabled={!gameState.moneybags[moneybag.name].unlocked}
+			onclick={() => {
+				if (gameState.moneybags[moneybag.name].unlocked) {
+					setPage('mb' + moneybag.name);
+				}
+			}}
+		>
+			<div
+				class={[
+					'rounded-box flex aspect-square size-8 items-center justify-center bg-gradient-to-br md:size-10',
+					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.text : 'text-white',
+					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.from : 'from-gray-600',
+					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.via : '',
+					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.to : 'to-gray-600'
+				]}
+			>
+				{#if gameState.moneybags[moneybag.name].unlocked && moneybag.icon}
+					<moneybag.icon class="size-5 md:size-6" />
+				{:else}
+					<IconQuestionMark class="size-5 md:size-6" />
+				{/if}
+			</div>
+			<div>{gameState.moneybags[moneybag.name].unlocked ? moneybag.name : '???'}</div>
+		</button>
+	{/each}
+</div>

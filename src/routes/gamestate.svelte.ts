@@ -4,7 +4,7 @@ import { MarketDataLastIndex } from '$lib/marketData';
 import { nextValue } from '$lib/nextValue';
 
 import defaultGameState from './defaultGameState.json';
-import { type Moneybag_t, moneybags } from './moneybags';
+import { type Moneybag_t, moneybags, type Powerup_t } from './moneybags';
 
 export const ssr = false;
 
@@ -22,6 +22,11 @@ export type GameState_t = {
 			marketHistory: [number, number, number, number, number];
 			unlocked: boolean;
 			flashSales: number;
+			discoveries: {
+				min: number | null;
+				max: number | null;
+				powerups: Array<Powerup_t[number]>;
+			};
 		};
 	};
 	lastRandomEvent: DateTime | null;
@@ -44,7 +49,12 @@ for (const moneybag of moneybags) {
 				moneybag.market.target
 			],
 			unlocked: false,
-			flashSales: 0
+			flashSales: 0,
+			discoveries: {
+				min: null,
+				max: null,
+				powerups: []
+			}
 		};
 	}
 }
@@ -130,7 +140,12 @@ export const migrateGameState = () => {
 					moneybag.market.target
 				],
 				unlocked: false,
-				flashSales: 0
+				flashSales: 0,
+				discoveries: {
+					min: null,
+					max: null,
+					powerups: []
+				}
 			};
 		}
 	}
@@ -165,7 +180,7 @@ export const migrateGameState = () => {
 					gameState.moneybags[mbName][defaultKey] =
 						// @ts-expect-error I promise this is type-safe
 						defaultGameState.moneybags['Dirt Poor Landscaping'][defaultKey];
-					console.log('Added', defaultKey, 'from', mbName);
+					console.log('Added', defaultKey, 'to', mbName);
 					dirty = true;
 				}
 			}

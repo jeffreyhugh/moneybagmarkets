@@ -23,7 +23,7 @@
 </svelte:head>
 
 <ModeWatcher defaultMode="light" defaultTheme="light" />
-<div class="flex min-h-dvh w-full flex-col items-center">
+<div class="flex min-h-dvh w-full flex-col items-center select-none">
 	<Header />
 	<div class="mb-8 w-full text-base md:text-xl">
 		{@render children()}
