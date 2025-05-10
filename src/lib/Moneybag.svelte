@@ -126,7 +126,7 @@
 >
 	{#if gameState.moneybags[moneybag.name].unlocked}
 		<div class="absolute top-1/2 left-1/2">
-			<Confetti x={[-0.4, 0.4]} y={[0.2, 0.5]} amount={20} colorArray={moneybag.colors.confetti} />
+			<Confetti x={[-0.4, 0.4]} y={[0.2, 0.5]} amount={30} colorArray={moneybag.colors.confetti} />
 		</div>
 	{/if}
 	{#if !gameState.moneybags[moneybag.name].unlocked}
