@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.4.0 - 2025-05-10
+#### Features
+- add notebook - (12205bb) - Jeffrey Hugh
+
+- - -
+
 ## v0.3.6 - 2025-05-10
 #### Bug Fixes
 - change plunging bros - (1eebe7b) - Jeffrey Hugh

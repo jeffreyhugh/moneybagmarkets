@@ -4,7 +4,7 @@
 
 	import { reset } from '../routes/gamestate.svelte';
 
-	const version = '0.3.6';
+	const version = '0.4.0';
 </script>
 
 <div class="mb-8 w-full flex-col items-stretch gap-2">
