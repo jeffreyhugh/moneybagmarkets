@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.3.3 - 2025-05-10
+#### Bug Fixes
+- revert 0 coins - (848b591) - Jeffrey Hugh
+
+- - -
+
 ## v0.3.2 - 2025-05-10
 #### Bug Fixes
 - add missing powerups - (c8cf528) - Jeffrey Hugh
