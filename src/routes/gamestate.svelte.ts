@@ -1,9 +1,11 @@
 import type { DateTime } from 'luxon';
+import { v4 } from 'uuid';
 
 import { MarketDataLastIndex } from '$lib/marketData';
 import { nextValue } from '$lib/nextValue';
 
 import defaultGameState from './defaultGameState.json';
+import { type Event_t } from './headlines';
 import { type Moneybag_t, moneybags, type Powerup_t } from './moneybags';
 
 export const ssr = false;
@@ -32,6 +34,10 @@ export type GameState_t = {
 	lastRandomEvent: DateTime | null;
 	maxEachMoneybag: number;
 	bonusSnacks: number;
+	events: (Event_t & {
+		id: string;
+		removeAtTick: number;
+	})[];
 };
 
 let pauseGame = $state(false);
@@ -65,20 +71,31 @@ export const gameState = $state(
 	) as GameState_t
 );
 
-setInterval(() => {
-	if (pauseGame) {
-		return;
-	}
+export const loadedEvents = $state<{ events: Event_t[] }>({ events: [] });
 
-	gameState.tick += 1;
-	for (const moneybag of moneybags) {
-		writeLatest(moneybag);
-	}
+export const gameLoop = () => {
+	const interval = setInterval(() => {
+		if (pauseGame) {
+			return;
+		}
 
-	if (gameState.tick % 5 === 0) {
-		save();
-	}
-}, 1_000);
+		gameState.tick += 1;
+		for (const moneybag of moneybags) {
+			writeLatest(moneybag);
+		}
+
+		if (gameState.tick % 60 === 0) {
+			nextEvent(gameState.tick);
+		}
+
+		if (gameState.tick % 5 === 0) {
+			console.debug('Saving, tick', gameState.tick);
+			save();
+		}
+	}, 1_000);
+
+	return () => clearInterval(interval);
+};
 
 const writeLatest = (moneybag: Moneybag_t) => {
 	if (gameState.tick % moneybag.market.updateOnMod !== 0) {
@@ -101,6 +118,25 @@ const writeLatest = (moneybag: Moneybag_t) => {
 
 	gameState.moneybags[moneybag.name].marketHistory =
 		snapshot as GameState_t['moneybags']['']['marketHistory'];
+};
+
+const nextEvent = (tick: number) => {
+	if (loadedEvents.events.length === 0) {
+		return;
+	}
+
+	const chosen = loadedEvents.events[Math.floor(Math.random() * loadedEvents.events.length)];
+
+	const duration = Math.floor(Math.random() * 4) + 2;
+
+	console.debug(`Added headline "${chosen.headline}" for ${duration * 60} ticks`);
+
+	gameState.events.push({
+		...chosen,
+		id: v4(),
+		removeAtTick: tick + 60 * duration
+	});
+	gameState.events = gameState.events.filter((event) => event.removeAtTick > tick);
 };
 
 const save = () => {

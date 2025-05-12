@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { cubicOut } from 'svelte/easing';
-	import { Tween } from 'svelte/motion';
-
 	import type { Moneybag_t } from '../routes/moneybags';
 	import { RAD2DEG } from './RAD2DEG';
 
@@ -45,20 +41,22 @@
 		pathDatas.push(ret);
 	}
 
-	let wheelRotation = new Tween(360 * 3 + Math.random() * 360, {
-		duration: 2000,
-		easing: cubicOut
-	});
+	// let wheelRotation = new Tween(360 * 3 + Math.random() * 360, {
+	// 	duration: 2000,
+	// 	easing: cubicOut
+	// });
 
-	onMount(() => (wheelRotation.target = 0));
+	const initialRotation = 360 * 3 + Math.random() * 360;
+
+	// onMount(() => (wheelRotation.target = 0));
 </script>
 
 <svg
-	class="aspect-square h-full w-auto"
+	class="color-changing-box aspect-square h-full w-auto"
 	viewBox="-1.2 -1.2 2.4 2.4"
 	style={`transform: rotate(${-angle * RAD2DEG - 90}deg)`}
 >
-	<g style={`transform:rotate(${wheelRotation.current}deg)`}>
+	<g class="unwind" style={`--initial-rotation:${initialRotation}deg;`}>
 		{#each pathDatas as pathData (pathData.data)}
 			<path d={pathData.data} fill={pathData.color} />
 		{/each}
@@ -69,3 +67,18 @@
 		transform={`translate(${pointerData.tipX}, ${pointerData.tipY}) rotate(${angle * RAD2DEG + 90})`}
 	/>
 </svg>
+
+<style>
+	.unwind {
+		animation: kfUnwind 2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+	}
+
+	@keyframes kfUnwind {
+		from {
+			rotate: var(--initial-rotation);
+		}
+		to {
+			rotate: 0deg;
+		}
+	}
+</style>

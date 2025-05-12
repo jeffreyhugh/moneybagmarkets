@@ -1,4 +1,5 @@
 import { gameState } from '../routes/gamestate.svelte';
+import type { Demographics_t } from '../routes/headlines';
 import type { Moneybag_t } from '../routes/moneybags';
 
 export const nextValue = (currentValue: number, moneybag: Moneybag_t) => {
@@ -11,10 +12,39 @@ export const nextValue = (currentValue: number, moneybag: Moneybag_t) => {
 		moneybag.market.lineWeight * currentValue +
 		(1 - moneybag.market.lineWeight) * moneybag.market.target;
 
+	const TMI = totalMarketImpacts(moneybag.applicableDemographics, moneybag.name);
+
+	const eventWeightedMidpoint = midpoint * (1 + TMI);
+
 	const sign = Math.random() >= 0.5 ? 1 : -1;
 	const amount = Math.random() * moneybag.market.absoluteVolatility;
 
+	const bonusAmount = amount * (1 + TMI);
+
 	return Math.round(
-		Math.max(Math.min(midpoint + sign * amount, moneybag.market.max), moneybag.market.min)
+		Math.max(
+			Math.min(eventWeightedMidpoint + sign * amount + bonusAmount, moneybag.market.max),
+			moneybag.market.min
+		)
 	);
+};
+
+const totalMarketImpacts = (demographics: Demographics_t[], mbName: string) => {
+	let impactPercent = 0;
+
+	for (const event of gameState.events) {
+		for (const demTarget of event.demographicTargets) {
+			if (demographics.includes(demTarget.demographic)) {
+				impactPercent += demTarget.effect.value;
+			}
+		}
+
+		for (const mbTarget of event.moneybagTargets) {
+			if (mbTarget.moneybag === mbName) {
+				impactPercent += mbTarget.effect.value;
+			}
+		}
+	}
+
+	return impactPercent / 100;
 };

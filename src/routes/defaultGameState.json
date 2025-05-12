@@ -22,5 +22,6 @@
 	"updateTick": 0,
 	"lastRandomEvent": null,
 	"maxEachMoneybag": 10,
-	"bonusSnacks": 0
+	"bonusSnacks": 0,
+	"events": []
 }

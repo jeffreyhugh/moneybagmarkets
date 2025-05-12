@@ -3,22 +3,28 @@
 	import { IconNotebook } from '@tabler/icons-svelte/icons';
 	import { onMount } from 'svelte';
 
+	import BreakingNews from '$lib/headline/BreakingNews.svelte';
+	import Headline from '$lib/headline/Headline.svelte';
+	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
 	import Notebook from '$lib/Notebook.svelte';
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
 
 	import Moneybag from '../lib/Moneybag.svelte';
 	import { coinEvents } from './coinEvents.svelte';
-	import { gameState, migrateGameState } from './gamestate.svelte';
+	import { gameLoop, gameState, migrateGameState } from './gamestate.svelte';
+	import { downloadEvents } from './headlines';
 	import { moneybags } from './moneybags';
 
 	let hideSparklines = $state(false);
 
 	let notebookDialog = $state<HTMLDialogElement>();
 
+	onMount(gameLoop);
 	onMount(migrateGameState);
+	onMount(downloadEvents);
 </script>
 
-<div class="border-base-300 sticky top-0 z-30 mb-2 border-b py-2 backdrop-blur-md select-none">
+<div class="sticky top-0 z-30 mb-2 py-2 backdrop-blur-md select-none">
 	<div class="mx-auto flex w-11/12 max-w-4xl items-center justify-between gap-1">
 		<div>
 			<label class="label ml-2">
@@ -49,6 +55,19 @@
 			>
 				<IconNotebook class="size-6 md:size-7" />
 			</button>
+		</div>
+	</div>
+	<div class="mx-auto w-11/12 max-w-4xl">
+		<div class="relative">
+			<HeadlineBanner>
+				{#each gameState.events as event, i (event.id)}
+					<Headline
+						className={i === gameState.events.length - 1 ? 'font-bold' : ''}
+						headline={event.headline}
+					/>
+				{/each}
+			</HeadlineBanner>
+			<BreakingNews />
 		</div>
 	</div>
 </div>

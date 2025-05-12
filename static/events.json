@@ -1,0 +1,597 @@
+[
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping wins 'Best Yard Makeover' award",
+		"moneybagTargets": [
+			{ "moneybag": "Dirt Poor Landscaping", "effect": { "type": "%", "value": 12 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class families face rising food costs",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": -10 } }]
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal expands to new states",
+		"moneybagTargets": [
+			{ "moneybag": "Anderson Cactus Removal", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged professionals invest in luxury goods",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": 8 } }]
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia and [[Faux Brothers Jewelry]] Faux Brothers Jewelry collaborate on limited collection",
+		"moneybagTargets": [
+			{ "moneybag": "Florals by Patricia", "effect": { "type": "%", "value": 10 } },
+			{ "moneybag": "Faux Brothers Jewelry", "effect": { "type": "%", "value": 7 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses face new regulations",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": -12 } }]
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim opens 24-hour locations",
+		"moneybagTargets": [{ "moneybag": "Stronk Jim", "effect": { "type": "%", "value": 14 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class investors diversify portfolios",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": 9 } }]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) expands runway capacity",
+		"moneybagTargets": [
+			{ "moneybag": "Underground Airport (KNDR)", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population embraces online shopping",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": -11 } }]
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press recalls contaminated batch",
+		"moneybagTargets": [
+			{ "moneybag": "Midnight Oil Press", "effect": { "type": "%", "value": -15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods manufacturers report record profits",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": 12 } }]
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery goes viral on FoodTok",
+		"moneybagTargets": [
+			{ "moneybag": "Grandma's Algorithmic Bakery", "effect": { "type": "%", "value": 14 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults embrace minimalist lifestyles",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": -8 } }]
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing faces class action lawsuit",
+		"moneybagTargets": [
+			{ "moneybag": "Cracked Plumbing", "effect": { "type": "%", "value": -13 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class sees wage increases",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": 10 } }]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ announces revolutionary investment product",
+		"moneybagTargets": [{ "moneybag": "The Vault™", "effect": { "type": "%", "value": 15 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_SERVICE}} Services sector experiences labor shortage",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 7, "effect": { "type": "%", "value": -14 } }]
+	},
+	{
+		"headline": "[[Pawn Dome]] Pawn Dome expands to luxury goods market",
+		"moneybagTargets": [{ "moneybag": "Pawn Dome", "effect": { "type": "%", "value": 11 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population faces healthcare cost increases",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": -12 } }]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink hosts championship tournament",
+		"moneybagTargets": [{ "moneybag": "Neon Roller Rink", "effect": { "type": "%", "value": 13 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class tax breaks announced",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": 15 } }]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax introduces healthy alternatives",
+		"moneybagTargets": [{ "moneybag": "11PM Snax", "effect": { "type": "%", "value": 9 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged workers face layoffs",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": -11 } }]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry discovers diamond mine",
+		"moneybagTargets": [
+			{ "moneybag": "Faux Brothers Jewelry", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses receive government grants",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": 13 } }]
+	},
+	{
+		"headline": "[[Gaslamp Galleria]] Gaslamp Galleria faces competition from new mall",
+		"moneybagTargets": [
+			{ "moneybag": "Gaslamp Galleria", "effect": { "type": "%", "value": -10 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class benefits expanded",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": 12 } }]
+	},
+	{
+		"headline": "[[Prune Juice, Inc.]] Prune Juice, Inc. patents new fermentation process",
+		"moneybagTargets": [
+			{ "moneybag": "Prune Juice, Inc.", "effect": { "type": "%", "value": 14 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults face student loan crisis",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": -15 } }]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping unionizes",
+		"moneybagTargets": [
+			{ "moneybag": "Dirt Poor Landscaping", "effect": { "type": "%", "value": 8 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods prices plummet due to overproduction",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": -13 } }]
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal faces invasive species threat",
+		"moneybagTargets": [
+			{ "moneybag": "Anderson Cactus Removal", "effect": { "type": "%", "value": -9 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class home ownership declines",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": -7 } }]
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia opens floral design school",
+		"moneybagTargets": [
+			{ "moneybag": "Florals by Patricia", "effect": { "type": "%", "value": 11 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population invests in reverse mortgages",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": 9 } }]
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim faces steroid scandal",
+		"moneybagTargets": [{ "moneybag": "Stronk Jim", "effect": { "type": "%", "value": -14 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_SERVICE}} Services sector adopts automation",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 7, "effect": { "type": "%", "value": 7 } }]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) experiences security breach",
+		"moneybagTargets": [
+			{ "moneybag": "Underground Airport (KNDR)", "effect": { "type": "%", "value": -12 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class luxury tax implemented",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": -15 } }]
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press wins international quality award",
+		"moneybagTargets": [
+			{ "moneybag": "Midnight Oil Press", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged consumers embrace DIY culture",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": 6 } }]
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery faces flour shortage",
+		"moneybagTargets": [
+			{ "moneybag": "Grandma's Algorithmic Bakery", "effect": { "type": "%", "value": -8 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses benefit from tourism boom",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": 14 } }]
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing launches 24/7 emergency service",
+		"moneybagTargets": [{ "moneybag": "Cracked Plumbing", "effect": { "type": "%", "value": 12 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class faces rising rent costs",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": -15 } }]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ implicated in financial scandal",
+		"moneybagTargets": [{ "moneybag": "The Vault™", "effect": { "type": "%", "value": -14 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults embrace gig economy",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": 10 } }]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax expands to college campuses nationwide",
+		"moneybagTargets": [{ "moneybag": "11PM Snax", "effect": { "type": "%", "value": 13 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods supply chain improves dramatically",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": 11 } }]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry celebrates 100th anniversary",
+		"moneybagTargets": [
+			{ "moneybag": "Faux Brothers Jewelry", "effect": { "type": "%", "value": 9 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class credit card debt reaches record high",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": -12 } }]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping expands to commercial clients",
+		"moneybagTargets": [
+			{ "moneybag": "Dirt Poor Landscaping", "effect": { "type": "%", "value": 10 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population embraces urban gardening",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": 8 } }]
+	},
+	{
+		"headline": "[[Prune Juice, Inc.]] Prune Juice, Inc. launches new organic line",
+		"moneybagTargets": [
+			{ "moneybag": "Prune Juice, Inc.", "effect": { "type": "%", "value": 12 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class faces grocery price inflation",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": -14 } }]
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal develops eco-friendly method",
+		"moneybagTargets": [
+			{ "moneybag": "Anderson Cactus Removal", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_SERVICE}} Services sector sees wage stagnation",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 7, "effect": { "type": "%", "value": -9 } }]
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia wins wedding industry award",
+		"moneybagTargets": [
+			{ "moneybag": "Florals by Patricia", "effect": { "type": "%", "value": 13 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged consumers prioritize experiences over goods",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": 7 } }]
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim introduces senior fitness program",
+		"moneybagTargets": [{ "moneybag": "Stronk Jim", "effect": { "type": "%", "value": 11 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class luxury spending reaches new highs",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": 15 } }]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) adds private jet terminals",
+		"moneybagTargets": [
+			{ "moneybag": "Underground Airport (KNDR)", "effect": { "type": "%", "value": 14 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods manufacturers face raw material shortages",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": -12 } }]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry expands to Asian markets",
+		"moneybagTargets": [
+			{ "moneybag": "Faux Brothers Jewelry", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults delay major purchases",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": -10 } }]
+	},
+	{
+		"headline": "[[Gaslamp Galleria]] Gaslamp Galleria hosts holiday festival",
+		"moneybagTargets": [{ "moneybag": "Gaslamp Galleria", "effect": { "type": "%", "value": 9 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class home improvement spending surges",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": 11 } }]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax faces health code violations",
+		"moneybagTargets": [{ "moneybag": "11PM Snax", "effect": { "type": "%", "value": -13 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses benefit from staycation trend",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": 10 } }]
+	},
+	{
+		"headline": "[[Pawn Dome]] Pawn Dome offers low-interest loans",
+		"moneybagTargets": [{ "moneybag": "Pawn Dome", "effect": { "type": "%", "value": 8 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population downsizes homes",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": -7 } }]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink renovates vintage flooring",
+		"moneybagTargets": [{ "moneybag": "Neon Roller Rink", "effect": { "type": "%", "value": 12 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class benefits face cuts",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": -15 } }]
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press expands to European markets",
+		"moneybagTargets": [
+			{ "moneybag": "Midnight Oil Press", "effect": { "type": "%", "value": 14 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_SERVICE}} Services sector embraces AI technology",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 7, "effect": { "type": "%", "value": 9 } }]
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery opens 24-hour location",
+		"moneybagTargets": [
+			{ "moneybag": "Grandma's Algorithmic Bakery", "effect": { "type": "%", "value": 13 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged workers face retirement uncertainty",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": -11 } }]
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing wins commercial contract",
+		"moneybagTargets": [{ "moneybag": "Cracked Plumbing", "effect": { "type": "%", "value": 10 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class invests in rare collectibles",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": 12 } }]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ introduces platinum membership",
+		"moneybagTargets": [{ "moneybag": "The Vault™", "effect": { "type": "%", "value": 15 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods retailers overstock holiday inventory",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": -8 } }]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping faces drought restrictions",
+		"moneybagTargets": [
+			{ "moneybag": "Dirt Poor Landscaping", "effect": { "type": "%", "value": -12 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults embrace side hustles",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": 9 } }]
+	},
+	{
+		"headline": "[[Prune Juice, Inc.]] Prune Juice, Inc. recalls popular flavor",
+		"moneybagTargets": [
+			{ "moneybag": "Prune Juice, Inc.", "effect": { "type": "%", "value": -11 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class faces childcare cost crisis",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": -14 } }]
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal featured on home improvement show",
+		"moneybagTargets": [
+			{ "moneybag": "Anderson Cactus Removal", "effect": { "type": "%", "value": 13 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses adapt to remote work trends",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": 7 } }]
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia launches subscription service",
+		"moneybagTargets": [
+			{ "moneybag": "Florals by Patricia", "effect": { "type": "%", "value": 10 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population moves to warmer climates",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 2, "effect": { "type": "%", "value": -9 } }]
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim introduces virtual training",
+		"moneybagTargets": [{ "moneybag": "Stronk Jim", "effect": { "type": "%", "value": 8 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class benefits from minimum wage increase",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 3, "effect": { "type": "%", "value": 12 } }]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) adds luxury lounges",
+		"moneybagTargets": [
+			{ "moneybag": "Underground Airport (KNDR)", "effect": { "type": "%", "value": 15 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_SERVICE}} Services sector faces customer satisfaction decline",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 7, "effect": { "type": "%", "value": -10 } }]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry celebrates anniversary sale",
+		"moneybagTargets": [
+			{ "moneybag": "Faux Brothers Jewelry", "effect": { "type": "%", "value": 14 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_MID}} Middle-Aged consumers prioritize health spending",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 1, "effect": { "type": "%", "value": 9 } }]
+	},
+	{
+		"headline": "[[Gaslamp Galleria]] Gaslamp Galleria adds food hall",
+		"moneybagTargets": [{ "moneybag": "Gaslamp Galleria", "effect": { "type": "%", "value": 11 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class faces new wealth tax",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 5, "effect": { "type": "%", "value": -13 } }]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax expands vegan options",
+		"moneybagTargets": [{ "moneybag": "11PM Snax", "effect": { "type": "%", "value": 10 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_GOOD}} Goods manufacturers streamline production",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 6, "effect": { "type": "%", "value": 8 } }]
+	},
+	{
+		"headline": "[[Pawn Dome]] Pawn Dome offers jewelry authentication",
+		"moneybagTargets": [{ "moneybag": "Pawn Dome", "effect": { "type": "%", "value": 9 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults embrace financial literacy",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 0, "effect": { "type": "%", "value": 7 } }]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink hosts national competition",
+		"moneybagTargets": [{ "moneybag": "Neon Roller Rink", "effect": { "type": "%", "value": 15 } }],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_MID}} Middle-Class debt consolidation increases",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 4, "effect": { "type": "%", "value": -10 } }]
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press faces olive shortage",
+		"moneybagTargets": [
+			{ "moneybag": "Midnight Oil Press", "effect": { "type": "%", "value": -12 } }
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{TYPE_ESTABLISHMENT}} Establishment businesses expand hours",
+		"moneybagTargets": [],
+		"demographicTargets": [{ "demographic": 8, "effect": { "type": "%", "value": 9 } }]
+	}
+]
