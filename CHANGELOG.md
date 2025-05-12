@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.5.0 - 2025-05-12
+#### Bug Fixes
+- nerf double and triple money in preparation for casino - (ebc6ed6) - Jeffrey Hugh
+#### Features
+- headline update - (f56d88a) - Jeffrey Hugh
+
+- - -
+
 ## v0.4.0 - 2025-05-10
 #### Features
 - add notebook - (12205bb) - Jeffrey Hugh
