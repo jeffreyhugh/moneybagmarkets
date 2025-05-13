@@ -1,3 +1,4 @@
+import { del, get, set } from 'idb-keyval';
 import type { DateTime } from 'luxon';
 import { v4 } from 'uuid';
 
@@ -66,9 +67,7 @@ for (const moneybag of moneybags) {
 }
 
 export const gameState = $state(
-	JSON.parse(
-		localStorage.getItem('gamestate') || JSON.stringify(defaultPlusMoneybags)
-	) as GameState_t
+	JSON.parse((await get('gamestate')) || JSON.stringify(defaultPlusMoneybags)) as GameState_t
 );
 
 export const loadedEvents = $state<{ events: Event_t[] }>({ events: [] });
@@ -140,10 +139,10 @@ const nextEvent = (tick: number) => {
 };
 
 const save = () => {
-	localStorage.setItem('gamestate', JSON.stringify(gameState));
+	set('gamestate', JSON.stringify(gameState));
 };
 
-export const reset = () => {
+export const reset = async () => {
 	pauseGame = true;
 	const yes = confirm('Are you sure? Your save data will be lost.');
 	if (!yes) {
@@ -151,7 +150,7 @@ export const reset = () => {
 		return;
 	}
 
-	localStorage.removeItem('gamestate');
+	await del('gamestate');
 	window.location.reload();
 };
 
