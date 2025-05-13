@@ -42,7 +42,7 @@ export type GameState_t = {
 	})[];
 };
 
-let pauseGame = $state(false);
+let pauseGame = $state(true);
 
 const defaultPlusMoneybags = { ...defaultGameState } as unknown as GameState_t;
 for (const moneybag of moneybags) {
@@ -68,8 +68,22 @@ for (const moneybag of moneybags) {
 }
 
 export const gameState = $state(
-	JSON.parse((await get('gamestate')) || JSON.stringify(defaultPlusMoneybags)) as GameState_t
+	// JSON.parse((await get('gamestate')) || JSON.stringify(defaultPlusMoneybags)) as GameState_t
+	{} as GameState_t
 );
+
+export const loadGameState = async () => {
+	const loadedGameState = JSON.parse(
+		(await get('gamestate')) || JSON.stringify(defaultPlusMoneybags)
+	) as GameState_t;
+
+	for (const key of Object.keys(loadedGameState)) {
+		// @ts-expect-error I promise this is type-safe
+		gameState[key] = loadedGameState[key];
+	}
+
+	pauseGame = false;
+};
 
 export const loadedEvents = $state<{ events: Event_t[] }>({ events: [] });
 
