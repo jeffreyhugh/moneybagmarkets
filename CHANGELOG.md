@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.6.1 - 2025-05-13
+#### Bug Fixes
+- move nixpacks to node 22 - (aae33b1) - Jeffrey Hugh
+
+- - -
+
 ## v0.6.0 - 2025-05-13
 #### Bug Fixes
 - headlines last 2-3 days - (5407073) - Jeffrey Hugh
