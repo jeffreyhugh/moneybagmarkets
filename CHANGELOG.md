@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.6.0 - 2025-05-13
+#### Bug Fixes
+- headlines last 2-3 days - (5407073) - Jeffrey Hugh
+- breaking news text color - (fd7859f) - Jeffrey Hugh
+- change imports to avoid download 10mb of icons on load - (2c63ac5) - Jeffrey Hugh
+#### Features
+- offline support and pwa - (b5d80f4) - Jeffrey Hugh
+- events v3 with randomness - (979c9b8) - Jeffrey Hugh
+- move to indexeddb - (a9cace1) - Jeffrey Hugh
+
+- - -
+
 ## v0.5.0 - 2025-05-12
 #### Bug Fixes
 - nerf double and triple money in preparation for casino - (ebc6ed6) - Jeffrey Hugh
