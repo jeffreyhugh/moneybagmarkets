@@ -11,7 +11,7 @@
 
 	import Moneybag from '../lib/Moneybag.svelte';
 	import { coinEvents } from './coinEvents.svelte';
-	import { gameLoop, gameState, migrateGameState } from './gamestate.svelte';
+	import { gameLoop, gameState, loadedEvents, migrateGameState } from './gamestate.svelte';
 	import { downloadEvents } from './headlines';
 	import { moneybags } from './moneybags';
 
@@ -67,7 +67,7 @@
 					/>
 				{/each}
 			</HeadlineBanner>
-			<BreakingNews />
+			<BreakingNews enabled={loadedEvents.events.length > 0} />
 		</div>
 	</div>
 </div>

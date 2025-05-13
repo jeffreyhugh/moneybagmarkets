@@ -3,11 +3,13 @@
 
 	import { gameState } from '../../routes/gamestate.svelte';
 
+	const { enabled }: { enabled?: boolean } = $props();
+
 	const breaking = $derived(gameState.tick % 60 >= 58 || gameState.tick % 60 < 5);
 	const headlinesEnabled = $derived(gameState.tick > 55);
 </script>
 
-{#if headlinesEnabled && breaking}
+{#if enabled && headlinesEnabled && breaking}
 	<div
 		class="expand bg-warning text-warning-content absolute top-0 left-1/2 flex h-full w-0 -translate-x-1/2 items-center justify-center overflow-hidden text-sm text-nowrap md:text-base"
 	>

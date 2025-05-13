@@ -16,7 +16,7 @@ export enum Demographics_t {
 type BaseTarget_t = {
 	effect: {
 		type: '%';
-		value: number;
+		isNegative?: boolean;
 	};
 };
 
@@ -32,6 +32,24 @@ export type Event_t = {
 	moneybagTargets: MoneybagTarget_t[];
 	demographicTargets: DemographicTarget_t[];
 	headline: string;
+};
+
+export type ActiveEvent_t = {
+	headline: string;
+	moneybagTargets: {
+		moneybag: Moneybag_t['name'];
+		effect: {
+			type: '%';
+			value: number;
+		};
+	}[];
+	demographicTargets: {
+		demographic: Demographics_t;
+		effect: {
+			type: '%';
+			value: number;
+		};
+	}[];
 };
 
 export const downloadEvents = async () => {

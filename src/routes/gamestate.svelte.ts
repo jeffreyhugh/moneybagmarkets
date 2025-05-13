@@ -4,9 +4,10 @@ import { v4 } from 'uuid';
 
 import { MarketDataLastIndex } from '$lib/marketData';
 import { nextValue } from '$lib/nextValue';
+import { randBetween } from '$lib/randBetween';
 
 import defaultGameState from './defaultGameState.json';
-import { type Event_t } from './headlines';
+import { type ActiveEvent_t, type Event_t } from './headlines';
 import { type Moneybag_t, moneybags, type Powerup_t } from './moneybags';
 
 export const ssr = false;
@@ -35,7 +36,7 @@ export type GameState_t = {
 	lastRandomEvent: DateTime | null;
 	maxEachMoneybag: number;
 	bonusSnacks: number;
-	events: (Event_t & {
+	events: (ActiveEvent_t & {
 		id: string;
 		removeAtTick: number;
 	})[];
@@ -131,7 +132,21 @@ const nextEvent = (tick: number) => {
 	console.debug(`Added headline "${chosen.headline}" for ${duration * 60} ticks`);
 
 	gameState.events.push({
-		...chosen,
+		headline: chosen.headline,
+		demographicTargets: chosen.demographicTargets.map((dt) => ({
+			demographic: dt.demographic,
+			effect: {
+				type: dt.effect.type,
+				value: randBetween(1, 7) * (dt.effect.isNegative ? -1 : 1)
+			}
+		})),
+		moneybagTargets: chosen.moneybagTargets.map((mt) => ({
+			moneybag: mt.moneybag,
+			effect: {
+				type: mt.effect.type,
+				value: randBetween(1, 21) * (mt.effect.isNegative ? -1 : 1)
+			}
+		})),
 		id: v4(),
 		removeAtTick: tick + 60 * duration
 	});
