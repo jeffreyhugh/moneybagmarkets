@@ -126,7 +126,7 @@ const nextEvent = (tick: number) => {
 
 	const chosen = loadedEvents.events[Math.floor(Math.random() * loadedEvents.events.length)];
 
-	const duration = Math.floor(Math.random() * 4) + 2;
+	const duration = Math.floor(Math.random() * 2) + 2;
 
 	console.debug(`Added headline "${chosen.headline}" for ${duration * 60} ticks`);
 
