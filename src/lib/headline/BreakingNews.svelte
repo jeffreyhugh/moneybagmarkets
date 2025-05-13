@@ -9,7 +9,7 @@
 
 {#if headlinesEnabled && breaking}
 	<div
-		class="expand bg-warning absolute top-0 left-1/2 flex h-full w-0 -translate-x-1/2 items-center justify-center overflow-hidden text-sm text-nowrap md:text-base"
+		class="expand bg-warning text-warning-content absolute top-0 left-1/2 flex h-full w-0 -translate-x-1/2 items-center justify-center overflow-hidden text-sm text-nowrap md:text-base"
 	>
 		<News /> Breaking News
 	</div>
