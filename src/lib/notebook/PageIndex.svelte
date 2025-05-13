@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { IconQuestionMark } from '@tabler/icons-svelte';
+	import QuestionMark from '@tabler/icons-svelte/icons/question-mark';
 
 	import { gameState } from '../../routes/gamestate.svelte';
 	import { moneybags } from '../../routes/moneybags';
 
-	const { setPage }: { setPage: (page: string) => void } = $props();
+	const { setPage }: { setPage: (_page: string) => void } = $props();
 </script>
 
 <h3 class="mb-2 text-xl font-bold md:text-2xl">Moneybags</h3>
@@ -31,7 +31,7 @@
 				{#if gameState.moneybags[moneybag.name].unlocked && moneybag.icon}
 					<moneybag.icon class="size-5 md:size-6" />
 				{:else}
-					<IconQuestionMark class="size-5 md:size-6" />
+					<QuestionMark class="size-5 md:size-6" />
 				{/if}
 			</div>
 			<div>{gameState.moneybags[moneybag.name].unlocked ? moneybag.name : '???'}</div>

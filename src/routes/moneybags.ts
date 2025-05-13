@@ -1,4 +1,3 @@
-import { IconLock } from '@tabler/icons-svelte';
 import Barbell from '@tabler/icons-svelte/icons/barbell';
 import Bottle from '@tabler/icons-svelte/icons/bottle';
 import Bread from '@tabler/icons-svelte/icons/bread';
@@ -10,6 +9,7 @@ import EggCracked from '@tabler/icons-svelte/icons/egg-cracked';
 import Flask from '@tabler/icons-svelte/icons/flask';
 import IceCream from '@tabler/icons-svelte/icons/ice-cream';
 import type Icons from '@tabler/icons-svelte/icons/icons';
+import LockIcon from '@tabler/icons-svelte/icons/lock';
 import Plant from '@tabler/icons-svelte/icons/plant';
 import Receipt from '@tabler/icons-svelte/icons/receipt';
 import RollerSkating from '@tabler/icons-svelte/icons/roller-skating';
@@ -909,7 +909,7 @@ const crackedPlumbing: Moneybag_t = {
 const theVault: Moneybag_t = {
 	name: 'The Vault™',
 	lore: "You've finally made it to the ultra-exclusive club. Welcome to the 1% -- may you stay richer than the 99%.",
-	icon: IconLock,
+	icon: LockIcon,
 	applicableDemographics: [DEM.AGE_MID, DEM.AGE_OLD, DEM.MONEY_RICH, DEM.TYPE_ESTABLISHMENT],
 	colors: {
 		text: 'text-white',

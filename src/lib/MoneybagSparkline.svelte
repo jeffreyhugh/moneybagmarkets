@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
+	import TrendingDown from '@tabler/icons-svelte/icons/trending-down';
+	import TrendingUp from '@tabler/icons-svelte/icons/trending-up';
 	import { colord } from 'colord';
 
 	import { MarketDataLastIndex } from '$lib/marketData';
@@ -17,11 +18,11 @@
 		<span class="grid grid-cols-1 grid-rows-1">
 			{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
 				<span class="col-start-1 row-start-1">
-					<IconTrendingUp class="inline size-6" />
+					<TrendingUp class="inline size-6" />
 				</span>
 			{:else}
 				<span class="col-start-1 row-start-1">
-					<IconTrendingDown class="inline size-6" />
+					<TrendingDown class="inline size-6" />
 				</span>
 			{/if}
 		</span>
@@ -56,11 +57,11 @@
 			<span class="grid grid-cols-1 grid-rows-1">
 				{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
 					<span class="col-start-1 row-start-1">
-						<IconTrendingUp class="inline size-4 md:size-6" />
+						<TrendingUp class="inline size-4 md:size-6" />
 					</span>
 				{:else}
 					<span class="col-start-1 row-start-1">
-						<IconTrendingDown class="inline size-4 md:size-6" />
+						<TrendingDown class="inline size-4 md:size-6" />
 					</span>
 				{/if}
 			</span>

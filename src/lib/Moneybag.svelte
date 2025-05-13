@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { IconMoneybag, IconTrendingDown, IconTrendingUp } from '@tabler/icons-svelte';
+	import Moneybag from '@tabler/icons-svelte/icons/moneybag';
 	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
+	import TrendingDown from '@tabler/icons-svelte/icons/trending-down';
+	import TrendingUp from '@tabler/icons-svelte/icons/trending-up';
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
 
@@ -194,7 +196,7 @@
 					{#if moneybag.icon}
 						<moneybag.icon class="size-12 md:size-16" />
 					{:else}
-						<IconMoneybag class="size-12 md:size-16" />
+						<Moneybag class="size-12 md:size-16" />
 					{/if}
 				</div>
 			{/if}
@@ -214,11 +216,11 @@
 					&middot; <span class="grid grid-cols-1 grid-rows-1">
 						{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
 							<span class="col-start-1 row-start-1">
-								<IconTrendingUp class="inline size-4" />
+								<TrendingUp class="inline size-4" />
 							</span>
 						{:else}
 							<span class="col-start-1 row-start-1">
-								<IconTrendingDown class="inline size-4" />
+								<TrendingDown class="inline size-4" />
 							</span>
 						{/if}
 					</span>

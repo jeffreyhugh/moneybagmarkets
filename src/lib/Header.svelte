@@ -1,5 +1,6 @@
 <script>
-	import { IconMoon, IconSun } from '@tabler/icons-svelte';
+	import Moon from '@tabler/icons-svelte/icons/moon';
+	import Sun from '@tabler/icons-svelte/icons/sun';
 	import { setMode, setTheme, theme } from 'mode-watcher';
 
 	import { reset } from '../routes/gamestate.svelte';
@@ -22,9 +23,9 @@
 			}}
 		>
 			{#if theme.current === 'light'}
-				<IconSun />
+				<Sun />
 			{:else}
-				<IconMoon />
+				<Moon />
 			{/if}
 		</button>
 	</div>

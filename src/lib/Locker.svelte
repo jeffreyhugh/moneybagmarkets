@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { IconLock, IconPigMoney } from '@tabler/icons-svelte';
+	import Lock from '@tabler/icons-svelte/icons/lock';
+	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
 	import { fade } from 'svelte/transition';
 
 	import { coin } from '../routes/coinEvents.svelte';
@@ -25,7 +26,7 @@
 	out:fade
 >
 	<div>
-		<IconLock class="size-8" />
+		<Lock class="size-8" />
 	</div>
 	<button
 		type="button"
@@ -42,7 +43,7 @@
 		]}
 		onclick={unlock}
 	>
-		Unlock (<IconPigMoney class="-m-1 opacity-100" />
+		Unlock (<PigMoney class="-m-1 opacity-100" />
 		{moneybag.costToUnlock.toLocaleString(undefined, numberFormatOptions)})
 	</button>
 </div>

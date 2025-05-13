@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { IconPigMoney } from '@tabler/icons-svelte';
-	import { IconNotebook } from '@tabler/icons-svelte/icons';
+	import NotebookIcon from '@tabler/icons-svelte/icons/notebook';
+	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
 	import { onMount } from 'svelte';
 
 	import BreakingNews from '$lib/headline/BreakingNews.svelte';
@@ -34,7 +34,7 @@
 		</div>
 		<div class="relative top-0 mr-2 flex items-center justify-end gap-1 text-xl md:text-2xl">
 			<div class="relative flex items-center gap-1">
-				<IconPigMoney class="size-6 md:size-7" />
+				<PigMoney class="size-6 md:size-7" />
 				{gameState.coins.toLocaleString(undefined, numberFormatOptions)}
 				{#each coinEvents.events as e (e.id)}
 					<div
@@ -53,7 +53,7 @@
 				type="button"
 				onclick={() => notebookDialog?.show()}
 			>
-				<IconNotebook class="size-6 md:size-7" />
+				<NotebookIcon class="size-6 md:size-7" />
 			</button>
 		</div>
 	</div>
