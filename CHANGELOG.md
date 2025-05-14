@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.6 - 2025-05-14
+#### Bug Fixes
+- add useless comment - (f97583c) - Jeffrey Hugh
+#### Revert
+- add useless comment - (0cb7690) - Jeffrey Hugh
+
+- - -
+
 ## v0.8.5 - 2025-05-14
 #### Bug Fixes
 - add useless comment - (5d0ec89) - Jeffrey Hugh
