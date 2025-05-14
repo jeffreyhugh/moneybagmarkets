@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.0 - 2025-05-14
+#### Bug Fixes
+- pwa manifest cleanup - (0b26c31) - Jeffrey Hugh
+- markets were too high from incorrect event calculations - (c16654b) - Jeffrey Hugh
+#### Features
+- new events - (21e1d2e) - Jeffrey Hugh
+#### Refactoring
+- refactor everything - (f8aaad2) - Jeffrey Hugh
+
+- - -
+
 ## v0.6.1 - 2025-05-13
 #### Bug Fixes
 - move nixpacks to node 22 - (aae33b1) - Jeffrey Hugh
