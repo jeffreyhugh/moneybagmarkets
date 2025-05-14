@@ -6,6 +6,8 @@
 	import { pwaInfo } from 'virtual:pwa-info';
 	import { useRegisterSW } from 'virtual:pwa-register/svelte';
 
+	import { saveBeforeUpdate } from '$lib/gameState/gamestate.svelte';
+
 	import Header from '../lib/Header.svelte';
 
 	let { children } = $props();
@@ -33,7 +35,10 @@
 						}
 					});
 
-					if (resp?.status === 200) await r.update();
+					if (resp?.status === 200) {
+						await saveBeforeUpdate();
+						await r.update();
+					}
 				}, 1000 * 60);
 			}
 		},

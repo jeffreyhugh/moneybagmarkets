@@ -167,8 +167,13 @@ const nextEvent = (tick: number) => {
 	gameState.events = gameState.events.filter((event) => event.removeAtTick > tick);
 };
 
-const save = () => {
-	set('gamestate', JSON.stringify(gameState));
+const save = async () => {
+	await set('gamestate', JSON.stringify(gameState));
+};
+
+export const saveBeforeUpdate = async () => {
+	pauseGame = true;
+	await save();
 };
 
 export const reset = async () => {
