@@ -8,6 +8,8 @@
 
 	import Header from '../lib/Header.svelte';
 
+	// useless comment
+
 	let { children } = $props();
 
 	const webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
