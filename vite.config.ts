@@ -35,44 +35,44 @@ export default defineConfig({
 			registerType: 'autoUpdate',
 			manifest: {
 				background_color: '#ffffff',
-				// theme_color: '#7CCF00',
+				theme_color: '#ffffff00',
 				name: 'moneybag.markets',
 				description:
-					'Amass wealth by buying, selling, and opening moneybags on the moneybag market.',
-				short_name: 'MNYBG.MRKTS',
+					'Amass wealth by buying, selling, and opening moneybags on the moneybag markets.',
+				short_name: 'Moneybag',
 				start_url: '/',
 				display: 'standalone',
 				orientation: 'portrait',
 				icons: [
 					{
+						src: '/favicon.svg',
+						sizes: '512x512',
+						type: 'image/svg+xml',
+						purpose: 'any'
+					},
+					{
+						src: '/web-app-manifest-192x192.png',
+						sizes: '192x192',
+						type: 'image/png',
+						purpose: 'maskable'
+					},
+					{
+						src: '/web-app-manifest-512x512.png',
+						sizes: '512x512',
+						type: 'image/png',
+						purpose: 'maskable'
+					},
+					{
 						src: '/favicon.ico',
-						sizes: '256x256',
+						sizes: '48x48',
 						type: 'image/x-icon',
 						purpose: 'any'
 					},
 					{
-						src: '/favicon.svg',
-						sizes: '24x24',
-						type: 'image/svg+xml',
-						purpose: 'any'
-					},
-					{
-						src: '/favicon-144.svg',
-						sizes: '144x144',
-						type: 'image/svg+xml',
-						purpose: 'any'
-					},
-					{
-						src: '/favicon-192.svg',
-						sizes: '192x192',
-						type: 'image/svg+xml',
-						purpose: 'any'
-					},
-					{
-						src: '/favicon-512.svg',
-						sizes: '512x512',
-						type: 'image/svg+xml',
-						purpose: 'any'
+						src: '/apple-touch-icon.png',
+						sizes: '180x180',
+						type: 'image/png',
+						purpose: 'maskable'
 					}
 				]
 			}
