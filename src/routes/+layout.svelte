@@ -40,8 +40,6 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifestLink}
 
-	<!-- useless comment -->
-
 	<!-- #region apple icons-->
 	<link
 		rel="apple-touch-startup-image"
