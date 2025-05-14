@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.9.1 - 2025-05-14
+#### Bug Fixes
+- save before updating sw - (f904f63) - Jeffrey Hugh
+
+- - -
+
 ## v0.9.0 - 2025-05-14
 #### Features
 - auto update SW and PWA when new versions come out - (24e002c) - Jeffrey Hugh
