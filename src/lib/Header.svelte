@@ -14,7 +14,7 @@
 		updateServiceWorker: (reloadPage?: boolean) => Promise<void>;
 	} = $props();
 
-	const version = '0.7.2';
+	const version = '0.8.0';
 </script>
 
 <div class="mb-8 w-full flex-col items-stretch gap-2">
