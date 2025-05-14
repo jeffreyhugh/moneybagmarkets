@@ -16,19 +16,12 @@
 		onRegisteredSW(swUrl, r) {
 			console.log('SW registered');
 			if (r) {
-				console.debug('setting interval');
 				setInterval(async () => {
 					if (r.installing || !navigator) {
-						console.debug('SW interval early return', r.installing, navigator);
 						return;
 					}
 
 					if ('connection' in navigator && !navigator.onLine) {
-						console.debug(
-							'SW interval early return 2',
-							'connection' in navigator,
-							!navigator.onLine
-						);
 						return;
 					}
 
@@ -39,8 +32,6 @@
 							'cache-control': 'no-cache'
 						}
 					});
-
-					console.debug('SW interval response', resp);
 
 					if (resp?.status === 200) await r.update();
 				}, 1000 * 60);
