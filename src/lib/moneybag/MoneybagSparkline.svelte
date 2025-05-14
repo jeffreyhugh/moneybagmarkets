@@ -3,12 +3,12 @@
 	import TrendingUp from '@tabler/icons-svelte/icons/trending-up';
 	import { colord } from 'colord';
 
-	import { MarketDataLastIndex } from '$lib/marketData';
+	import { gameState } from '$lib/gameState/gamestate.svelte';
+	import type { Moneybag_t } from '$lib/gameState/moneybags';
+	import { numberFormatOptions } from '$lib/numberFormatOptions';
+	import Sparkline from '$lib/Sparkline.svelte';
 
-	import { gameState } from '../routes/gamestate.svelte';
-	import type { Moneybag_t } from '../routes/moneybags';
-	import { numberFormatOptions } from './numberFormatOptions';
-	import Sparkline from './Sparkline.svelte';
+	import { MarketDataLastIndex } from './marketData';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 </script>

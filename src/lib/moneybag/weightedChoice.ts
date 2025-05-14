@@ -1,4 +1,4 @@
-import type { Moneybag_t } from '../routes/moneybags';
+import type { Moneybag_t } from '../gameState/moneybags';
 
 export const weightedChoice = (
 	open: Moneybag_t['open']

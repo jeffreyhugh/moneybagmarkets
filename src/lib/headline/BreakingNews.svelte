@@ -1,7 +1,7 @@
 <script lang="ts">
 	import News from '@tabler/icons-svelte/icons/news';
 
-	import { gameState } from '../../routes/gamestate.svelte';
+	import { gameState } from '$lib/gameState/gamestate.svelte';
 
 	const { enabled }: { enabled?: boolean } = $props();
 

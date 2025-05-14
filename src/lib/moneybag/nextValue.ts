@@ -1,6 +1,6 @@
-import { gameState } from '../routes/gamestate.svelte';
-import type { Demographics_t } from '../routes/headlines';
-import type { Moneybag_t } from '../routes/moneybags';
+import { gameState } from '$lib/gameState/gamestate.svelte';
+import type { Demographics_t } from '$lib/gameState/headlines';
+import type { Moneybag_t } from '$lib/gameState/moneybags';
 
 export const nextValue = (currentValue: number, moneybag: Moneybag_t) => {
 	if (gameState.moneybags[moneybag.name].flashSales > 0) {

@@ -3,7 +3,7 @@
 	import Sun from '@tabler/icons-svelte/icons/sun';
 	import { setMode, setTheme, theme } from 'mode-watcher';
 
-	import { reset } from '../routes/gamestate.svelte';
+	import { reset } from './gameState/gamestate.svelte';
 
 	const version = '0.6.1';
 </script>

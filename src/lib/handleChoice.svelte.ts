@@ -1,7 +1,8 @@
-import { coin } from '../routes/coinEvents.svelte';
-import { gameState } from '../routes/gamestate.svelte';
-import type { Moneybag_t } from '../routes/moneybags';
-import { MarketDataLastIndex } from './marketData';
+import { coin } from '$lib/coinEvents.svelte';
+
+import { gameState } from './gameState/gamestate.svelte';
+import type { Moneybag_t } from './gameState/moneybags';
+import { MarketDataLastIndex } from './moneybag/marketData';
 
 export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
 	// gameState.moneybags[moneybag.name].owned -= 1;

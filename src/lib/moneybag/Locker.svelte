@@ -3,10 +3,11 @@
 	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
 	import { fade } from 'svelte/transition';
 
-	import { coin } from '../routes/coinEvents.svelte';
-	import { gameState } from '../routes/gamestate.svelte';
-	import type { Moneybag_t } from '../routes/moneybags';
-	import { numberFormatOptions } from './numberFormatOptions';
+	import { coin } from '$lib/coinEvents.svelte';
+	import { gameState } from '$lib/gameState/gamestate.svelte';
+	import type { Moneybag_t } from '$lib/gameState/moneybags';
+
+	import { numberFormatOptions } from '../numberFormatOptions';
 
 	const { moneybag }: { moneybag: Moneybag_t } = $props();
 

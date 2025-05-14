@@ -1,9 +1,7 @@
 export const numberFormatOptions: Intl.NumberFormatOptions = {
 	notation: 'compact',
 	compactDisplay: 'short',
-	minimumSignificantDigits: 3,
-	maximumSignificantDigits: 4,
-	maximumFractionDigits: 2,
-	minimumFractionDigits: 1,
+	maximumFractionDigits: 2, // Cap at 2 decimal places
+	minimumFractionDigits: 0, // Allow no decimals for whole numbers
 	trailingZeroDisplay: 'stripIfInteger'
 };

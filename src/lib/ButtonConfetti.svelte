@@ -2,17 +2,13 @@
 	import type { Snippet } from 'svelte';
 	import Confetti from 'svelte-confetti';
 
-	import type { Moneybag_t } from '../routes/moneybags';
+	import type { Moneybag_t } from './gameState/moneybags';
 	import ToggleConfetti from './ToggleConfetti.svelte';
 
-	const {
-		moneybag,
-		disabled = false,
-		children
-	}: { moneybag: Moneybag_t; disabled?: boolean; children: Snippet } = $props();
+	const { moneybag, children }: { moneybag: Moneybag_t; children: Snippet } = $props();
 </script>
 
-<ToggleConfetti {disabled} {confetti}>
+<ToggleConfetti {confetti}>
 	{@render children()}
 </ToggleConfetti>
 

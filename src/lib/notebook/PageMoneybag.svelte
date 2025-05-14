@@ -11,11 +11,10 @@
 	import Tools from '@tabler/icons-svelte/icons/tools';
 	import Walk from '@tabler/icons-svelte/icons/walk';
 
+	import { gameState } from '$lib/gameState/gamestate.svelte';
+	import { Demographics_t as DEM } from '$lib/gameState/headlines';
+	import { moneybags, powerupDescriptions } from '$lib/gameState/moneybags';
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
-
-	import { gameState } from '../../routes/gamestate.svelte';
-	import { Demographics_t as DEM } from '../../routes/headlines';
-	import { moneybags, powerupDescriptions } from '../../routes/moneybags';
 
 	const { mbName, setPage }: { mbName: string; setPage: (page: string) => void } = $props();
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import QuestionMark from '@tabler/icons-svelte/icons/question-mark';
 
-	import { moneybags } from '../../routes/moneybags';
+	import { moneybags } from '$lib/gameState/moneybags';
 
 	const { part }: { part: string } = $props();
 

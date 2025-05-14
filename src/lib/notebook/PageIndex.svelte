@@ -1,8 +1,8 @@
 <script lang="ts">
 	import QuestionMark from '@tabler/icons-svelte/icons/question-mark';
 
-	import { gameState } from '../../routes/gamestate.svelte';
-	import { moneybags } from '../../routes/moneybags';
+	import { gameState } from '$lib/gameState/gamestate.svelte';
+	import { moneybags } from '$lib/gameState/moneybags';
 
 	const { setPage }: { setPage: (_page: string) => void } = $props();
 </script>

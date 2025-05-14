@@ -2,8 +2,8 @@ import { del, get, set } from 'idb-keyval';
 import type { DateTime } from 'luxon';
 import { v4 } from 'uuid';
 
-import { MarketDataLastIndex } from '$lib/marketData';
-import { nextValue } from '$lib/nextValue';
+import { MarketDataLastIndex } from '$lib/moneybag/marketData';
+import { nextValue } from '$lib/moneybag/nextValue';
 import { randBetween } from '$lib/randBetween';
 
 import defaultGameState from './defaultGameState.json';

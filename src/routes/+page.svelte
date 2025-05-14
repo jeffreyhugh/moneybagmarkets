@@ -5,23 +5,22 @@
 	import { onMount } from 'svelte';
 
 	import { browser } from '$app/environment';
-	import BreakingNews from '$lib/headline/BreakingNews.svelte';
-	import Headline from '$lib/headline/Headline.svelte';
-	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
-	import Notebook from '$lib/Notebook.svelte';
-	import { numberFormatOptions } from '$lib/numberFormatOptions';
-
-	import Moneybag from '../lib/Moneybag.svelte';
-	import { coinEvents } from './coinEvents.svelte';
+	import { coinEvents } from '$lib/coinEvents.svelte';
 	import {
 		gameLoop,
 		gameState,
 		loadedEvents,
 		loadGameState,
 		migrateGameState
-	} from './gamestate.svelte';
-	import { downloadEvents } from './headlines';
-	import { moneybags } from './moneybags';
+	} from '$lib/gameState/gamestate.svelte';
+	import { downloadEvents } from '$lib/gameState/headlines';
+	import { moneybags } from '$lib/gameState/moneybags';
+	import BreakingNews from '$lib/headline/BreakingNews.svelte';
+	import Headline from '$lib/headline/Headline.svelte';
+	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
+	import Moneybag from '$lib/moneybag/Moneybag.svelte';
+	import Notebook from '$lib/notebook/Notebook.svelte';
+	import { numberFormatOptions } from '$lib/numberFormatOptions';
 
 	let hideSparklines = $state(false);
 

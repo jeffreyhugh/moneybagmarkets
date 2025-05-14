@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Moneybag_t } from '../routes/moneybags';
-	import { RAD2DEG } from './RAD2DEG';
+	import type { Moneybag_t } from '$lib/gameState/moneybags';
+	import { RAD2DEG } from '$lib/RAD2DEG';
 
 	const getCoordinatesForPercent = (percent: number) => {
 		const x = Math.cos(2 * Math.PI * percent);

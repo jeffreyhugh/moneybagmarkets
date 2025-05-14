@@ -1,7 +1,7 @@
 <script lang="ts">
-	import LayoutPage from './notebook/LayoutPage.svelte';
-	import PageIndex from './notebook/PageIndex.svelte';
-	import PageMoneybag from './notebook/PageMoneybag.svelte';
+	import LayoutPage from './LayoutPage.svelte';
+	import PageIndex from './PageIndex.svelte';
+	import PageMoneybag from './PageMoneybag.svelte';
 
 	let page = $state('index');
 	const setPage = (p: string) => (page = p);

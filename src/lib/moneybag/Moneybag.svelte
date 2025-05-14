@@ -6,17 +6,17 @@
 	import { blur } from 'svelte/transition';
 	import Confetti from 'svelte-confetti';
 
+	import { coin } from '$lib/coinEvents.svelte';
+	import { gameState } from '$lib/gameState/gamestate.svelte';
+	import type { Moneybag_t } from '$lib/gameState/moneybags';
 	import { handleChoice } from '$lib/handleChoice.svelte';
-	import LuckyWheel from '$lib/LuckyWheel.svelte';
-	import { weightedChoice } from '$lib/weightedChoice';
+	import { weightedChoice } from '$lib/moneybag/weightedChoice';
+	import { numberFormatOptions } from '$lib/numberFormatOptions';
 
-	import { coin } from '../routes/coinEvents.svelte';
-	import { gameState } from '../routes/gamestate.svelte';
-	import type { Moneybag_t } from '../routes/moneybags';
 	import Locker from './Locker.svelte';
+	import LuckyWheel from './LuckyWheel.svelte';
 	import { MarketDataLastIndex } from './marketData';
 	import MoneybagSparkline from './MoneybagSparkline.svelte';
-	import { numberFormatOptions } from './numberFormatOptions';
 
 	const MultiplierStops = [1, 5, 10, 100, 1000];
 
