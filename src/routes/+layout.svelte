@@ -13,8 +13,25 @@
 	const webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
 	useRegisterSW({
 		immediate: true,
-		onRegistered(sw) {
-			console.debug('Service worker registered', sw);
+		onRegisteredSW(swUrl, r) {
+			console.log('SW registered');
+			if (r) {
+				setInterval(async () => {
+					if (r.installing || !navigator) return;
+
+					if ('connection' in navigator && !navigator.onLine) return;
+
+					const resp = await fetch(swUrl, {
+						cache: 'no-store',
+						headers: {
+							cache: 'no-store',
+							'cache-control': 'no-cache'
+						}
+					});
+
+					if (resp?.status === 200) await r.update();
+				}, 1000 * 60);
+			}
 		},
 		onRegisterError(error) {
 			console.error('Error registering service worker', error);
