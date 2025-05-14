@@ -172,7 +172,7 @@ const save = async () => {
 };
 
 export const saveBeforeUpdate = async () => {
-	pauseGame = true;
+	// TODO should we pause?
 	await save();
 };
 
