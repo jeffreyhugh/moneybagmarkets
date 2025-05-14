@@ -14,8 +14,6 @@
 		updateServiceWorker: (reloadPage?: boolean) => Promise<void>;
 	} = $props();
 
-	// removeme
-
 	const version = '0.8.0';
 </script>
 
