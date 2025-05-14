@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.2 - 2025-05-14
+#### Bug Fixes
+- ios pwa theme colors - (cf5f880) - Jeffrey Hugh
+
+- - -
+
 ## v0.7.1 - 2025-05-14
 #### Bug Fixes
 - ios pwa icons - (443d559) - Jeffrey Hugh
