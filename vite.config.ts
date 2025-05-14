@@ -35,7 +35,7 @@ export default defineConfig({
 			registerType: 'autoUpdate',
 			manifest: {
 				background_color: '#ffffff',
-				theme_color: '#ffffff00',
+				theme_color: '#000000',
 				name: 'moneybag.markets',
 				description:
 					'Amass wealth by buying, selling, and opening moneybags on the moneybag markets.',

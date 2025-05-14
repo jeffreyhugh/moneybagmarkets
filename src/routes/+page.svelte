@@ -2,6 +2,7 @@
 	import Hourglass from '@tabler/icons-svelte/icons/hourglass';
 	import NotebookIcon from '@tabler/icons-svelte/icons/notebook';
 	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
+	import { theme } from 'mode-watcher';
 	import { onMount } from 'svelte';
 
 	import { browser } from '$app/environment';
@@ -50,6 +51,14 @@
 		downloadEvents();
 	});
 </script>
+
+<svelte:head>
+	{#if theme.current === 'light'}
+		<meta name="theme-color" content="#ffffff" />
+	{:else}
+		<meta name="theme-color" content="#000000" />
+	{/if}
+</svelte:head>
 
 {#if initializing}
 	<div class="flex h-full w-full items-center justify-center gap-1">
