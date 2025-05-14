@@ -35,15 +35,21 @@ export default defineConfig({
 			registerType: 'autoUpdate',
 			manifest: {
 				background_color: '#ffffff',
-				theme_color: '#7CCF00',
+				// theme_color: '#7CCF00',
 				name: 'moneybag.markets',
 				description:
 					'Amass wealth by buying, selling, and opening moneybags on the moneybag market.',
-				short_name: 'MM 💰',
+				short_name: 'MNYBG.MRKTS',
 				start_url: '/',
 				display: 'standalone',
 				orientation: 'portrait',
 				icons: [
+					{
+						src: '/favicon.ico',
+						sizes: '256x256',
+						type: 'image/x-icon',
+						purpose: 'any'
+					},
 					{
 						src: '/favicon.svg',
 						sizes: '24x24',
