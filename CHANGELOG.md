@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.1 - 2025-05-14
+#### Bug Fixes
+- add useless comment - (4d8a389) - Jeffrey Hugh
+#### Revert
+- add useless comment - (29a158c) - Jeffrey Hugh
+
+- - -
+
 ## v0.8.0 - 2025-05-14
 #### Features
 - add option to refresh service worker when updated - (6295246) - Jeffrey Hugh
