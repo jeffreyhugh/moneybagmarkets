@@ -11,7 +11,7 @@
 	let { children } = $props();
 
 	const webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
-	useRegisterSW({
+	const { needRefresh, updateServiceWorker } = useRegisterSW({
 		onRegistered(sw) {
 			console.debug('Service worker registered', sw);
 		},
@@ -39,6 +39,7 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifestLink}
 
+	<!-- #region apple icons-->
 	<link
 		rel="apple-touch-startup-image"
 		media="screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
@@ -249,11 +250,12 @@
 		media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
 		href="splash_screens/8.3__iPad_Mini_portrait.png"
 	/>
+	<!-- #endregion -->
 </svelte:head>
 
 <ModeWatcher defaultMode="light" defaultTheme="light" />
 <div class="flex min-h-dvh w-full flex-col items-center select-none">
-	<Header />
+	<Header {needRefresh} {updateServiceWorker} />
 	<div class="mb-8 w-full text-base md:text-xl">
 		{@render children()}
 	</div>
