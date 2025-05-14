@@ -18,9 +18,19 @@
 			if (r) {
 				console.debug('setting interval');
 				setInterval(async () => {
-					if (r.installing || !navigator) return;
+					if (r.installing || !navigator) {
+						console.debug('SW interval early return', r.installing, navigator);
+						return;
+					}
 
-					if ('connection' in navigator && !navigator.onLine) return;
+					if ('connection' in navigator && !navigator.onLine) {
+						console.debug(
+							'SW interval early return 2',
+							'connection' in navigator,
+							!navigator.onLine
+						);
+						return;
+					}
 
 					const resp = await fetch(swUrl, {
 						cache: 'no-store',
