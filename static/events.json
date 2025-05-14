@@ -649,5 +649,1116 @@
 				}
 			}
 		]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax launches breakfast line, hurting [[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ raises fees, driving {{MONEY_MID}} Middle-Class investors to [[Pawn Dome]] Pawn Dome",
+		"moneybagTargets": [
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_MID",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia's wedding boom strains {{TYPE_SERVICE}} Services sector workers",
+		"moneybagTargets": [
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "TYPE_SERVICE",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink's popularity soars while [[Stronk Jim]] Stronk Jim memberships decline",
+		"moneybagTargets": [
+			{
+				"moneybag": "Neon Roller Rink",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing's aggressive ads anger [[Dirt Poor Landscaping]] Dirt Poor Landscaping clients",
+		"moneybagTargets": [
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_OLD}} Retired population embraces [[Prune Juice, Inc.]] Prune Juice, Inc., ignoring [[11PM Snax]] 11PM Snax",
+		"moneybagTargets": [
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_OLD",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry undercuts [[Gaslamp Galleria]] Gaslamp Galleria jewelry stores",
+		"moneybagTargets": [
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Gaslamp Galleria",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal's expansion threatens [[Midnight Oil Press]] Midnight Oil Press desert operations",
+		"moneybagTargets": [
+			{
+				"moneybag": "Anderson Cactus Removal",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Midnight Oil Press",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{AGE_YOUNG}} Young Adults prefer [[Underground Airport (KNDR)]] Underground Airport (KNDR) over traditional airlines",
+		"moneybagTargets": [
+			{
+				"moneybag": "Underground Airport (KNDR)",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_YOUNG",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ security breach benefits [[Pawn Dome]] Pawn Dome's high-end clients",
+		"moneybagTargets": [
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim's new hydration line competes with [[Prune Juice, Inc.]] Prune Juice, Inc.",
+		"moneybagTargets": [
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_RICH}} Upper-Class invests in [[Florals by Patricia]] Florals by Patricia, snubbing [[Faux Brothers Jewelry]] Faux Brothers Jewelry",
+		"moneybagTargets": [
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_RICH",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping's organic push hurts [[Anderson Cactus Removal]] Anderson Cactus Removal chemical sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Anderson Cactus Removal",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery night deliveries disrupt [[11PM Snax]] 11PM Snax revenue",
+		"moneybagTargets": [
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing's DIY kits reduce {{TYPE_SERVICE}} Services demand",
+		"moneybagTargets": [
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "TYPE_SERVICE",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink's retro nights attract {{AGE_MID}} Middle-Aged crowd from [[Stronk Jim]] Stronk Jim",
+		"moneybagTargets": [
+			{
+				"moneybag": "Neon Roller Rink",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_MID",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press drought raises prices, helping [[Prune Juice, Inc.]] Prune Juice, Inc. sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "Midnight Oil Press",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) VIP members abandon [[The Vault™]] The Vault™",
+		"moneybagTargets": [
+			{
+				"moneybag": "Underground Airport (KNDR)",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "{{MONEY_LOWER}} Lower-Class embraces [[Pawn Dome]] Pawn Dome over [[Faux Brothers Jewelry]] Faux Brothers Jewelry",
+		"moneybagTargets": [
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_LOWER",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Gaslamp Galleria]] Gaslamp Galleria food court steals [[11PM Snax]] 11PM Snax late-night crowd",
+		"moneybagTargets": [
+			{
+				"moneybag": "Gaslamp Galleria",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia's funeral deals upset {{AGE_OLD}} Retired community",
+		"moneybagTargets": [
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_OLD",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping's rain gardens compete with [[Cracked Plumbing]] Cracked Plumbing drainage services",
+		"moneybagTargets": [
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery gluten-free line alienates {{AGE_OLD}} Retired customers",
+		"moneybagTargets": [
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_OLD",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink's punk nights drive away {{MONEY_RICH}} Upper-Class patrons",
+		"moneybagTargets": [
+			{
+				"moneybag": "Neon Roller Rink",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_RICH",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ crypto investments lure clients from [[Pawn Dome]] Pawn Dome gold traders",
+		"moneybagTargets": [
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim corporate wellness deals hurt [[Anderson Cactus Removal]] Anderson Cactus Removal worker health plans",
+		"moneybagTargets": [
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Anderson Cactus Removal",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press's Italian expansion threatens [[Prune Juice, Inc.]] Prune Juice, Inc. European sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "Midnight Oil Press",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) private suites lure [[The Vault™]] The Vault™ members",
+		"moneybagTargets": [
+			{
+				"moneybag": "Underground Airport (KNDR)",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry lab diamonds appeal to {{AGE_YOUNG}} Young Adults over [[Gaslamp Galleria]] Gaslamp Galleria jewelers",
+		"moneybagTargets": [
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Gaslamp Galleria",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_YOUNG",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax health violations benefit [[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery late sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing's franchise model upsets {{TYPE_SERVICE}} Services professionals",
+		"moneybagTargets": [
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "TYPE_SERVICE",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping native plants reduce [[Midnight Oil Press]] Midnight Oil Press irrigation needs",
+		"moneybagTargets": [
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Midnight Oil Press",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia's rose shortage benefits [[Faux Brothers Jewelry]] Faux Brothers Jewelry floral jewelry",
+		"moneybagTargets": [
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim personal trainers lure {{AGE_MID}} Middle-Aged from [[Neon Roller Rink]] Neon Roller Rink",
+		"moneybagTargets": [
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Neon Roller Rink",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_MID",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ gold storage fees push {{MONEY_MID}} Middle-Class to [[Pawn Dome]] Pawn Dome safes",
+		"moneybagTargets": [
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			},
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_MID",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Gaslamp Galleria]] Gaslamp Galleria antique market hurts [[Faux Brothers Jewelry]] Faux Brothers Jewelry vintage sales",
+		"moneybagTargets": [
+			{
+				"moneybag": "Gaslamp Galleria",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[11PM Snax]] 11PM Snax energy drinks compete with [[Prune Juice, Inc.]] Prune Juice, Inc. morning customers",
+		"moneybagTargets": [
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Anderson Cactus Removal]] Anderson Cactus Removal drone tech reduces {{TYPE_SERVICE}} Services jobs",
+		"moneybagTargets": [
+			{
+				"moneybag": "Anderson Cactus Removal",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "TYPE_SERVICE",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery AI recipes alienate {{AGE_OLD}} Retired bakers",
+		"moneybagTargets": [
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_OLD",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) expansion disrupts [[Dirt Poor Landscaping]] Dirt Poor Landscaping contracts",
+		"moneybagTargets": [
+			{
+				"moneybag": "Underground Airport (KNDR)",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Cracked Plumbing]] Cracked Plumbing's YouTube tutorials reduce {{MONEY_LOWER}} Lower-Class service calls",
+		"moneybagTargets": [
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_LOWER",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[The Vault™]] The Vault™ art storage lures [[Florals by Patricia]] Florals by Patricia wealthy clients",
+		"moneybagTargets": [
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Neon Roller Rink]] Neon Roller Rink's vegan cafe steals [[11PM Snax]] 11PM Snax customers",
+		"moneybagTargets": [
+			{
+				"moneybag": "Neon Roller Rink",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Stronk Jim]] Stronk Jim corporate deals squeeze [[Anderson Cactus Removal]] Anderson Cactus Removal employee benefits",
+		"moneybagTargets": [
+			{
+				"moneybag": "Stronk Jim",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Anderson Cactus Removal",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Midnight Oil Press]] Midnight Oil Press's Spanish olive deal hurts [[Prune Juice, Inc.]] Prune Juice, Inc. imports",
+		"moneybagTargets": [
+			{
+				"moneybag": "Midnight Oil Press",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Prune Juice, Inc.",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Pawn Dome]] Pawn Dome's online platform attracts {{AGE_YOUNG}} Young Adults from [[The Vault™]] The Vault™",
+		"moneybagTargets": [
+			{
+				"moneybag": "Pawn Dome",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_YOUNG",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Faux Brothers Jewelry]] Faux Brothers Jewelry's ethical mining appeals to {{MONEY_RICH}} Upper-Class over [[Gaslamp Galleria]] Gaslamp Galleria",
+		"moneybagTargets": [
+			{
+				"moneybag": "Faux Brothers Jewelry",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Gaslamp Galleria",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "MONEY_RICH",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Grandma's Algorithmic Bakery]] Grandma's Algorithmic Bakery midnight deliveries disrupt [[11PM Snax]] 11PM Snax revenue",
+		"moneybagTargets": [
+			{
+				"moneybag": "Grandma's Algorithmic Bakery",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "11PM Snax",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Dirt Poor Landscaping]] Dirt Poor Landscaping's water conservation angers [[Cracked Plumbing]] Cracked Plumbing",
+		"moneybagTargets": [
+			{
+				"moneybag": "Dirt Poor Landscaping",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "Cracked Plumbing",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
+	},
+	{
+		"headline": "[[Florals by Patricia]] Florals by Patricia's funeral deals upset {{AGE_OLD}} Retired community",
+		"moneybagTargets": [
+			{
+				"moneybag": "Florals by Patricia",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			}
+		],
+		"demographicTargets": [
+			{
+				"demographic": "AGE_OLD",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		]
+	},
+	{
+		"headline": "[[Underground Airport (KNDR)]] Underground Airport (KNDR) private terminals lure [[The Vault™]] The Vault™ clients",
+		"moneybagTargets": [
+			{
+				"moneybag": "Underground Airport (KNDR)",
+				"effect": {
+					"type": "%",
+					"isNegative": false
+				}
+			},
+			{
+				"moneybag": "The Vault™",
+				"effect": {
+					"type": "%",
+					"isNegative": true
+				}
+			}
+		],
+		"demographicTargets": []
 	}
 ]
