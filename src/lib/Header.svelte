@@ -2,19 +2,8 @@
 	import Moon from '@tabler/icons-svelte/icons/moon';
 	import Sun from '@tabler/icons-svelte/icons/sun';
 	import { setMode, setTheme, theme } from 'mode-watcher';
-	import type { Writable } from 'svelte/store';
 
 	import { reset } from './gameState/gamestate.svelte';
-
-	const {
-		needRefresh,
-		updateServiceWorker
-	}: {
-		needRefresh: Writable<boolean>;
-		updateServiceWorker: (reloadPage?: boolean) => Promise<void>;
-	} = $props();
-
-	//remove me
 
 	const version = '0.8.1';
 </script>
@@ -53,14 +42,6 @@
 			</span>
 			<div class="divider divider-horizontal"></div>
 			<button type="button" onclick={reset} class="btn btn-error btn-xs">Reset</button>
-			{#if $needRefresh}
-				<div class="divider divider-horizontal"></div>
-				<button
-					type="button"
-					onclick={() => updateServiceWorker(true)}
-					class="btn btn-success btn-xs">Update</button
-				>
-			{/if}
 		</div>
 	</div>
 </div>

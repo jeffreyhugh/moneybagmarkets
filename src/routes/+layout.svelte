@@ -11,7 +11,8 @@
 	let { children } = $props();
 
 	const webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
-	const { needRefresh, updateServiceWorker } = useRegisterSW({
+	useRegisterSW({
+		immediate: true,
 		onRegistered(sw) {
 			console.debug('Service worker registered', sw);
 		},
@@ -255,7 +256,7 @@
 
 <ModeWatcher defaultMode="light" defaultTheme="light" />
 <div class="flex min-h-dvh w-full flex-col items-center select-none">
-	<Header {needRefresh} {updateServiceWorker} />
+	<Header />
 	<div class="mb-8 w-full text-base md:text-xl">
 		{@render children()}
 	</div>
