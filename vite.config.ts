@@ -13,7 +13,7 @@ export default defineConfig({
 				runtimeCaching: [
 					{
 						urlPattern: ({ url }) => url.pathname.startsWith('/'),
-						handler: 'StaleWhileRevalidate',
+						handler: 'NetworkFirst',
 						options: {
 							cacheName: 'app-cache'
 						}
