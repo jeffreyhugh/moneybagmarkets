@@ -19,7 +19,7 @@ export const nextValue = (currentValue: number, moneybag: Moneybag_t) => {
 	const sign = Math.random() >= 0.5 ? 1 : -1;
 	const amount = Math.random() * moneybag.market.absoluteVolatility;
 
-	const bonusAmount = amount * (1 + TMI);
+	const bonusAmount = amount * TMI;
 
 	return Math.round(
 		Math.max(
