@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.8.8 - 2025-05-14
+#### Bug Fixes
+- trying to get sw auto updating - (ec9c6d5) - Jeffrey Hugh
+
+- - -
+
 ## v0.8.7 - 2025-05-14
 #### Bug Fixes
 - trying to get sw auto updating - (5f802d8) - Jeffrey Hugh
