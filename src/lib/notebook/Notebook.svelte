@@ -7,7 +7,10 @@
 	const setPage = (p: string) => (page = p);
 </script>
 
-<div class="modal-box overflow-y-auto">
+<div
+	class="modal-box border-base-content/20 overflow-y-auto border-t-2 bg-transparent backdrop-blur-2xl sm:border-2"
+	style="border-style: outset;"
+>
 	<button class="mb-4 text-2xl font-bold md:text-4xl" onclick={() => setPage('index')}>
 		Notebook
 	</button>

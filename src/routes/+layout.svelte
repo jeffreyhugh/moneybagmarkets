@@ -7,6 +7,7 @@
 	import { useRegisterSW } from 'virtual:pwa-register/svelte';
 
 	import { saveBeforeUpdate } from '$lib/gameState/gamestate.svelte';
+	import Footer from '$lib/nav/Footer.svelte';
 
 	import Header from '../lib/Header.svelte';
 
@@ -286,4 +287,5 @@
 	<div class="mb-8 w-full text-base md:text-xl">
 		{@render children()}
 	</div>
+	<Footer />
 </div>

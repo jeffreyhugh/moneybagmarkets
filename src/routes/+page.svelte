@@ -16,6 +16,7 @@
 	} from '$lib/gameState/gamestate.svelte';
 	import { downloadEvents } from '$lib/gameState/headlines';
 	import { moneybags } from '$lib/gameState/moneybags';
+	import { navState } from '$lib/gameState/navstate.svelte';
 	import BreakingNews from '$lib/headline/BreakingNews.svelte';
 	import Headline from '$lib/headline/Headline.svelte';
 	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
@@ -33,7 +34,7 @@
 		if (!browser) {
 			return;
 		}
-		gameLoop();
+		return gameLoop();
 	});
 	onMount(async () => {
 		if (!browser) {
@@ -66,7 +67,9 @@
 		<div>Loading...</div>
 	</div>
 {:else}
-	<div class="sticky top-0 z-30 mb-2 py-2 backdrop-blur-md select-none">
+	<div
+		class="border-base-content/20 sticky top-0 z-30 mb-2 border-b py-2 backdrop-blur-2xl select-none"
+	>
 		<div class="mx-auto flex w-11/12 max-w-4xl items-center justify-between gap-1">
 			<div>
 				<label class="label ml-2">
@@ -93,7 +96,10 @@
 				<button
 					class="btn btn-ghost btn-square md:ml-3"
 					type="button"
-					onclick={() => notebookDialog?.show()}
+					onclick={() => {
+						notebookDialog?.show();
+						navState.modalPage = 'notebook';
+					}}
 				>
 					<NotebookIcon class="size-6 md:size-7" />
 				</button>
@@ -122,7 +128,13 @@
 			{/each}
 		</div>
 	</div>
-	<dialog bind:this={notebookDialog} class="modal modal-bottom sm:modal-middle">
+	<dialog
+		bind:this={notebookDialog}
+		class="modal modal-bottom sm:modal-middle -translate-y-12 sm:translate-y-0"
+		onclose={() => {
+			navState.modalPage = '';
+		}}
+	>
 		<Notebook />
 		<form method="dialog" class="modal-backdrop">
 			<button>close</button>
@@ -131,6 +143,14 @@
 {/if}
 
 <style>
+	.modal {
+		/* &.modal-open, */
+		&[open],
+		&:target {
+			background-color: transparent;
+		}
+	}
+
 	.fade-move {
 		position: absolute; /* Absolutely positioned */
 		top: -0.25rem; /* Starting position */
