@@ -5,8 +5,6 @@
 
 	import { navState } from '../gameState/navstate.svelte';
 	import FooterIcon from './FooterIcon.svelte';
-
-	$inspect(navState.modalPage);
 </script>
 
 <div
