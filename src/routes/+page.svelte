@@ -67,15 +67,9 @@
 	</div>
 {:else}
 	<div
-		class="border-base-content/20 sticky top-0 z-30 mb-2 border-b py-2 backdrop-blur-2xl select-none"
+		class="border-base-content/20 sticky -top-px z-30 mb-2 border-b py-2 backdrop-blur-2xl select-none"
 	>
-		<div class="mx-auto flex w-11/12 max-w-4xl items-center justify-between gap-1">
-			<div>
-				<label class="label ml-2">
-					<input type="checkbox" bind:checked={settingsState.compactView} class="toggle" />
-					Compact View
-				</label>
-			</div>
+		<div class="mx-auto flex w-11/12 max-w-4xl items-center justify-end gap-1">
 			<div class="relative top-0 mr-2 flex items-center justify-end gap-1 text-xl md:text-2xl">
 				<div class="relative flex items-center gap-1">
 					<PigMoney class="size-6 md:size-7" />
@@ -88,7 +82,7 @@
 								e.sign === '-' && 'text-error'
 							]}
 						>
-							{e.sign}{e.value}{e.suffix || ''}
+							{e.sign}{e.value.toLocaleString(undefined, numberFormatOptions)}{e.suffix || ''}
 						</div>
 					{/each}
 				</div>

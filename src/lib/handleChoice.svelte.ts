@@ -3,6 +3,7 @@ import { coin } from '$lib/coinEvents.svelte';
 import { gameState } from './gameState/gamestate.svelte';
 import type { Moneybag_t } from './gameState/moneybags';
 import { MarketDataLastIndex } from './moneybag/marketData';
+import { numberFormatOptions } from './numberFormatOptions';
 
 export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
 	// gameState.moneybags[moneybag.name].owned -= 1;
@@ -15,7 +16,7 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 		coin('+', newCoins);
 		gameState.coins += newCoins;
 
-		return `+${newCoins}`;
+		return `+${newCoins.toLocaleString(undefined, numberFormatOptions)}`;
 	} else if (choice.effect === 'powerup') {
 		let ownedMoneybags = 0;
 
