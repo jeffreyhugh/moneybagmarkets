@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.1 - 2025-05-16
+#### Bug Fixes
+- footer positioning and animations - (c6922b4) - Jeffrey Hugh
+#### Miscellaneous Chores
+- clean old code, comments, etc - (134dd66) - Jeffrey Hugh
+
+- - -
+
 ## v0.10.0 - 2025-05-16
 #### Bug Fixes
 - format coin events - (c80237e) - Jeffrey Hugh
