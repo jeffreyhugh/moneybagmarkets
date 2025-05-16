@@ -6,8 +6,6 @@ import { MarketDataLastIndex } from './moneybag/marketData';
 import { numberFormatOptions } from './numberFormatOptions';
 
 export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]) => {
-	// gameState.moneybags[moneybag.name].owned -= 1;
-
 	if (choice.effect === 'add') {
 		const newCoins = Math.round(
 			(Math.random() * (choice.maxValue - choice.minValue + 1) + choice.minValue) *
@@ -74,7 +72,6 @@ export const handleChoice = (moneybag: Moneybag_t, choice: Moneybag_t['open'][0]
 };
 
 export const handleChoices = (_moneybag: Moneybag_t, choices: (Moneybag_t['open'][0] | null)[]) => {
-	// gameState.moneybags[moneybag.name].owned -= 1;
 	let addTotal = 0;
 
 	for (const choice of choices) {

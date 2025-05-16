@@ -8,9 +8,7 @@
 		confetti,
 		children
 	}: {
-		// disabled?: boolean;
 		toggleOnce?: boolean;
-		// relative?: boolean;
 		confetti: Snippet;
 		children: Snippet;
 	} = $props();

@@ -148,34 +148,20 @@
 	}
 
 	.fade-move {
-		position: absolute; /* Absolutely positioned */
-		top: -0.25rem; /* Starting position */
-		opacity: 1; /* Starting opacity */
-		animation: fadeMove 1s linear forwards; /* Animation properties */
+		position: absolute;
+		top: -0.25rem;
+		opacity: 1;
+		animation: fadeMove 1s linear forwards;
 	}
 
 	@keyframes fadeMove {
 		0% {
-			top: -0.25rem; /* Starting position */
-			opacity: 1; /* Starting opacity */
+			top: -0.25rem;
+			opacity: 1;
 		}
 		100% {
-			top: -1.5rem; /* Ending position */
-			opacity: 0; /* Ending opacity */
-		}
-	}
-
-	.delay-out {
-		animation: delayOut 0.35s linear forwards;
-	}
-
-	@keyframes delayOut {
-		0% {
-		}
-		99% {
-		}
-		100% {
-			display: none;
+			top: -1.5rem;
+			opacity: 0;
 		}
 	}
 </style>

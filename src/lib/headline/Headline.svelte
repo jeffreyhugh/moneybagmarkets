@@ -9,7 +9,6 @@
 		let remaining = headline;
 
 		while (remaining.length > 0) {
-			// Try to match a moneybag icon first
 			const mbMatch = remaining.match(/^(\[\[[^[\]]+\]\])/);
 			if (mbMatch) {
 				parts.push(mbMatch[1]);
@@ -17,7 +16,6 @@
 				continue;
 			}
 
-			// Then try to match a demographic icon
 			const demoMatch = remaining.match(/^(\{\{[A-Z_]+\}\})/);
 			if (demoMatch) {
 				parts.push(demoMatch[1]);
@@ -25,7 +23,6 @@
 				continue;
 			}
 
-			// If no matches, accumulate text until next icon
 			const nextIconIndex = remaining.search(/\[\[|\{\{/);
 			if (nextIconIndex === -1) {
 				parts.push(remaining);

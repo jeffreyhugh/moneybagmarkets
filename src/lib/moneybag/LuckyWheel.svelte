@@ -41,14 +41,7 @@
 		pathDatas.push(ret);
 	}
 
-	// let wheelRotation = new Tween(360 * 3 + Math.random() * 360, {
-	// 	duration: 2000,
-	// 	easing: cubicOut
-	// });
-
 	const initialRotation = 360 * 3 + Math.random() * 360;
-
-	// onMount(() => (wheelRotation.target = 0));
 </script>
 
 <svg

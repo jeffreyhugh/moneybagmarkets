@@ -30,17 +30,6 @@
 	let showWheel = $state<number | null>(null);
 	let showGain = $state<string | null>(null);
 
-	// const bumpMultiplier = () => {
-	// 	const newIndex = (mult.index + 1) % MultiplierStops.length;
-	// 	// if (gameState.moneybags[moneybag.name].owned >= MultiplierStops[newIndex]) {
-	// 	mult.index = newIndex;
-	// 	mult.multiplier = MultiplierStops[newIndex];
-	// 	// } else {
-	// 	// mult.index = 0;
-	// 	// mult.multiplier = MultiplierStops[0];
-	// 	// }
-	// };
-
 	const openMoneybag = async () => {
 		if (gameState.moneybags[moneybag.name].owned === 0) {
 			return;
@@ -49,24 +38,6 @@
 		opening = true;
 
 		gameState.moneybags[moneybag.name].owned -= 1;
-
-		// const choices = [] as ((typeof moneybag.open)[0] | null)[];
-		// let random = 0;
-		// for (let i = 0; i < mult.multiplier; i++) {
-		// 	if (gameState.moneybags[moneybag.name].owned === 0) {
-		// 		opening = false;
-		// 		break;
-		// 	}
-
-		// 	gameState.moneybags[moneybag.name].owned -= 1;
-
-		// 	const [choice, r] = weightedChoice(moneybag.open);
-		// 	if (!choice) {
-		// 		break;
-		// 	}
-		// 	random = r;
-		// 	choices.push(choice);
-		// }
 
 		const [choice, random] = weightedChoice(moneybag.open);
 
@@ -78,7 +49,6 @@
 		showWheel = random;
 		await new Promise((resolve) => setTimeout(resolve, 2200));
 
-		// showGain = handleChoices(moneybag, choices);
 		showGain = handleChoice(moneybag, choice);
 		if (gameState.bonusSnacks > 0) {
 			gameState.bonusSnacks -= 1;
@@ -103,7 +73,6 @@
 
 		await new Promise((resolve) => setTimeout(resolve, 250));
 
-		// showGain = handleChoices(moneybag, choices);
 		showGain = handleChoice(moneybag, choice);
 	};
 
@@ -235,11 +204,6 @@
 					</span>
 				{/if}
 			</div>
-			<!-- {#if moneybag.market.target !== 0}
-				<button disabled={opening} class={['btn btn-sm']} onclick={bumpMultiplier}>
-					x{mult.multiplier}
-				</button>
-			{/if} -->
 			<div class="mt-1">
 				<button
 					disabled={opening || gameState.moneybags[moneybag.name].owned === 0}

@@ -67,10 +67,7 @@ for (const moneybag of moneybags) {
 	}
 }
 
-export const gameState = $state(
-	// JSON.parse((await get('gamestate')) || JSON.stringify(defaultPlusMoneybags)) as GameState_t
-	{} as GameState_t
-);
+export const gameState = $state({} as GameState_t);
 
 export const loadGameState = async () => {
 	const loadedGameState = JSON.parse(
