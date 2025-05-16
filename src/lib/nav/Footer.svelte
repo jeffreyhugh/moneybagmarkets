@@ -26,21 +26,4 @@
 	<FooterIcon location="settings">
 		<Settings class="size-6" />
 	</FooterIcon>
-	<!-- <FooterIcon location="notebook">
-	</FooterIcon>
-	<button
-		class={['btn btn-square btn-lg btn-ghost grow', navState.modalPage === '' && 'btn-active']}
-		onclick={() => (navState.modalPage = '')}
-	>
-		<Home class="size-6" />
-	</button>
-	<button
-		class={[
-			'btn btn-square btn-lg btn-ghost grow',
-			navState.modalPage.startsWith('settings') && 'btn-base'
-		]}
-		onclick={() => (navState.modalPage = 'settings')}
-	>
-		<Settings class="size-6" />
-	</button> -->
 </div>

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Hourglass from '@tabler/icons-svelte/icons/hourglass';
-	import NotebookIcon from '@tabler/icons-svelte/icons/notebook';
 	import PigMoney from '@tabler/icons-svelte/icons/pig-money';
 	import { theme } from 'mode-watcher';
 	import { onMount } from 'svelte';
@@ -17,16 +16,15 @@
 	import { downloadEvents } from '$lib/gameState/headlines';
 	import { moneybags } from '$lib/gameState/moneybags';
 	import { navState } from '$lib/gameState/navstate.svelte';
+	import { loadSettingsState, settingsState } from '$lib/gameState/settingsState.svelte';
 	import BreakingNews from '$lib/headline/BreakingNews.svelte';
 	import Headline from '$lib/headline/Headline.svelte';
 	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
 	import Moneybag from '$lib/moneybag/Moneybag.svelte';
-	import Notebook from '$lib/notebook/Notebook.svelte';
+	import Footer from '$lib/nav/Footer.svelte';
+	import NotebookRoot from '$lib/nav/notebook/NotebookRoot.svelte';
+	import SettingsRoot from '$lib/nav/settings/SettingsRoot.svelte';
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
-
-	let hideSparklines = $state(false);
-
-	let notebookDialog = $state<HTMLDialogElement>();
 
 	let initializing = $state(true);
 
@@ -41,6 +39,7 @@
 			return;
 		}
 
+		await loadSettingsState();
 		await loadGameState();
 		migrateGameState();
 		initializing = false;
@@ -73,7 +72,7 @@
 		<div class="mx-auto flex w-11/12 max-w-4xl items-center justify-between gap-1">
 			<div>
 				<label class="label ml-2">
-					<input type="checkbox" bind:checked={hideSparklines} class="toggle" />
+					<input type="checkbox" bind:checked={settingsState.compactView} class="toggle" />
 					Compact View
 				</label>
 			</div>
@@ -93,16 +92,16 @@
 						</div>
 					{/each}
 				</div>
-				<button
+				<!-- <button
 					class="btn btn-ghost btn-square md:ml-3"
 					type="button"
 					onclick={() => {
-						notebookDialog?.show();
+						navState.modalDialog?.showModal();
 						navState.modalPage = 'notebook';
 					}}
 				>
 					<NotebookIcon class="size-6 md:size-7" />
-				</button>
+				</button> -->
 			</div>
 		</div>
 		<div class="mx-auto w-11/12 max-w-4xl">
@@ -120,25 +119,32 @@
 		</div>
 	</div>
 	<div class="mx-auto w-11/12 max-w-4xl">
-		<div class={['grid grid-cols-1 gap-2', hideSparklines && 'md:grid-cols-2']}>
+		<div class={['grid grid-cols-1 gap-2', settingsState.compactView && 'md:grid-cols-2']}>
 			{#each moneybags as moneybag (moneybag.name)}
 				{#if moneybag.name in gameState.moneybags}
-					<Moneybag {moneybag} {hideSparklines} />
+					<Moneybag {moneybag} />
 				{/if}
 			{/each}
 		</div>
 	</div>
 	<dialog
-		bind:this={notebookDialog}
-		class="modal modal-bottom sm:modal-middle -translate-y-12 sm:translate-y-0"
+		bind:this={navState.modalDialog}
+		class="modal modal-bottom sm:modal-middle sm:translate-y-0"
 		onclose={() => {
 			navState.modalPage = '';
 		}}
 	>
-		<Notebook />
+		{#if navState.modalPage.startsWith('notebook')}
+			<NotebookRoot />
+		{:else if navState.modalPage.startsWith('settings')}
+			<SettingsRoot />
+		{/if}
+
 		<form method="dialog" class="modal-backdrop">
 			<button>close</button>
 		</form>
+
+		<Footer />
 	</dialog>
 {/if}
 

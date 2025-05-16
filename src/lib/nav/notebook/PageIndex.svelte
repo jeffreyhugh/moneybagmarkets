@@ -3,19 +3,18 @@
 
 	import { gameState } from '$lib/gameState/gamestate.svelte';
 	import { moneybags } from '$lib/gameState/moneybags';
-
-	const { setPage }: { setPage: (_page: string) => void } = $props();
+	import { navState } from '$lib/gameState/navstate.svelte';
 </script>
 
 <h3 class="mb-2 text-xl font-bold md:text-2xl">Moneybags</h3>
-<div class="flex flex-col items-start pb-4 md:pb-6">
+<div class="flex flex-col items-start">
 	{#each moneybags as moneybag (moneybag.name)}
 		<button
 			class="btn md:btn-lg btn-ghost flex h-auto w-full items-center justify-start gap-1 p-1 sm:gap-2"
 			disabled={!gameState.moneybags[moneybag.name].unlocked}
 			onclick={() => {
 				if (gameState.moneybags[moneybag.name].unlocked) {
-					setPage('mb' + moneybag.name);
+					navState.modalPage = `notebook/mb/${moneybag.name}`;
 				}
 			}}
 		>

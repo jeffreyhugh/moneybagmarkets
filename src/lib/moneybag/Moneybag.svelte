@@ -9,6 +9,7 @@
 	import { coin } from '$lib/coinEvents.svelte';
 	import { gameState } from '$lib/gameState/gamestate.svelte';
 	import type { Moneybag_t } from '$lib/gameState/moneybags';
+	import { settingsState } from '$lib/gameState/settingsState.svelte';
 	import { handleChoice } from '$lib/handleChoice.svelte';
 	import { weightedChoice } from '$lib/moneybag/weightedChoice';
 	import { numberFormatOptions } from '$lib/numberFormatOptions';
@@ -20,7 +21,7 @@
 
 	const MultiplierStops = [1, 5, 10, 100, 1000];
 
-	const { moneybag, hideSparklines }: { moneybag: Moneybag_t; hideSparklines: boolean } = $props();
+	const { moneybag }: { moneybag: Moneybag_t } = $props();
 	let mult = $state({
 		index: 0,
 		multiplier: MultiplierStops[0]
@@ -167,7 +168,7 @@
 	{/if}
 	<div class="flex items-center gap-4">
 		<div class="grid aspect-square size-20 grid-cols-1 grid-rows-1 md:size-24">
-			{#if hideSparklines && showWheel !== null}
+			{#if settingsState.compactView && showWheel !== null}
 				<div
 					class="pointer-events-none relative col-start-1 row-start-1"
 					transition:blur={{ duration: 200 }}
@@ -207,12 +208,14 @@
 				<span class="font-bold">
 					{gameState.moneybags[moneybag.name].owned}/{gameState.maxEachMoneybag}
 				</span>
-				{#if !hideSparklines}owned{/if} &middot; <PigMoney class="inline size-4 md:size-6" />
+				{#if !settingsState.compactView}owned{/if} &middot; <PigMoney
+					class="inline size-4 md:size-6"
+				/>
 				{(
 					gameState.moneybags[moneybag.name].owned *
 					gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]
 				).toLocaleString(undefined, numberFormatOptions)}
-				{#if hideSparklines}
+				{#if settingsState.compactView}
 					&middot; <span class="grid grid-cols-1 grid-rows-1">
 						{#if gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex] >= moneybag.market.target}
 							<span class="col-start-1 row-start-1">
@@ -272,7 +275,7 @@
 			</div>
 		</div>
 	</div>
-	{#if !hideSparklines}
+	{#if !settingsState.compactView}
 		<div class="relative h-40 grow md:max-w-1/3">
 			{#if showWheel === null}
 				<div class="absolute top-0 right-0 h-full w-full" transition:blur={{ duration: 200 }}>

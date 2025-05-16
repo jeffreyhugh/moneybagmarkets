@@ -17,7 +17,13 @@
 
 <button
 	type="button"
-	onclick={() => (navState.modalPage = active ? '' : location)}
+	onclick={() => {
+		if (strict) {
+			navState.modalPage = navState.modalPage === location ? '' : location;
+		} else {
+			navState.modalPage = navState.modalPage.startsWith(location) ? '' : location;
+		}
+	}}
 	role="tab"
 	class={['tab grow', active && 'tab-active']}
 >
