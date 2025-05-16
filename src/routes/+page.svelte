@@ -86,16 +86,6 @@
 						</div>
 					{/each}
 				</div>
-				<!-- <button
-					class="btn btn-ghost btn-square md:ml-3"
-					type="button"
-					onclick={() => {
-						navState.modalDialog?.showModal();
-						navState.modalPage = 'notebook';
-					}}
-				>
-					<NotebookIcon class="size-6 md:size-7" />
-				</button> -->
 			</div>
 		</div>
 		<div class="mx-auto w-11/12 max-w-4xl">
@@ -123,16 +113,23 @@
 	</div>
 	<dialog
 		bind:this={navState.modalDialog}
-		class="modal modal-bottom sm:modal-middle sm:translate-y-0"
+		class="modal modal-bottom sm:modal-middle"
 		onclose={() => {
 			navState.modalPage = '';
 		}}
 	>
-		{#if navState.modalPage.startsWith('notebook')}
-			<NotebookRoot />
-		{:else if navState.modalPage.startsWith('settings')}
-			<SettingsRoot />
-		{/if}
+		<div
+			class="modal-box border-base-content/20 mb-12 overflow-y-auto border-t-2 bg-transparent backdrop-blur-2xl sm:border-2"
+			style="border-style:outset;height:calc(var(--spacing) * 160);max-height:calc(var(--spacing) * 160);"
+		>
+			<div class="grid h-full w-full grid-cols-1 grid-rows-1">
+				{#if navState.modalPage.startsWith('notebook')}
+					<NotebookRoot />
+				{:else if navState.modalPage.startsWith('settings')}
+					<SettingsRoot />
+				{/if}
+			</div>
+		</div>
 
 		<form method="dialog" class="modal-backdrop">
 			<button>close</button>
@@ -144,7 +141,6 @@
 
 <style>
 	.modal {
-		/* &.modal-open, */
 		&[open],
 		&:target {
 			background-color: transparent;
@@ -166,6 +162,20 @@
 		100% {
 			top: -1.5rem; /* Ending position */
 			opacity: 0; /* Ending opacity */
+		}
+	}
+
+	.delay-out {
+		animation: delayOut 0.35s linear forwards;
+	}
+
+	@keyframes delayOut {
+		0% {
+		}
+		99% {
+		}
+		100% {
+			display: none;
 		}
 	}
 </style>

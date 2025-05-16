@@ -11,7 +11,7 @@
 	role="tablist"
 	class={[
 		'tabs tabs-border',
-		'border-base-content/20 fixed bottom-0 left-1/2 z-20 h-12 w-full max-w-2xl -translate-x-1/2 border-t bg-transparent backdrop-blur-2xl',
+		'border-base-content/20 fixed bottom-0 left-1/2 z-20 h-14 w-full max-w-2xl -translate-x-1/2 items-start border-t bg-transparent backdrop-blur-2xl sm:items-center',
 		'sm:text-xl',
 		'sm:rounded-t-box sm:w-5/6 sm:border-x sm:border-t',
 		navState.modalPage !== '' && 'sm:border-base-content/20 border-transparent'
