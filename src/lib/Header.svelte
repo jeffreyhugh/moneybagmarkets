@@ -5,7 +5,7 @@
 
 	import { reset } from './gameState/gamestate.svelte';
 
-	const version = '0.9.2';
+	const version = '0.10.0';
 </script>
 
 <div class="mb-8 w-full flex-col items-stretch gap-2">

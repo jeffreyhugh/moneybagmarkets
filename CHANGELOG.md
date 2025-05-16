@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.10.0 - 2025-05-16
+#### Bug Fixes
+- format coin events - (c80237e) - Jeffrey Hugh
+#### Features
+- new footer - (efa1940) - Jeffrey Hugh
+- footer, nav doesn't work yet - (09b24b9) - Jeffrey Hugh
+- footer, nav doesn't work yet - (00dc550) - Jeffrey Hugh
+
+- - -
+
 ## v0.9.2 - 2025-05-14
 #### Bug Fixes
 - do not pause before saving - (9d1f14e) - Jeffrey Hugh
