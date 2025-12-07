@@ -54,7 +54,7 @@
 
 <svelte:head>
 	<title>moneybag.markets</title>
-	<meta name="description" content="Buy low, sell high, crack open for a prize." />
+	<meta name="description" content="Buy low, sell high, crack the bag for a prize." />
 
 	<script
 		src="/trends"
