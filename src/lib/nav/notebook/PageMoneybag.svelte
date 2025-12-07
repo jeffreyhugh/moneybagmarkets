@@ -66,7 +66,7 @@
 			{/each}
 		</div>
 
-		{@render label('Moneybag Type')}
+		{@render label('Company Type')}
 		<div>
 			{#each moneybag.applicableDemographics as dem (dem)}
 				<div class="flex items-center gap-1 font-bold">

@@ -4,6 +4,7 @@
 	import { setMode, setTheme, theme } from 'mode-watcher';
 
 	import { reset } from './gameState/gamestate.svelte';
+	import { navState } from './gameState/navstate.svelte';
 
 	const version = '0.10.1';
 </script>
@@ -41,6 +42,13 @@
 				version {version}
 			</span>
 			<div class="divider divider-horizontal"></div>
+			<button
+				type="button"
+				onclick={() => (navState.modalPage = 'about')}
+				class="btn btn-info btn-xs mr-4"
+			>
+				About
+			</button>
 			<button type="button" onclick={reset} class="btn btn-error btn-xs">Reset</button>
 		</div>
 	</div>

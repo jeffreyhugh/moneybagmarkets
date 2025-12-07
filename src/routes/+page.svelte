@@ -21,6 +21,7 @@
 	import Headline from '$lib/headline/Headline.svelte';
 	import HeadlineBanner from '$lib/headline/HeadlineBanner.svelte';
 	import Moneybag from '$lib/moneybag/Moneybag.svelte';
+	import AboutRoot from '$lib/nav/about/AboutRoot.svelte';
 	import Footer from '$lib/nav/Footer.svelte';
 	import NotebookRoot from '$lib/nav/notebook/NotebookRoot.svelte';
 	import SettingsRoot from '$lib/nav/settings/SettingsRoot.svelte';
@@ -127,6 +128,8 @@
 					<NotebookRoot />
 				{:else if navState.modalPage.startsWith('settings')}
 					<SettingsRoot />
+				{:else if navState.modalPage.startsWith('about')}
+					<AboutRoot />
 				{/if}
 			</div>
 		</div>

@@ -6,7 +6,7 @@
 	import { navState } from '$lib/gameState/navstate.svelte';
 </script>
 
-<h3 class="mb-2 text-xl font-bold md:text-2xl">Moneybags</h3>
+<h3 class="mb-2 text-xl font-bold md:text-2xl">Companies</h3>
 <div class="flex flex-col items-start">
 	{#each moneybags as moneybag (moneybag.name)}
 		<button
