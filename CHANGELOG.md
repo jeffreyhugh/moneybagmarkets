@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.3 - 2025-12-07
+#### Bug Fixes
+- update tagline - (5eeb9d8) - Jeffrey Hugh
+
+- - -
+
 ## v0.11.2 - 2025-12-07
 #### Bug Fixes
 - update tagline - (aa67831) - Jeffrey Hugh
