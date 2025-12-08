@@ -24,12 +24,15 @@ post_package_bump_hooks = []
 tag_prefix="v"
 
 [git_hooks]
+[git_hooks.pre-commit]
+script="""
+pnpx lint-staged
+"""
 [git_hooks.commit-msg]
 script = """#!/bin/sh
 set -e
 cog verify --file $1
 cog check
-pnpm lint
 """
 
 [commit_types]

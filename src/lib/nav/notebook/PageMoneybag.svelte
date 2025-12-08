@@ -106,7 +106,11 @@
 		</div>
 	</div>
 </div>
-<button onclick={() => (navState.modalPage = 'notebook')} class="btn btn-outline md:btn-lg">
+<button
+	name="tabNotebook"
+	onclick={() => (navState.modalPage = 'notebook')}
+	class="btn btn-outline md:btn-lg"
+>
 	Home
 </button>
 

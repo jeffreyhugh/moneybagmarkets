@@ -33,6 +33,7 @@
 		"eslint-plugin-svelte": "^3.0.0",
 		"eslint-plugin-unused-imports": "^4.1.4",
 		"globals": "^16.0.0",
+		"lint-staged": "^16.2.7",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
@@ -60,5 +61,31 @@
 		"mode-watcher": "^1.0.4",
 		"svelte-fast-marquee": "^0.8.0",
 		"uuid": "^11.1.0"
+	},
+	"lint-staged": {
+		"*.svelte": [
+			"prettier --check",
+			"eslint --max-warnings=0"
+		],
+		"*.ts": [
+			"prettier --check",
+			"eslint --max-warnings=0"
+		],
+		"*.js": [
+			"prettier --check",
+			"eslint --max-warnings=0"
+		],
+		"*.json": [
+			"prettier --check"
+		],
+		"*.css": [
+			"prettier --check"
+		],
+		"*.md": [
+			"prettier --check"
+		],
+		"*.svg": [
+			"prettier --check"
+		]
 	}
 }
