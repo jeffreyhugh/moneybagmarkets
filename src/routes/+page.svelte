@@ -135,7 +135,7 @@
 		</div>
 
 		<form method="dialog" class="modal-backdrop">
-			<button name="closeModal">close</button>
+			<button>close</button>
 		</form>
 
 		<Footer />

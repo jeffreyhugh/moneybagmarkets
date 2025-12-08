@@ -206,7 +206,6 @@
 			</div>
 			<div class="mt-1">
 				<button
-					name={`open${moneybag.name}`}
 					disabled={opening || gameState.moneybags[moneybag.name].owned === 0}
 					class={[
 						'btn btn-sm',
@@ -223,7 +222,6 @@
 					Open
 				</button>
 				<button
-					name={`buy${moneybag.name}`}
 					disabled={gameState.moneybags[moneybag.name].owned === gameState.maxEachMoneybag ||
 						gameState.coins < gameState.moneybags[moneybag.name].marketHistory[MarketDataLastIndex]}
 					class="btn btn-sm not-disabled:btn-success"
@@ -232,7 +230,6 @@
 					Buy
 				</button>
 				<button
-					name={`sell${moneybag.name}`}
 					disabled={gameState.moneybags[moneybag.name].owned === 0}
 					class="btn btn-sm not-disabled:btn-error"
 					onclick={sellMoneybag}

@@ -30,7 +30,6 @@
 		<Lock class="size-8" />
 	</div>
 	<button
-		name={`unlock${moneybag.name}`}
 		type="button"
 		disabled={gameState.coins < moneybag.costToUnlock}
 		class={[

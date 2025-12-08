@@ -12,7 +12,6 @@
 <div class="mb-8 w-full flex-col items-stretch gap-2">
 	<div class="flex justify-end">
 		<button
-			name="themeChange"
 			class="btn btn-ghost btn-circle m-2 text-xl"
 			onclick={() => {
 				if (theme.current === 'dark') {
@@ -44,14 +43,13 @@
 			</span>
 			<div class="divider divider-horizontal"></div>
 			<button
-				name="about"
 				type="button"
 				onclick={() => (navState.modalPage = 'about')}
 				class="btn btn-info btn-xs mr-4"
 			>
 				About
 			</button>
-			<button name="reset" type="button" onclick={reset} class="btn btn-error btn-xs">Reset</button>
+			<button type="button" onclick={reset} class="btn btn-error btn-xs">Reset</button>
 		</div>
 	</div>
 </div>

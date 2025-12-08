@@ -10,7 +10,6 @@
 <div class="flex flex-col items-start">
 	{#each moneybags as moneybag (moneybag.name)}
 		<button
-			name={`tagNotebook/${moneybag.name}`}
 			class="btn md:btn-lg btn-ghost flex h-auto w-full items-center justify-start gap-1 p-1 sm:gap-2"
 			disabled={!gameState.moneybags[moneybag.name].unlocked}
 			onclick={() => {

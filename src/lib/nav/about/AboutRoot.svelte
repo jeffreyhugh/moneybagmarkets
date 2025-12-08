@@ -12,7 +12,6 @@
 	transition:blur={{ duration: 200 }}
 >
 	<button
-		name="tabAbout"
 		class="mb-4 text-2xl font-bold md:text-4xl"
 		onclick={() => (navState.modalPage = 'about')}
 	>
