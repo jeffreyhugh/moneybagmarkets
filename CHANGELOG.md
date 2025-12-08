@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.11.5 - 2025-12-08
+#### Revert
+- add button labels - (e2d82e3) - Jeffrey Hugh
+
+- - -
+
 ## v0.11.4 - 2025-12-08
 #### Bug Fixes
 - add names to buttons - (eb90aad) - Jeffrey Hugh
