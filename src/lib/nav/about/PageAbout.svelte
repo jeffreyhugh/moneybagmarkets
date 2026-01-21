@@ -12,6 +12,7 @@
 	import Speedboat from '@tabler/icons-svelte/icons/speedboat';
 	import Tools from '@tabler/icons-svelte/icons/tools';
 	import Walk from '@tabler/icons-svelte/icons/walk';
+	import { DateTime } from 'luxon';
 </script>
 
 <div class="mb-4 overflow-y-auto">
@@ -109,6 +110,6 @@
 
 	<div class="divider"></div>
 
-	moneybag.markets &copy; Jeffrey Hugh 2025<br />
+	moneybag.markets &copy; Jeffrey Hugh 2025 - {DateTime.now().year}<br />
 	<a class="link" href="mailto:mm@jh.ms">mm@jh.ms</a>
 </div>

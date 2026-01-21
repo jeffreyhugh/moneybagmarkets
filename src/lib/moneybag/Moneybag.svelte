@@ -155,7 +155,7 @@
 				<div
 					class={[
 						'col-start-1 row-start-1',
-						'rounded-box flex size-full items-center justify-center bg-gradient-to-br',
+						'rounded-box flex size-full items-center justify-center bg-linear-to-br',
 						moneybag.colors.from,
 						moneybag.colors.via,
 						moneybag.colors.to,
@@ -210,7 +210,7 @@
 					class={[
 						'btn btn-sm',
 						gameState.moneybags[moneybag.name].owned > 0 && [
-							'bg-gradient-to-br',
+							'bg-linear-to-br',
 							moneybag.colors.from,
 							moneybag.colors.via,
 							moneybag.colors.to,

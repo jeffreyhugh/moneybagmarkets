@@ -3,6 +3,8 @@
 	import Sun from '@tabler/icons-svelte/icons/sun';
 	import { setMode, setTheme, theme } from 'mode-watcher';
 
+	import { resolve } from '$app/paths';
+
 	import { reset } from './gameState/gamestate.svelte';
 	import { navState } from './gameState/navstate.svelte';
 
@@ -32,7 +34,7 @@
 	</div>
 	<div class="text-center">
 		<a
-			href="/"
+			href={resolve('/')}
 			class="text-vibrant p-2 text-center text-4xl leading-tight font-bold text-transparent select-none md:text-6xl md:leading-snug"
 		>
 			moneybag.markets

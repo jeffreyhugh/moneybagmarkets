@@ -35,7 +35,7 @@
 		class={[
 			'btn btn-base btn-lg opacity-100',
 			gameState.coins >= moneybag.costToUnlock && [
-				'bg-gradient-to-br',
+				'bg-linear-to-br',
 				moneybag.colors.from,
 				moneybag.colors.via,
 				moneybag.colors.to,

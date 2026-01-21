@@ -24,7 +24,7 @@
 <div class="flex items-center gap-3">
 	<div
 		class={[
-			'rounded-box flex aspect-square size-12 items-center justify-center bg-gradient-to-br md:size-16',
+			'rounded-box flex aspect-square size-12 items-center justify-center bg-linear-to-br md:size-16',
 			moneybag.colors.text,
 			moneybag.colors.from,
 			moneybag.colors.via,

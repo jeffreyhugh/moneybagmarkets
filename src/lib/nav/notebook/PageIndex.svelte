@@ -20,7 +20,7 @@
 		>
 			<div
 				class={[
-					'rounded-box flex aspect-square size-8 items-center justify-center bg-gradient-to-br md:size-10',
+					'rounded-box flex aspect-square size-8 items-center justify-center bg-linear-to-br md:size-10',
 					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.text : 'text-white',
 					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.from : 'from-gray-600',
 					gameState.moneybags[moneybag.name].unlocked ? moneybag.colors.via : '',
