@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.12.0 - 2026-01-21
+#### Features
+- add readme - (59388ab) - Jeffrey Hugh
+#### Miscellaneous Chores
+- update deps - (869cf9d) - Jeffrey Hugh
+
+- - -
+
 ## v0.11.5 - 2025-12-08
 #### Revert
 - add button labels - (e2d82e3) - Jeffrey Hugh

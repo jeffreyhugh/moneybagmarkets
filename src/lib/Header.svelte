@@ -8,7 +8,7 @@
 	import { reset } from './gameState/gamestate.svelte';
 	import { navState } from './gameState/navstate.svelte';
 
-	const version = '0.11.5';
+	const version = '0.12.0';
 </script>
 
 <div class="mb-8 w-full flex-col items-stretch gap-2">
